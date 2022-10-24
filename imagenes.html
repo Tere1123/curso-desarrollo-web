@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagenes</title>
+    <style>
+        div {
+            display: flex;
+            justify-content: center;
+
+            position: relative;
+        }
+
+        div h2 {
+            position: absolute;
+            top: 35%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            color: rgb(251, 244, 235);
+            text-align: center;
+        }
+       div img {
+        width: 500px;
+        border-radius: 15px;
+        box-shadow: 8px;;
+       }
+    </style>
+</head>
+
+<body>
+
+    <h1>Trabajar en imagenes en HTML</h1>
+
+    <h2>Ubicar texto en una imagen</h2>
+    <div>
+        <img width="100%" 
+        src="./recursos/Bosque.jpg" alt="">
+        <h2>UN BOSQUE DE ENSUEÑO</h2>
+        <!-- el ./ busca en los archivos internos -->
+        <!-- subes al style das div h2 y vas agregando las caracteriticar
+        de ubicacion y estilo al texto -->
+    </div>
+</body>
+</html>

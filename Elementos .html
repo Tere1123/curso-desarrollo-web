@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="general.css">
+    <style>
+        div {
+            /* ejemplo de como centrar */
+            display: flex;
+            justify-content: center;
+        }
+
+        div a {
+            text-decoration: none;
+            background-color: rgb(165, 30, 113);
+            color: bisque;
+            padding: 5px;
+            border-radius: 5px;
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Elementos avanzados de HTML</h1>
+
+    <H2>Links o hipervinculos</H2>
+
+    <p>
+        los link se encuentran en todo tipo de paginas.perten al usuario
+        navegar por los documentos de la web.
+    </p>
+    <p>
+        Cuando clicas en un link te mueve a otro documento o a una parte concreta al mismo
+    </p>
+    <p>
+        cuando se pasa al cursor sobre um link, este se torna en una mano.
+
+    </p>
+    <p>
+        un link se define mediente el elemento <code>&lt</code>
+    </p>
+
+    <p>
+        la sintaxis de un link, por normageneral ,es:
+        <code>
+            &lt;a href="url"&gt;Text del link&lt;/a&gt;
+        </code>
+    </p>
+    <p>
+        El atributo mas importante de un link es el "href"
+        ya que es este el que indica el puntoal que nos llevara el link
+    </p>
+    <p>
+        Ejemplo
+
+    </p>
+
+    <a href="https://www.google.es" target="_blank">link a Google</a><br>
+    <a href="CSS-basico.css"> Lin teoria de css</a>
+
+    <P>Los link tienen tres teorias
+
+    <ul>
+        <li>son azules cuando no han sido visitados</li>
+        <li>morados cuando ya han sido clicados</li>
+        <li>y rojos cuando estan activos</li>
+    </ul>
+    </P>
+
+    <p>
+        los links se pueden modificar mediante CSS para que tengan un aspecto distinto
+
+    </p>
+    <div>
+        <a href="#">Esto es un link</a>
+    </div>
+
+    <h3>Usar una imagen como link</h3>
+    <!-- ejemplos de como enlazar un link a una imagen -->
+
+    <a target="_blank" href="https://es.wikipedia.org/wiki/Fernando_Botero" alt="">
+        <!-- en el href se escribe al link al que se quiere llegar -->
+        <img width="60%"
+            src="https://i0.wp.com/elplanetaurbano.com/wp-content/uploads/2022/04/Fernando_Botero_90_an%CC%83os_Planeta_Urbano_2022_Mona-Lisa-1978.jpg?resize=640%2C766&ssl=1"
+            alt="">
+        <!-- el src colocas el link de la imagen -->
+    </a>
+    <p>
+        <a target="_blank" href="https://www.renault.es" alt="">
+            <img width="60%"
+                src="https://i0.wp.com/quizlandia.club/wp-content/uploads/2013/10/sonhar-com-carro-amarelo.jpg?fit=1919%2C1034&ssl=1"
+                alt="">
+        </a>
+    </p>
+
+    <p>
+
+        <a target="_blank" href="https://www.vespa.com/es_ES/models/elettrica/" alt="">
+            <img width="60%"
+                src="https://th.bing.com/th/id/R.257f356105d662397787a6ac978f7b20?rik=L4WR8O0yqnqJlg&pid=ImgRaw&r=0"
+                alt="">
+        </a>
+
+    </p>
+
+    <a target="_blank" href="https://www.labicicleta.net/" alt="">
+        <img width="60%" src="https://www.topcascosbici.com/wp-content/uploads/2019/01/ancheer.jpg" alt="">
+    </a>
+
+    <a href=" _blank"></a>
+
+
+</body>
+
+</html>

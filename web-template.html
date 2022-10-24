@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantilla de web</title>
+
+    <style>
+        body {
+            margin: 0;
+        }
+
+        header {
+            background-color: rgb(75, 172, 139);
+            color: rgb(247, 238, 238);
+            height: 180;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 65px;
+        }
+        header h1{
+            margin-bottom: 0;
+        }
+
+        nav {
+            display: flex;
+            padding: 5px 0;
+            
+            background-color: rgb(53, 48, 48);
+            color: beige;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: beige;
+            padding: 5px;
+        }
+        /* :hover es un estado especial ,que se 
+        aplica al pasar el raton/cursor por ensima del elemnto  */
+        nav a:hover {
+            color:rgb(53, 48, 48); 
+            background-color:beige ;
+        }
+
+        section {
+            display: flex;
+        }
+
+        section div {
+            padding: 10px;
+        }
+
+        .div-izq {
+            width: 30%;
+            background-color: rgb(226, 250, 237);
+        }
+
+        .div-der {
+            width: 70%;
+            background-color: rgb(214, 246, 235);
+        }
+
+        footer {
+            background-color: rgb(215, 215, 218);
+            height: 75px;
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- esto esla cabecera de la web -->
+        <h1> Plantilla web</h1>
+        <p> <b>Es un ejemplo</b> </p>
+    </header>
+
+    <nav >
+        <!-- esto es el menu de navegacion -->
+
+        <div>
+            <a href="#">link</a>
+            <a href="#">link</a>
+            <a href="#">link</a>
+        </div>
+        <div>
+
+            <a href="#">link</a>
+        </div>
+
+    </nav>
+
+    <section>
+
+        <div class="div-izq">
+            <!-- contenedor de la izquierda -->
+            <h2>Bloq izq</h2>
+
+            <p>Photo of me:</p>
+            <img width="100%" height="150px"
+                src="https://i.pinimg.com/originals/81/3c/1f/813c1f28f6ae1e2c7cb7b2103ad1c413.png" alt="">
+
+            <p>Some text about me in culpa qui officia deserunt mollit anim.</p>
+
+            <h3>More Text</h3>
+            <p>Lorem ipsum dolor sit ame</p>
+
+            <img width="100%" height="50px"
+                src="https://res.cloudinary.com/postedin/image/upload/d_postedin:no-image.jpg,c_lfill,w_340,f_auto,q_80/postedin/c-1504272808_12b3e978-a4c7-488e-8aed-5692fee1abcc_Fiestas_Patrias_5"
+                alt="">
+            <img width="100%" height="50px" src="https://crearpagina.org.es/wp-content/uploads/2021/06/aaa-768x512.jpg"
+                alt="">
+            <img width="100%" height="50px"
+                src="https://th.bing.com/th/id/OIP.XNy2usuchxvqRnfsLdsJWgHaEK?pid=ImgDet&w=1920&h=1080&rs=1" alt="">
+
+        </div>
+
+        <div class="div-der">
+            <h2>Bloque der 1</h2>
+            <p>Title description, Dec 7, 2017</p>
+
+            <img width="100%" height="150px"
+                src="https://th.bing.com/th/id/OIP._q-5Fy0sEYjY_xeecN1LdgHaE8?pid=ImgDet&rs=1" alt="">
+
+            <p>Lorem ipsum dolor sit amet, consectetur
+                adipisicing elit. Ducimus porro itaque veritatis rerum
+                error id impedit repudiandae! Accusantium quia doloremque
+                corporis facilis tempora optio veritatis natus</p>
+
+            <h2>Bloque der 2</h2>
+            <p>Title description, Sep 2, 2017</p>
+            <img width="100%" height="150px"
+                src="https://th.bing.com/th/id/OIP.gXqfGEygXnNtg-z7vTmUaAHaD4?pid=ImgDet&w=1200&h=628&rs=1" alt="">
+
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Error dolor exercitationem sapiente quisquam provident,
+                sunt cum facilis nam quae molestiae odit natus laborum
+                repellendus repudiandae, voluptatum, aliquam amet quaerat blanditiis?</p>
+
+        </div>
+
+
+
+    </section>
+    <footer> fin de pagina! </footer>
+
+
+</body>
+
+</html>

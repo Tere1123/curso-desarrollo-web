@@ -1,0 +1,17 @@
+body{
+    font-family: Verdana;
+}
+
+h1{  
+    color:rgb(91, 34, 145);
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 300%;
+}
+h2{
+    border: 3px solid rgb(151, 17, 73);
+    /* los valores de borner se dividen en dos puntos: 2px define el grosor del borde
+    solid define la textura del borde y color del borde */
+    padding-left: 30px;
+    margin-left: 15px;
+}
+

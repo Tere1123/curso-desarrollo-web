@@ -1,0 +1,11 @@
+body{ 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+h1{ color: darkmagenta;
+font-size: 14;
+
+}
+code {
+    background-color: rgb(129, 21, 127);
+    color: rgb(208, 217, 234);
+}

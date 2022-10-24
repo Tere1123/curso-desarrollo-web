@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablas en HTML</title>
+
+    <style>
+        table.tabla1 {
+            border: 4px solid black;
+            border-collapse: collapse;
+            /* este border-collapse permite dejar todos los borde de la
+             tabla en un solo elemeto */
+            text-align: center;
+            /*  esta linea hace que las celdas se juntan,
+            eliminando los espcaios en blanco */
+
+        }
+
+        .tabla1 th {
+            /* siempre se debe colocar color al borde */
+            border: 2px solid black;
+            padding: 5px 10px;
+            background-color: rgb(222, 220, 220);
+        }
+
+        .tabla1 td {
+            border: 1px solid rgb(16, 15, 15);
+
+        }
+
+        table.tabla2 {
+            border: 1px solid rgb(22, 21, 21);
+            width: 300px;
+            border-collapse: collapse;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+
+        .tabla2 th {
+            border: 1px solid black;
+            padding: 5px 10px;
+            background-color: rgb(168, 166, 166);
+            width: 50%;
+            text-align:left ;
+        }
+
+        .tabla2 td {
+            border: 0.5px solid rgb(14, 4, 4);
+            padding: 4px;
+
+        }
+
+        .der {
+            /* se deven realizar clases `para darles una apariencia particular
+            a la tabla ,como esta ejemplo: color,alineacion,bordes  */
+            text-align: left;
+            background-color: rgb(221, 219, 224);
+            font-weight: bolder;
+            /* font-weight: te permite colocar en negrita las
+             letras de una etiqueta como la de esta columna */
+        }
+
+        .izq {
+            text-align: end;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Tablas HTML</h1>
+
+    <table class="tabla1">
+
+        <tr>
+            <!-- cabecero de la tabla -->
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Edad</th>
+        </tr>
+        <!-- datos de la tabla th se utiliza para rellenar los datos-->
+        <td>Tere</td>
+        <td>Herrera</td>
+        <td>29</td>
+        </tr>
+        <tr>
+            <td>Camilo</td>
+            <td>Casas</td>
+            <td>29</td>
+        </tr>
+        <tr>
+            <td>Carmen</td>
+            <td>Diaz</td>
+            <td>30</td>
+        </tr>
+        <tr>
+            <td>German</td>
+            <td>Sanchez</td>
+            <td>32</td>
+        </tr>
+
+
+    </table>
+<hr>
+
+    <table class="tabla2">
+
+        <tr>
+            <th class="der">Persona</th>
+            <th class="izq">Edad</th>
+        </tr>
+
+        <tr>
+            <td class="der">German</td>
+            <td class="izq">32</td>
+        </tr>
+        <tr>
+            <td class="der">Camilo</td>
+            <td class="izq">30</td>
+        </tr>
+        <tr>
+            <td class="der">sofia</td>
+            <td class="izq">29</td>
+        </tr>
+        <tr>
+            <td class="der">carlos</td>
+            <td class="izq">25</td>
+        </tr>
+
+
+    </table>
+
+</body>
+
+</html>
