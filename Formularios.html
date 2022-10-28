@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+
+    <link rel="stylesheet" href="general.css">
+</head>
+
+<style>
+
+   form {
+    background-color: rgb(229, 232, 248);
+   }
+
+   form h1 {
+    display: flex;
+    justify-content: center;
+   }
+
+
+    form>div {
+        display: flex;
+        justify-content: space-between;
+        width: 350px;
+        margin-bottom: 5px;  
+        font-family: Arial, Helvetica, sans-serif; 
+    }
+
+    form div:last-child {
+        justify-content: flex-start;
+    }
+
+    form input, form div button {
+        border: none;
+        background-color: rgb(183, 182, 182);
+        border-radius: 4px;
+        margin-right: 7px;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+
+</style>
+
+<body>
+    <h1>Formularios en html</h1>
+
+    <h2>formulario sencillo</h2>
+
+    <form action="#">
+        <h1>HTML FORM</h1>
+        <!-- si quieres que un campo sea hobligatorio al final de despues 
+    de id se debe colocar "required" -->
+
+        <!-- en el input se puede colocar la forma de la estructura si va hacer texto,
+     numero o viñeta en forma de circulo(radio) o cuadrado (checkbox) y fecha(date)-->
+
+
+        <div>
+            <label for="firstName">First Name:</label>
+            <input type="text" name="firstName" id="">
+        </div>
+        <div>
+            <label for="lastName">Last Name:</label>
+            <input type="text" name="lastName" id="">
+        </div>
+
+        <div>
+            <label for="dateOfBirth">Date of Birth:</label>
+            <input type="date" name="dateOfBirth" id="">
+        </div>
+        <div>
+            <label for="">Gender:</label>
+            <div>
+                <input type="radio" name="gender" id="">Male
+                <input type="radio" name="gender" id="">Female
+                <input type="radio" name="gender" id="">Other
+            </div>
+        </div>
+        <div>
+            <label for="">Owned vehicles:</label>
+            <div>
+                <input type="checkbox" name="vehicles" id="">Car
+                <input type="checkbox" name="vehicles" id="">Motorbike
+                <input type="checkbox" name="vehicles" id="">Bycicle
+            </div>
+
+        </div>
+        <div>
+            <label for="emailId">Email Id:</label>
+            <input type="text" name="emailId" id="">
+        </div>
+        <div>
+            <label for="mobileNumber">Mobile Number:</label>
+            <input type="number" name="movilNumber" id="">
+        </div>
+        <br>
+        <div class="button">
+
+            <button type="submit">submit</button>
+            <!-- se puede usar tambien input tipe=submit value="sutmit" -->
+            <button type="reset">Reset</button>
+        </div>
+
+
+    </form>
+</body>
+
+</html>
