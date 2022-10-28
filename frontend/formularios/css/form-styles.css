@@ -1,0 +1,94 @@
+form.simple-form {
+    background: linear-gradient(270deg, rgb(172, 216, 236),
+            rgb(116, 140, 219), transparent);
+    padding: 15px;
+    /* con esto le podemos dar colores en gradiente al fondo */
+}
+
+form.simple-form h1 {
+    display: flex;
+    justify-content: center;
+    color: black;
+}
+
+
+form.simple-form>div {
+    display: flex;
+    justify-content: space-between;
+    width: 350px;
+    margin-bottom: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+form.simple-form div:last-child {
+    justify-content: flex-start;
+}
+
+form.simple-form input,
+form div button {
+    border: none;
+    background-color: rgb(219, 215, 215);
+    border-radius: 4px;
+    margin-right: 7px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+form.contact {
+    background-color: rgb(117, 236, 238);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+form.contact-us  {
+    display: flex;
+    align-items: center;
+}
+
+.iconos {
+
+    width: 70px;
+    display: flex;
+    align-items: center;
+}
+
+form.contact div {
+    width: 50%;
+}
+
+form.contact input[ type='text'],
+form.contact textarea {
+    /* type=text le esta dando una clase espacifica */
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid black;
+    width: 100%;
+
+}
+
+form.contact input[type="submit"] {
+    /* type=submit le esta dando una clase espacifica
+         al en este caso  */
+    background: transparent;
+    padding: 10px 40px;
+    margin: 20px 0;
+}
+
+form.contact input[type="submit"]:hover {
+
+    background-color: black;
+    color: aliceblue;
+    /* el cursor cambia a una mano o el elemento que escojamos
+    indicando que puede cursar sobre el */
+    cursor: pointer;
+}
+
+.contac-us {
+
+
+
+    
+    
+}
