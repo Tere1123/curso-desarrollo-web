@@ -50,17 +50,17 @@
         <div>
             <label for="">Gender:</label>
             <div>
-                <input type="radio" name="gender" id="">Male
-                <input type="radio" name="gender" id="">Female
-                <input type="radio" name="gender" id="">Other
+                <input type="radio" name="gender" value="male">Male
+                <input type="radio" name="gender" value="female">Female
+                <input type="radio" name="gender" value="Other">Other
             </div>
         </div>
         <div>
             <label for="">Owned vehicles:</label>
             <div>
-                <input type="checkbox" name="vehicles" id="">Car
-                <input type="checkbox" name="vehicles" id="">Motorbike
-                <input type="checkbox" name="vehicles" id="">Bycicle
+                <input type="checkbox" name="vehicles" value="car">Car
+                <input type="checkbox" name="vehicles" value="Motorbike">Motorbike
+                <input type="checkbox" name="vehicles" value="bycicle">Bycicle
             </div>
 
         </div>
@@ -124,29 +124,29 @@
 
     <h2>Formulario de alquiler de vehiculos</h2>
 
-    <form action="renting">
+    <form class="renting" action="">
 
-        <label for="">Por favor selecione un vehiculo</label>
+        <label for="tipo">Por favor selecione un vehiculo</label>
         <!-- con esta opcion podemos crear un menu desplegable 
         para escoeger una sola opcion -->
-        <select name="" id="">
-            <option value="">Coche</option>
-            <option value="">Moto</option>
-            <option value="">Furgoneta</option>
+        <select name="tipo">
+            <option value="Coche">Coche</option>
+            <option value="Moto">Moto</option>
+            <option value="Furgoneta">Furgoneta</option>
         </select>
         <br>
 
-        <label for="">Por favor selecione el equipamiento del vehiculo</label>
-        <select name="" id="">
-            <option value="">Estanadar</option>
-            <option value="">Full equipo</option>
-            <option value=""> solo GPS</option>
-            <option value=""> </option>
+        <label for="equipo">Por favor selecione el equipamiento del vehiculo</label>
+        <select name="equipo" id="">
+            <option value="Estandar">Estandar</option>
+            <option value="Full equipo">Full equipo</option>
+            <option value="solo GPS"> solo GPS</option>
+           
         </select>
         <br>
 
-        <label for=""> seleccione la marca del vehiculo</label>
-        <input list="marcas">
+        <label for="marcas"> seleccione la marca del vehiculo</label>
+        <input name="marcas" list="marcas">
         <!-- datalist nos permite crear una listado de sugerencias para 
         escoger -->
         <datalist id="marcas">
@@ -159,9 +159,19 @@
         <br>
         <input type="submit">
 
-
-
     </form>
+
+<h2> Formulario de inicio de sesion</h2>
+
+<form action="" class="login">
+
+    <input name="user" type="text" placeholder="ingrese su usuario">
+    <br>
+    <input name="password" type="password" placeholder="Inserte contraseña">
+    <br>
+    <input type="submit">
+
+</form>
 
 
 </body>
