@@ -104,7 +104,7 @@
             <h1>CONTAC US</h1>
 
             <div class="iconos">
-                <!-- en boostrap iconos puedes encontar iconos para colocar -->
+                <!-- en "boostrap iconos" puedes encontar iconos para colocar -->
                 <i class="bi bi-facebook"></i>
                 <i class="bi bi-twitter"></i>
                 <i class="bi bi-instagram"></i>
@@ -119,6 +119,49 @@
 
     </form>
 
+
+    <h1>Formilario con desplegables</h1>
+
+    <h2>Formulario de alquiler de vehiculos</h2>
+
+    <form action="renting">
+
+        <label for="">Por favor selecione un vehiculo</label>
+        <!-- con esta opcion podemos crear un menu desplegable 
+        para escoeger una sola opcion -->
+        <select name="" id="">
+            <option value="">Coche</option>
+            <option value="">Moto</option>
+            <option value="">Furgoneta</option>
+        </select>
+        <br>
+
+        <label for="">Por favor selecione el equipamiento del vehiculo</label>
+        <select name="" id="">
+            <option value="">Estanadar</option>
+            <option value="">Full equipo</option>
+            <option value=""> solo GPS</option>
+            <option value=""> </option>
+        </select>
+        <br>
+
+        <label for=""> seleccione la marca del vehiculo</label>
+        <input list="marcas">
+        <!-- datalist nos permite crear una listado de sugerencias para 
+        escoger -->
+        <datalist id="marcas">
+            <option value="Renault"></option>
+            <option value="Audi"></option>
+            <option value="Citron"></option>
+            <option value="Fiat"></option>
+
+        </datalist>
+        <br>
+        <input type="submit">
+
+
+
+    </form>
 
 
 </body>

@@ -40,6 +40,7 @@ form.contact {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 20px;
 }
 
 form.contact-us  {
@@ -55,7 +56,7 @@ form.contact-us  {
 }
 
 form.contact div {
-    width: 50%;
+    width: 60%;
 }
 
 form.contact input[ type='text'],
@@ -85,10 +86,8 @@ form.contact input[type="submit"]:hover {
     cursor: pointer;
 }
 
-.contac-us {
-
 
 
     
     
-}
+
