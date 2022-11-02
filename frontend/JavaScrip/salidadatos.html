@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salida de datos usando JS</title>
+    <link rel="stylesheet" href="../general.css">
+</head>
+
+<body>
+    <h2>Salida de datos usando JS</h2>
+
+    <p>
+        Muestra de datos de JS:
+    </p>
+
+    <ul>
+
+        <li>
+            Escribir dentro de un elemento HTML usando
+            <code>innerHTML</code>
+        </li>
+        <li>Escribir directamente en el HTML usando
+            <code>document.write()</code>
+        </li>
+        <li>Escribiren una caja de alerta usando
+            <code>window.alert()</code>
+        </li>
+        <li>Escribir en la consola del navegador usando
+            <code>console.log</code>
+        </li>
+
+        <p id="pText"></p>
+
+    </ul>
+</body>
+<script>
+    // ejemplo de salida de datos
+    document.getElementById("pText").innerHTML = 'Texto escrito usando innerHTML desde JS';
+    document.write("texto escrito usando documento ");
+    window.alert("este es el mensaje de la caja de alerta");
+    console.log("esto solo se vera desde la consola del navegador");
+</script>
+
+</html>

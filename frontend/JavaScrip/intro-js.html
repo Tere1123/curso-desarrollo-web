@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduccion a JavaScript</title>
+    <link rel="stylesheet" href="../general.css">
+    <link rel="stylesheet" href="intro js.js">
+
+</head>
+
+<body>
+
+    <h1>Introduccion a JavaScript</h1>
+
+    <p>
+        JavaScript es un lenguaje de programacion e la web nos
+        permite crear interaccones usuario web
+    </p>
+    <p>
+        Ejemplo:
+    </p>
+    <!-- camel cased: las variables por definiciones
+     se nombraran simpre iniciando por minuscula,sin usar espacios ni
+     simbolos y separando mediante el uso de mayusculas
+      ejemplo:pedroPicapiedra
+  -->
+    <p id="pColor">
+        pulsa el boton de abajo para resaltar este parrafo
+    </p>
+    <button onclick="colorChange()">color</button>
+    <hr>
+
+    <p id="pDate">
+        Pulsa el boton para que de la fecha y hora actual
+    </p>
+
+    <button onclick="showdate()">
+        Mostrar fecha
+    </button>
+
+    <hr>
+
+    <p id="pHide">
+        Pulsa el boton inferior para ocultar/mostrar este parrafo.
+    </p>
+    <button onclick="hideShow()">Mostrar/ocultar</button>
+
+    <hr>
+
+    <p>
+        Pulsa el boton para encender la bombilla
+    </p>
+
+    <img id="bulb" src="../recursos/bombilla.gif" alt="">
+    <br>
+
+    <button onclick="bulbSwitch()"> encender la luz</button>
+
+</body>
+
+<script src="intro js.js"></script>
+</html>
