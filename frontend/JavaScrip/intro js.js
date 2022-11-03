@@ -1,4 +1,3 @@
-<script>
     function colorChange() {
         // una funa funcion es un bloque de codigo que se puede reutilizar
         // para cambiar el parrafo de color lo primero es identificar y 
@@ -55,4 +54,3 @@
 
     }
 
-</script>

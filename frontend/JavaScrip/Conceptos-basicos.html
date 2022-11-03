@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conceptos Basicos JS</title>
+    <link rel="stylesheet" href="../general.css">
+
+</head>
+
+<body>
+    <h1>Conceptos JS</h1>
+    <h2>statemests o declaraciones</h2>
+
+    <p>
+        un <b>programa informatico</b> es una lista de instrucciones que se ejecuta programa por un ordenador.
+    </p>
+    <p>
+        En programacion estas instrucciones se llaman <b> declaraciones o "statements"</b>
+    </p>
+
+    <p>
+        un <b>programa de JS</b> es una lista de declaraciones de programacion
+    </p>
+
+    <p>
+        la de claraciones se componen:
+    </p>
+    <p>
+        valores(values),operadores(operators),palabras claves(keywords) y comentarios(comments).
+        <br>
+        ejemplo;Tenemos una decharacion (statements)que le indicaal navegador que debe Escribir
+        "Hola mundo" dentro de un elemento HTML con la id="test"
+    </p>
+    <code>
+    document.getElementById("test").innerHTML = "Hola mundo" ;
+ </code>
+    <p>los statements o lineas de codigo ,se ejecutan ene un orden de lectura</p>
+
+    <h2>Punto y coma (semicolon); </h2>
+    <p>
+        se usan para separar los statements en JS, no son obligatorios pero si 
+        muy recomendados para buenas practicas de codigo. <b> Ref al JS linea 1 </b>
+    </p>
+    <h2>Espacios en blanco</h2>
+    <p>
+        JS ignora los espacios en blanco ,y se usan para hacer el codigo mas legible, jemeplo: ref Js LINEA 11
+    </p>
+<code>
+let persona = "carlos"; <br>
+let persona="carlos";
+</code>
+
+<h2>Bloques de codigo</h2>
+<p>
+    Las declaraciones o statements se pueden agrupar en bloques dentro de llaves(curly brackets) {...}
+</p>
+
+<p>
+    El proposito de esto es definir una serie de declaraciones para que se ejecuten juntas.
+</p>
+<p>
+    Un ejemplo de declaraciones unidas en bloques son las funciones. Ref JS linea 16
+</p>
+
+<h2>Palabras claves o keywords</h2>
+
+<p>
+    A menudo muchas lineas de codigo inician por una palabra que indica la accion a realizar. <br>
+    Esta palabras estan <b> reservadas </b> y no pueden usarse en ningun otro contexto.Ejemplo:
+</p>
+<ul>
+    <li>var - declara una variable</li>
+    <li>let -  dechara una variable en bloque</li>
+    <li>const - declara una constante de bloque</li>
+    <li>if - indica un bloque de codigo a ejecutarse cuando se cumple una condicion</li>
+    <li>swich - indica un bloque de codigo a ejecutarse dependiendo de distintos factores</li>
+    <li>for - Indica un bloque de codigo a ejecutarse en bucle</li>
+    <li>function - Declara una funcion</li>
+    <li>return - Sale una funcion</li>
+    <li>try - Implementa manejo de errores a un bloque de codigo</li>
+</ul>
+
+
+</body>
+
+<script src="conceptos-basicos.js"></script>
+
+<script>
+    // document.getElementById("test").innerHTML = "Hola mundo" ;
+    console.log("hola mundo");
+
+</script>
+
+</html>

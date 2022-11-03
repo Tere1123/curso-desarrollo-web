@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculador de propinas</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <!-- como lo hago yo -->
+    <form action="calcular">
+
+        <h1>Calcular propinas</h1>
+
+
+        <label for="valor de la cuenta">How much was your bill</label>
+        <input type="number" name="$$$" id="">
+
+    </form>
+
+    <!-- como lo resuelve el profe -->
+
+    <div class="container">
+
+        <h1>Calcular propinas</h1>
+
+        <div>
+            <p>
+                Gasto total de la cuenta:
+            </p>
+            <input name="inputCuenta" id="cuentaTotal" type="number">€
+        </div>
+        
+        <div>
+            <p>
+                calidad del servicio:
+            </p>
+            <select name="calidadServ" id="calidadServ">
+                <option value="5">*</option>
+                <option value="10">**</option>
+                <option value="15">***</option>
+                <option value="20">****</option>
+                <option value="30">*****</option>
+
+            </select>
+        </div>
+
+        <div>
+            <p>numero de comensales:</p>
+            <input id="numPersonastype" type="number">personas.
+        </div>
+
+        <div>
+            <button>calcular</button>
+        </div>
+
+        <div>
+        
+         <p id="pResultado">Resultado</p>
+            
+        </div>
+
+        <button onclick="test()">probar</button>
+
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
