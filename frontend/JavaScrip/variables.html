@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../general.css">
+    <title>Variables de JS</title>
+</head>
+
+<body>
+
+    <h1>Todo sobre las Variables</h1>
+
+    <h2>Formas de declarar variables</h2>
+    <ul>
+        <li>usando <code>var</code> delante</li>
+        <li>usando <code>let</code> delante</li>
+        <li>usando <code>const</code> delante</li>
+        <li>usar nada</li>
+    </ul>
+    <p>
+        por buenas practicas siempre se debe usar una
+        de las tres primeras
+    </p>
+
+    <h3>VAR</h3>
+
+    <P>
+        Var es la forma clasica de declarar una variable desde los
+        inicios de JS
+    </P>
+    <p>
+        Let y Const fueron añadidas al lenguaje en el 2015
+    </p>
+
+    <p>
+        Var se usa principalmente como metodo de compatibilidad
+        con navegadores antiguos
+    </p>
+
+    <h3>Const y Let</h3>
+    <p>
+        Por regla general las variables se declaran con <code>const</code>
+        sin embargo si la valor de la variablepuede cambiar se usa let
+    </p>
+
+    <p>ejemplo con variables fijas y constantes y de valor variable.
+        ref js linea 1.</p>
+
+    <h2>El operador de asignacion =</h2>
+
+    <p>
+        en JS el signo de = <code>=</code> no equivale a resultado de, sino
+        que es un operador de asignacion.
+    </p>
+    <p><code>x = x + 5</code></p>
+
+    <p>
+        esta expresion matematicamente no tiene sentido,pues nunca va haber
+        un nuemro que <b> equivalga </b>en una suma a si mismo.
+
+    </p>
+    <p>
+        sin embargo en codigo ,no solo tiene sentido si no una practica muy comun.
+        Esta expresion indica que al valor de x le estamos <b>asignando</b> el valor de
+        la suma de x + 5.
+    </p>
+    <p>
+        Basicamente hemos aumentado el valor de X a 5
+
+    </p>
+
+    <p>
+        Nota: en JS el operador "igual a" se esribe <code>==</code>
+    </p>
+
+    <h2>Ti`pos de datos</h2>
+
+    <p>
+        Las variables pueden contenar muchos tipos de datos, pueden ser
+        numero como 100 o cadenas de texto como "juan eduardo"
+
+    </p>
+    <p>
+        en programacion ,a los valores de texto se les llama cadenas
+        de caracteres o strings
+    </p>
+
+    <p>
+        Los strings se escriben dentro de comillas dobles o sencillas.
+        si se escribe numeros dentro de comillas sera tratado como
+        strings texto
+        ref linea 15 js
+    </p>
+    <h2>Value = undefined</h2>
+
+    <p>
+        a menudo en un programas informaticos,las variables se calculan sin un valor,
+        el valor puede que sea algo que deba ser calculado o que sea provisto por el usuario
+        como input
+    </p>
+
+    <p>
+        las variables declaradas sin valor tendran como valor <code>undefined</code>
+        ref linea 24
+    </p>
+    <h2>Declarar variable</h2>
+
+    <p>
+        Si se redeclara una variable usando <code>var</code> ,
+        la variable mantendra su valor.
+    </p>
+    <p>
+        Sin embargo , al hacer esto con u na variable declarada con <code>let</code>
+         o <code>cosnt</code> el codigo lanzara un erros
+    </p
+
+
+</body>
+
+<script src="variables.js"></script>
+
+</html>
