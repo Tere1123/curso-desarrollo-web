@@ -14,7 +14,7 @@
 
 
     <!-- como lo hago yo -->
-    <form action="calcular">
+    <!-- <form action="calcular">
 
         <h1>Calcular propinas</h1>
 
@@ -22,9 +22,10 @@
         <label for="valor de la cuenta">How much was your bill</label>
         <input type="number" name="$$$" id="">
 
-    </form>
+    </form> -->
 
     <!-- como lo resuelve el profe -->
+<div class="div-ext">
 
     <div class="container">
 
@@ -34,10 +35,12 @@
             <p>
                 Gasto total de la cuenta:
             </p>
-            <input name="inputCuenta" id="cuentaTotal" type="number">€
+            <input name="inputCuenta" id="cuentaTotal" type="number" 
+            min="0" oninput="validity.valid||(value='')">€
+            <!-- usando en min= no permite que el usuario coloque numeros menores que 0 o el minimo deseado -->
         </div>
         
-        <div>
+        <div class="calidad">
             <p>
                 calidad del servicio:
             </p>
@@ -51,13 +54,14 @@
             </select>
         </div>
 
-        <div>
+        <div class="personas">
             <p>numero de comensales:</p>
-            <input id="numPersonastype" type="number">personas.
+            <input id="numPersonastype" type="number" min="0">personas.
         </div>
+        <br>
 
         <div>
-            <button>calcular</button>
+            <button onclick="calcularPropina">calcular</button>
         </div>
 
         <div>
@@ -66,9 +70,10 @@
             
         </div>
 
-        <button onclick="test()">probar</button>
-
+     
     </div>
+</div>
+
 </body>
 <script src="script.js"></script>
 </html>

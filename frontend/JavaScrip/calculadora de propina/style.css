@@ -1,0 +1,55 @@
+body {
+    background-color: #eef3f6;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.container {
+    background: linear-gradient(250deg, #984e9c, #0e83bd);
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15%;
+    border-radius: 10px;
+
+}
+
+.container h1 {
+    background-color: #11100f;
+    color: #f0f8ff;
+    width: 100%;
+    text-align: center;
+    margin-top: 0;
+    border-radius: 10px 10px 0 0;
+}
+.calidad {
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+
+}
+
+.personas {
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+button {
+    background-color: rgb(25, 25, 27);
+    border-radius: 5px;
+    width: 90px;
+    color: rgb(238, 237, 235);
+}
+
+button:hover {
+    background: #39a8a8;
+    color: #11100f;
+    cursor: pointer;
+
+}

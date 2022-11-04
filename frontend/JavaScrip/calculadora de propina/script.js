@@ -1,6 +1,6 @@
 // tomamos los datos que introduce el usuario
 
-function test() {
+function calcularPropina() {
 var cuentaTotal = document.getElementById("cuentaTotal").value;
 var calidadServ = document.getElementById("calidadServ").value;
 var numPersonastype = document.getElementById("numPersonastype").value;
@@ -10,12 +10,17 @@ var resulPorcentaje = calidadServ / 100;
 var porc = resulPorcentaje * cuentaTotal
 var cuentaT = porc / numPersonastype
 
-// con esto podemos hacer se vea en pantalla
+// con esto podemos hacer que se vea en pantalla
+if (cuentaT > 0) {
+    
 pResultado.style.display = 'block';
-pResultado.innerHTML = cuentaT + " € por persona";
-
-    console.log (cuentaT + "€");
+pResultado.innerHTML = cuentaT.toFixed(2) + " € por persona";
+// el tofixed permite que a la hora de imprimir el resultado se redondeo
+} console.log (cuentaT + "€");
 }
+
+
+
 // para obtener la propina hay que multiplicar el gasto por la calidad del servicio para obtener
 // el correspondiente porcentaje y por tanto la propina total
 
