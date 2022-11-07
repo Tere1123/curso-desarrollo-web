@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fecha y hora en JS</title>
+    <link rel="stylesheet" href="../general.css">
+
+</head>
+
+<body>
+    <h1>Fecha y Hora en JS</h1>
+
+    <h2>El objeto Date</h2>
+
+    <p>
+        Nos permiten trabajar en las fechas:
+    </p>
+
+    <p id="testDate"></p>
+
+    <p>El objeto Date es un obejeto estatico,no es como la hora</p>
+
+    <h2>Creando objetos fecha</h2>
+
+    <p>
+        Los objetos de fecha se crean con <code>new date</code>
+        hay distintas maneras de crear un new date, si no le creamos
+         parametros el objeto se crea con fecha y hora actuales
+    </p>
+    <code>
+    <ul>
+        <li>new date</li>
+        <li>new date( 'string de fecha')</li>
+        <li>new date(mes,dia,horas,minutos,segundos,ms)</li>
+        <li>new date (milisegundos)</li>
+    </ul>
+    </code>
+<h3>new Date ( 'string de fecha')</h3>
+<p>
+    crear un obehto apartir de una fecha concreta,en este caso sera el 
+    7 febrero del 1999
+</p>
+
+<p id="dateString"></p> 
+
+<h3>new Date(año,mes...)</h3>
+<p>
+    la fecha se crea introduciendo numeros, esto genera ciertas situaciones espaciale.
+    ref linea 11 JS
+</p>
+
+<p id="dateNumber"></p>
+
+<p> Nota: en JS los meses se cuentas de 0 a 11 si se introduce un mes mayor que 11</p>
+
+<h3>new Date ms()milisegundos</h3>
+
+<p>JS almasena las fechas como el nuemro de milisegundos que han transcurido desde 
+    el 1 de enero desde 1970
+</p>
+<p>
+    <b>el tiempo 0 (zero Time)</b> es el numero de 1970, 00:00:00 GTM 01
+</p>
+<p>
+    ahora el tiempo es: <b><span id="fechaMS">00</span></b> milisegundos
+    transcuridos  desde el tiempo cero.
+    
+</p>
+
+<p>el 4 de julio de 1965 <b><span id="fechaMS2"></span></b></p>
+
+
+
+<h2>Imprimir fechas</h2>
+<p>
+    escribir o imprimir <code>new Date()</code> Convertira la fecha de forma automatica.
+</p>
+
+<p>
+    un formato mas facil de ller se obtine al usar el metodo <code>toDateString()</code>
+</p>
+<p id="fechaDateString"></p>
+
+<h2>tomar datos de la fecha (get Methods)</h2>
+
+<ul>
+    <li>getFullYear()- retorna el año como un numero de 4 digitos YYYY</li>
+    <li>getMonth()- retorna almes como nuero 0-11</li>
+    <li>getDate(): retorna el dia delmes como numero 1-31  </li>
+    <li>getDay():retorna el dia de la semana como nuemro 0-6</li>
+    <li>getHours(): 0-23</li>
+    <li>getMinutes(): 0-59</li>
+    <li>getSeconds(): 5-59</li>
+    <li>getMilliseconds(): 0-999</li>
+    <li>getTime(): retorna el tiempo a los milisegundos antes de 1970 </li>
+</ul>
+
+<p>ejemplo</p>
+<p id="fechaGet"></p>
+
+
+</body>
+
+<script src="fechay hora.js"></script>
+</html>

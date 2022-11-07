@@ -19,7 +19,6 @@
 }
 
 //Hosting
-let = seat coche
 coche = 'seat panda'
 console.log(coche);
 // este es elorden que se debe tener
