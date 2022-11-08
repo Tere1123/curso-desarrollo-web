@@ -1,0 +1,40 @@
+body {
+    background:linear-gradient(270deg, rgb(86, 229, 234),
+    rgb(40, 157, 97));
+    font-family: 'TT Globs Trial';
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    width: 80%px;
+    display: flex;
+    justify-content: center;
+
+}
+
+div {
+    width: 60px;
+    display: flex;
+    justify-content: center;
+}
+div button {
+    width: 100px;
+    border-radius: 5px;
+    border-color: rgb(106, 230, 230);
+    background-color: black;
+    color: beige;
+}
+
+button:hover {
+    background-color: beige;
+    border-color: black;
+    color: black;
+    cursor: grabbing;
+
+}

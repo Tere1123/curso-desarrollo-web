@@ -1,0 +1,31 @@
+body {
+    background-color: rgb(161, 169, 254);
+    font-family: 'TT Globs Trial';
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+    /* esto hace que me ocupe el 100% de body y se aplica el 
+    margen 0 para eliminar espacios */
+    margin: 0;
+
+}
+
+h1 { 
+
+    background:linear-gradient(50deg, rgb(127, 138, 174),
+    rgb(43, 168, 184), transparent);
+    color: rgb(70, 69, 69);
+    border-radius: 10px ;
+    width: 70%;
+    text-align: center;
+
+
+}
+
+h5 {
+    font-size: 10px;
+    color: rgb(81, 74, 74);
+}
