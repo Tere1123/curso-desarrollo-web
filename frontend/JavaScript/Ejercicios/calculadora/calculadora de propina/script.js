@@ -5,7 +5,7 @@ var cuentaTotal = document.getElementById("cuentaTotal").value;
 var calidadServ = document.getElementById("calidadServ").value;
 var numPersonastype = document.getElementById("numPersonastype").value;
 
-var pResultado = document.getElementById("pResultado");
+var parrafo = document.getElementById("pResultado");
 var resulPorcentaje = calidadServ / 100;
 var porc = resulPorcentaje * cuentaTotal
 var cuentaT = porc / numPersonastype
@@ -13,8 +13,8 @@ var cuentaT = porc / numPersonastype
 // con esto podemos hacer que se vea en pantalla
 if (cuentaT > 0) {
     
-pResultado.style.display = 'block';
-pResultado.innerHTML = cuentaT.toFixed(2) + " € por persona";
+parrafo.style.visibility = 'visible';
+parrafo.innerHTML = cuentaT.toFixed(2) + " € por persona";
 // el tofixed permite que a la hora de imprimir el resultado se redondeo
 } console.log (cuentaT + "€");
 }
