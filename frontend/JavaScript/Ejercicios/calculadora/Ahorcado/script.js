@@ -8,6 +8,8 @@ const palabras = [
     "langostino",
     "murcielago"
 
+
+    
 ]
 
 // imprimir la palabra
