@@ -15,6 +15,7 @@ h1 {
     width: 80%px;
     display: flex;
     justify-content: center;
+    border-color: black;
 
 }
 
@@ -25,10 +26,18 @@ div {
 }
 div button {
     width: 100px;
-    border-radius: 5px;
-    border-color: rgb(106, 230, 230);
+    font-family: 'TT Globs Trial';
+    border-radius: 15px;
+    border-color: rgb(141, 145, 145);
     background-color: black;
     color: beige;
+    padding: 7px 20px;
+    margin: auto 7px;
+    /* esta funcion nos permite dar un tiempo de 
+    espera predeterminado para la transicion de otra funcion */
+    transition: all 1s; 
+    transition: background-color .5s;
+    transition: foun-family .6;
 }
 
 button:hover {
@@ -36,5 +45,8 @@ button:hover {
     border-color: black;
     color: black;
     cursor: grabbing;
-
+    /* esta funcion da el efecto de de iluminacion,
+    o sombreada */
+    box-shadow: 0 0 30px 7px rgba(255, 253, 253, 0.8);
+    
 }

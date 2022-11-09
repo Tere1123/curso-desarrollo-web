@@ -1,0 +1,29 @@
+body {
+    background-color: rgb(246, 240, 122);
+}
+
+h1 {
+    display: flex;
+    justify-content:center ;
+}
+
+div h2 {
+    display: flex;
+    justify-content:center ;
+    letter-spacing: 10px;
+}
+
+.lienzo {
+    
+    height: 300px;
+    border: 2px solid black;
+    border-color: black;
+    border-radius:10px ;
+    
+}
+
+button {
+    border-radius: 1px ;
+    border: 1px rgb(180, 231, 85) ;
+}
+
