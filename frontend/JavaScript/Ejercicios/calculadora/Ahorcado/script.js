@@ -5,7 +5,7 @@ const palabras = [
     "conejo",
     "gato",
     "pollo",
-    "langostino",
+    "langostino", 
     "murcielago"
 
 ]
