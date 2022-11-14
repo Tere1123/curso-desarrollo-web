@@ -21,7 +21,7 @@ random = Math.floor(Math.random() * palabras.length);
 let palabra = palabras[random];
 
 let longitud = palabra.length;
-// console.log(longitud);
+console.log(longitud);
 
 let texto = ''; // aqui estoy creando la variable de texto vacia con ''
 // para despues darle el valor que se necesite
@@ -30,19 +30,27 @@ let texto = ''; // aqui estoy creando la variable de texto vacia con ''
 // la accion se repita tantas veces se actualice la pagina.
 // para esto usamos el 'for'
 for (let indice = 0; indice < longitud; indice++) {
-//se crea la variable incice que espues sera [i] lo que nos
+//se crea la variable incice que despues sera [i] lo que nos
 //indica que: si el inice  inicia en 0, este recorrera los 
 //caracteres de la longitud de la palabra(indice < longitud) y 
-// y se detendra ahi. al detenerse continuara con el siguiente
+// se detendra ahi. al detenerse continuara con el siguiente
 // (indice++)
 
 //cuando lo anterior se cumple el resultado sera mostrado en
 //en este caso con la cantidad de espacios de cada palabra con 
 //guiones
-  texto =+ '_';
-
+  texto += '_';
+// siempre se coloca el + y despues el =, al lado del igual no puede quedar nada
 }
+
+console.log(texto);
+
 displayPalabra.innerHTML = texto;
-//esto nos permite mostrar los escios de la palabra en pantalla sin
+//esto nos permite mostrar los espacios de la palabra en pantalla sin
 //que se vea el texto
+
+
+
+
+
 
