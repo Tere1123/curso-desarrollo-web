@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../general.css">
+    <title>Layout</title>
+
+    <style>
+
+     .container {
+        color: aliceblue;
+        background: #aabbcc;
+        text-align: center;
+     }
+     
+     .container div {
+        padding: 10px;
+        border: 1px solid white;
+     }
+
+     #hideShow {
+        display: none;
+     }
+
+     .borde {
+        border: 2px solid rgb(117, 117, 209);
+      
+     }
+
+     .bloque {
+        display: block;
+     }
+     .linea {
+        display: inline;
+
+     }
+
+     /* display y visibility */
+    .flex-container {
+        display: flex;
+        justify-content: center;
+    }
+
+     .flex-container>div {
+        border: 2px solid blue;
+        width: 100%;
+        padding: 10px;
+
+     }
+     .img {
+        height: 150px;
+        background-image: url(https://th.bing.com/th/id/OIP.2UrOxu80bDsljBi_-kRxlAHaFj?pid=ImgDet&rs=1);
+        background-position: center; 
+        background-size: cover;
+
+     }
+     .flex-container button {
+        background: rgb(160, 160, 179);
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        color: aliceblue;
+        font-size: 1.1rem;
+     }
+
+    </style>
+</head>
+
+<body>
+    <h1>"layout" en CSS</h1>
+    <p>
+        El Layout es la disposicion o la forma en la que los elementos
+        se muestran en plantilla segunun tipo
+    </p>
+
+    <h2>Display</h2>
+    <p>
+        Es la propiedad mas importante de css para controlar el alineamiento.
+    </p>
+    <p>
+        <code>display</code>especifica la forma en eque se muestra un elemento.
+    </p>
+    <p>
+        en HTML cada elemnto posee un valor por defecto dependiendo del tipo
+        de elemnto que sea. la mayoria de los elemtos poseen una propiedad
+        <code>block</code> o <code>inline</code> por defecto.
+    </p>
+
+    <div class="container">
+        <div onclick="showPanel()">haz clinck para mostar el panel</div>
+        <div id="hideShow">
+            <p>
+                Este panel contiene un elemento <code>div</code> ocualto por
+                defectop con <code>Display: none;</code>
+            </p>
+            <p>
+                Esta estilizado con css y usamos js para mostrarlo.cambiando a
+                <code>display: block</code>
+            </p>
+        </div>
+    </div>
+
+    <h2>Elementos de bloque</h2>
+    <p>
+        Los elemntos de bloque siempre inician en una nueva linea y toman todo 
+        el ancho disponible.
+    </p>
+
+    <div class="borde">
+        Este elemnto <code>div</code> es de tipo bloque.
+    </div>
+    <p>algunos elemntos en bloque</p>
+    <ul>
+        <li>h1-h6</li>
+        <li>div</li>
+        <li>p</li>
+        <li>form</li>
+        <li>header</li>
+        <li>section</li>
+        <li>footer</li>
+    </ul>
+
+    <h2>Elementos en linea (inline)</h2>
+    <p> Estos elementos no enpiezan en una nueva linea y 
+        ocupan solo el ancho necesario</p>
+<p>
+    Esto es <span class="borde"> un espan dentro</span>un parrafo.
+</p>
+<p>
+    alguno de estos elemntos:
+</p>
+<ul>
+    <li>span</li>
+    <li>a</li>
+    <li>img</li>
+</ul>
+
+<h2>Alterar el valor de <code>display</code> por defecto</h2>
+
+<p>
+    Es posible alterar el valor de los elemntos para cambiar la 
+    forma en la que estos se muestran en pantalla.
+</p>
+
+<p>Ejemplo: una lista horizontal</p>
+<ul>
+    <li class="linea"><a href="">Home</a></li>
+    <li class="linea"><a href="">Contact us</a></li>
+    <li class="linea"><a href="">Services</a></li>
+  
+</ul>
+
+<p>Ejemplo de mostrar varios espan como bloques</p>
+<span class="bloque borde">esta es una serie</span><span class="bloque borde">de elemntos span</span>
+<span class="bloque borde">puestos en bloque</span>
+
+<h2>Diferencia entre  <code>display; none <code> y </code>visibility: hidden</code></h2>
+<p>Al ocultar un elemento con <code>display: none</code> la pagina se mostrara 
+como si el elemento no estubiera ahi
+</p>
+<p>
+    al ocultar un elemnto con <code>visibility: hidden</code> el elemnto no se
+    mostrara pero el espacio quedara en blanco
+</p>
+<div class="flex-container">
+    <div>
+        <p><code>display: none</code></p>
+        <div class="img"b id="quitar"></div>
+        <button onclick="quitar()">Quitar</button>
+    </div>
+</div>
+<div class="flex-container">
+    <div>
+        <p><code>vidibility: hidden</code></p>
+        <div class="img" id="esconder"></div>
+        <button onclick="esconder()">Esconder</button>
+    </div>
+</div>
+<div class="flex-container">
+    <div>
+        <p>reset</p>
+        <div class="img"></div>
+        <button onclick="restablecer()">Restablecer</button>
+    </div>
+</div>
+
+
+</body>
+<script>
+    function showPanel() {
+        const panel = document.getElementById('hideShow');
+        panel.style.display = 'block';
+    }
+
+    // quitar y esconder elemneto
+    const quitarFoto = document.getElementById('quitar');
+    const esconderFoto = document.getElementById('esconder');
+
+    function quitar() {
+        quitarFoto.style.display = 'none';
+
+    }
+
+    function esconder() {
+        esconderFoto.style.visibility ='hidden';
+
+    }
+
+    function restablecer() {
+        quitarFoto.style.display = 'block';
+        esconderFoto.style.visibility = 'visible';
+    }
+
+
+</script>
+</html>

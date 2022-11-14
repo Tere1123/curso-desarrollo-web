@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../ganeral.css">
+    <title>Selectores de css</title>
+
+    <style>
+        span {
+            color: blueviolet;
+        }
+
+        #parrafo {
+            color: rgb(78, 133, 196);
+            text-align: center;
+        }
+
+/* selector de clase */
+.sombras {
+    box-shadow: 5px 5px 3px -2px;
+    /* pos h, pos v, blur */
+}
+
+.pNegrita {
+    font-weight: bold; 
+    /* colocamos el textos en negrita */
+}
+
+div.sombras {
+    /* este selector afecta a los div con la clase espacificada  */
+    text-align: center;
+    font-family: monospace;
+}
+
+/* SELECTOR UNIVERSAL */
+ /* * {
+    color: chocolate;
+} */
+
+    </style>
+</head>
+
+<body>
+    <h1>Selectores CSS</h1>
+    <p>
+        los selectores tienen la funcion de encontrar o
+        seleccionar elementos html a los que queremos dar estilo
+    </p>
+
+    <ul>
+        <li>selectores sencillos: Apuntan a elementos basandose en su clase(.), id(#)
+            o nombre(h1)
+        </li>
+        <li>Combinadores: selectores basados en una especifica relacion entre
+            los elementos, ejemplo: .contenedor div
+        </li>
+        <li>pseudo-clases: son selectores basados en el estado del elementos
+            Eje:button:hover
+        </li>
+        <li>pseudo elemnetos: Seleciona una parte especifica de un elemento</li>
+        <li>De atributo: Seleciona elementos basandose en un atributo o
+            en el valorde un atributo</li>
+    </ul>
+
+    <h2>Selectores de nombre de elementos</h2>
+
+    <p>selecciona los elementos basandose en su nombre de elemneto
+        Ejemplo: todos los <span>span seran de color morados</span>
+    </p>
+
+    <p>
+        <code>
+        <pre>
+            span {
+                color: blueviolet;
+            }
+        </pre>
+
+    </code>
+    </p>
+
+    <h2>Selectores de id</h2>
+    <p>
+        Este selector usa el atributo id de un elemento html para
+        selecionar un <span>elemento espacifico</span>
+    </p>
+    <p> la id de un elemto es unica en el documentos.por lo tanto,
+        el selecionador de id(#) se usa para especificar un unico elemneto</p>
+
+    <p id="parrafo">
+        Ejemplo: Este parafo sera el unico en estar centrado y de color Azul.
+    </p>
+    <h2>Selectores de clase</h2>
+    <p>
+        El selector de clase <code>.</code> seleciona aquellos elementos con un
+        atributo de clase especifico.
+    </p>
+
+    <p class="sombras">ejemplo :estos tres parrafos compartes clase y
+        tienen una sombra</p>
+
+    <p class="sombras pNegrita">ejemplo :estos tres parrafos compartes clase y
+        tienen una sombra y este esta en negrita</p>
+
+    <p class="sombras">ejemplo :estos tres parrafos compartes clase y
+        tienen una sombra</p>
+
+    <div class="sombras">
+        Los selectores pueden especificar elemnetos dentro de una clase
+    </div>    
+
+    <h2>El selector universal</h2>
+
+    <p>
+        El selector universal <code>*</code> seleciona a <span>todos los elemntos</span>.
+    </p>
+    <h2>Selector de agrupacion</h2>
+    <p>
+        sirve para agrupar aquellos selectores que tienen las mismas caracteristica
+    </p>
+    <p>
+        Ejemplo:
+        <pre>
+            <code>
+            .sombras {
+                box-shadow: 5px 5px 3px -2px;
+            }    
+
+         h1 {
+            box-shadow: 5px 5px 3px -2px;
+         }
+
+         h2 {
+            box-shadow: 5px 5px 3px -2px;
+         }
+            </code>
+        </pre>
+    </p>
+    <p>
+        <code>
+            .sombras, h1, h2 {
+                box-shadow: 5px 5px 3px -2px;
+            } 
+        </code>
+    </p>
+
+
+
+</body>
+
+</html>
