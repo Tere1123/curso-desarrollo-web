@@ -1,0 +1,15 @@
+.divBtn {
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+.divNum {
+    width:75% ;
+    align-items: center;
+}
+
+.divIgual {
+    display: flex;
+   
+}
