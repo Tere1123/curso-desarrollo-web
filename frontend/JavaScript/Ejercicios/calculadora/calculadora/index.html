@@ -9,45 +9,48 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
 
-    <div>
-        <h1>Calculadora</h1>
-        <div>
-            <input name="calcular" type="number">
+    <h1>Calculadora</h1>
+    <div class="container">
+
+        <div class="input">
+            <input name="calcular" type="texto" id="input">
         </div>
+        <div class="divSuma">
+            <button>+</button>
+            <button>-</button>
+            <button>&times</button>
+            <button>&#247</button>
+        </div>
+       
 
-        <div class="divBtn">
-            <div class="divSuma">
-                <button>+</button>
-                <button>-</button>
-                <button>*</button>
-                <button>/</button>
-            </div>
+        <div class="numbers" id="numbers">
+            
+            <div >
 
-            <div class="divNum">
-                <button>1</button>
+                <button>7</button>
                 <button>2</button>
                 <button>3</button>
+                <button>0</button>
             </div>
-            <div class="divNum">
-                <button>4</button>
+            <div >
+                <button>8</button>
                 <button>5</button>
                 <button>6</button>
+                <button>.</button>
 
             </div>
-            <div class="divNum">
-                <button>7</button>
+            <div >
+                <button>9</button>
                 <button>8</button>
                 <button>9</button>
+                <button id="clear">C</button>
             </div>
-            <div class="divNum">
-                <button>0</button>
-                <button>C</button>
-                <button>.</button>
-            </div>
+
             <div class="divIgual">
-                <button>=</button>
+                <button id="igual">=</button>
             </div>
             
         </div>

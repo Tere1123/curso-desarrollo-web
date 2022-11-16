@@ -1,15 +1,91 @@
-.divBtn {
+body {
+    background-color: rgb(114, 180, 224);
+
+}
+
+.container {
+    background-color: #080566;
+    border-radius: 5px;
+
     display: flex;
     flex-direction: column;
-    
-    
+    align-items: center; 
+   
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    width:200px;
+    transform: translate(-50%, -50%);
+
 }
-.divNum {
-    width:75% ;
-    align-items: center;
+.divSuma {
+
+    width: 90%;
+    height: 30px;
+    padding: 5px;
+    
+    display:flex ;
+    justify-content: space-between;
+
+
+}
+
+.divSuma button {
+    background-color: rgb(239, 32, 136);
+    color: black;
+    padding: 5px;
+}
+div.input {
+    width: 90%;
+}
+div.input input {
+
+    border-radius: 5px;
+    border-color: rgb(124, 122, 122);
+    margin: 10px auto;
+    width: 100%;
+    height: 35px;
+    box-sizing: border-box;
+}
+.numbers {
+
+    width: 90%;
+    padding: 5px;
+    display: flex;
+    /* padding-bottom: 20%; */
+
+}
+
+button {
+    width: 40px;
+    border: 6px;
+    border-radius: 3px;
+    background-color:  #90f7d8;
+    color: rgb(61, 61, 62);
+    padding-bottom: 5%;
+    margin-bottom: 9px;
+    height: 30px;
+
+}
+
+.container button:hover {
+    cursor: pointer;
+    opacity: 0.65;
 }
 
 .divIgual {
-    display: flex;
-   
+
+    padding-bottom: 10px;
 }
+
+.divIgual button {
+
+    height: 100%;
+    border: none;
+    font-size: 1.2rem;
+    background-color: rgb(236, 8, 253);
+}
+
+
+
+   
