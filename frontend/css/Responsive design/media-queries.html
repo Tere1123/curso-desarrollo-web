@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=ç, initial-scale=1.0">
+    <title>Media Queries</title>
+    <link rel="stylesheet" href="../../general.css">
+    <link rel="stylesheet" media="screen and (max-width: 400px)" href="query.css">
+    <!-- le estamos indicando los parametros de tamaño a los cuales queremos modificar 
+    en este cado a las menores de 400px un combio de color -->
+</head>
+
+<body>
+    <h1>Media queries</h1>
+
+    <p>
+        En ccs3, se introdujo la idea de que en vez de adaptar la web
+        segun el tipo de dispositivo desde el que se esta visualiznado,las
+        adaptaremos segun las capacidades.
+    </p>
+    <p>Esto quiere decir que si en ves de revizar si en dispositivo es una pantalla,
+        unh movil, una impresora..., simplemente se vasara enlos siguientes parametros:
+
+    </p>
+
+    <ul>
+        <li>ancho y alto del viewport</li>
+        <li>ancho y alto de la pantalla del dispositivo</li>
+        <li>orientacion- si el dispositivo esta en horizontal o vertical</li>
+        <li>resolucion</li>
+    </ul>
+    <p>
+        Usar media queries, nos capacita con la posivilidad de hacer paginas a medida
+        para pantallas de escritorio:portatiles, tablets, moviles...
+    </p>
+
+    <h2>Sintaxis</h2>
+
+    <p>
+        Una expresion de media query puede contener una o varias condiciones
+        que se resuelven en <code>true</code> o <code>false</code>
+    </p>
+
+    <code>
+        <pre>
+            @media not | only <i>mediatype</i> and <i>condiciones</i> {
+                <i>codigo css</i>
+            }
+        </pre>
+    </code>
+    <p>
+        Tambien podemos aplicar las condiciones de media query en los <code>link</code>
+        del documento:
+    </p>
+
+
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto auto auto auto auto;
+            background-color: rgb(75, 163, 117);
+            padding: 6px;
+        }
+
+        .grid-item {
+
+            background-color: rgb(173, 226, 226);
+            border: 4px solid rgb(31, 150, 76);
+            padding: 20px;
+            text-align: center;
+
+        }
+
+        /* .item1 {
+            grid-row: 1;
+            grid-column-start: 1;
+
+            grid-row-end: 2;
+            grid-column-end: 2;
+        }
+
+        .item2 {
+            grid-row: 1;
+            grid-column-start: 6;
+
+            grid-row-end: 2;
+            grid-column-end: 7;
+        }
+
+        .item3 {
+            grid-row: 2;
+            grid-column-start: 1;
+
+            grid-row-end: 3;
+            grid-column-end: 2;
+        }
+
+        .item4 {
+            grid-row: 2;
+            grid-column-start: 6;
+
+            grid-row-end: 3;
+            grid-column-end: 7;
+        } */
+
+
+        .item8 {
+            grid-row: 1;
+            grid-column-start: 2;
+
+            grid-row-end: 5;
+            grid-column-end: 6;
+        }
+
+        @media screen and (min-width: 600px) {
+            #container {
+                width: 400px;
+                float: left;
+            }
+
+            .item8 {
+                
+                background-color: rgb(31, 169, 128);
+
+                grid-row: 2;
+                grid-column-start: 2;
+
+                grid-row-end: 3;
+                grid-column-end: 6;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="container" class="grid-container">
+
+        <div class="grid-item item1">1</div>
+        <div class="grid-item item2">2</div>
+        <div class="grid-item item3">3</div>
+        <div class="grid-item item4">4</div>
+        <div class="grid-item item5">5</div>
+        <div class="grid-item item6">6</div>
+        <div class="grid-item item7">7</div>
+        <div id="item8" class="grid-item item8">8</div>
+        <div class="grid-item item9">9</div>
+        <div class="grid-item item10">10</div>
+        <div class="grid-item item11">11</div>
+        <div class="grid-item item12">12</div>
+        <div id="itemfooter" class="grid-item item13">13</div>
+        <div id="itemfooter" class="grid-item item14">14</div>
+        <div id="itemfooter" class="grid-item item15">15</div>
+
+
+    </div>
+
+</body>
+
+</html>

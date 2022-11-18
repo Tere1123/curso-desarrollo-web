@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <link rel="stylesheet" href="../../general.css">
+
+
+    <style>
+
+        .grid-container {
+
+            display: grid;
+            grid-template-columns:  auto auto auto;
+            /* el auto indica el numero de columnas que se quieran mostrar,
+             en este caso 3 */
+
+             /* tambien podemos asignar espacion estre ellos */
+            /* column-gap: 5px;
+            row-gap: 20px; */
+            gap: 5px 6px; 
+             /*con este grid me ahorro usar column-gap y row-gap, por que puedo
+             colocar los dos ejes ejem 5px 10px  */
+
+            background-color: rgb(93, 41, 142);
+            padding: 7px;
+        
+
+        }
+
+        .grid-item {
+            background-color: rgb(214, 198, 235);
+            border: 1px solid rgb(86, 75, 75);
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        /* ejemplo de como mover los elementos en el tablero */
+        .item3 {
+            grid-row: 3;
+            grid-column-start: 2;
+
+            grid-row-end: 5;
+            grid-column-end:4 ;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <h1>Grid o Rejilla</h1>
+
+    <p>
+        El sistema de grid de css permite utilizar una plantilla de rejillas, con 
+        filas y columnas,apara alinear de manera sencilla paginas web sin neceidad
+        de usar float o posicionamiento.
+    </p>
+
+    <h2>Elemento grid</h2>
+
+    <p>
+        Una rejulla consiste en un elemneto padre con 1 o mas hijos
+
+    </p>
+
+    <p>
+        El elemnto padre  debe tener la propiedad <code>display: grid</code> 
+        o <code>inlene-grid</code>. los elementos decendientes se convertiran
+        automaticamente en objetops(item) grid.
+    </p>
+
+    <div class="grid-container">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item item3">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+        <div class="grid-item">7</div>
+        <div class="grid-item">8</div>
+        <div class="grid-item">9</div>
+        <div class="grid-item">10</div>
+        <div class="grid-item">11</div>
+        <div class="grid-item">12</div>
+
+    </div>
+
+</body>
+</html>

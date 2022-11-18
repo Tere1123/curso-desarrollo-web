@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio Grid</title>
+
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto auto;
+
+
+            background-color: rgb(18, 76, 153);
+            padding: 7px;
+        }
+
+        .grid-item {
+
+            background-color:rgb(210, 233, 235) ;
+            border: 5px solid rgb(49, 79, 199);
+            padding: 20px;
+            text-align: center;
+
+        }
+
+        .item1 {
+            grid-row: 1; 
+            grid-column-start:1 ;
+
+            grid-row-end: 2;
+            grid-column-end:4; 
+        }
+        .item2 {
+            grid-row: 2; 
+            grid-column-start:1 ;
+
+            grid-row-end:4 ;
+            grid-column-end:2; 
+
+        }
+
+        .item5 {
+
+            grid-row:3 ; 
+            grid-column-start: 2;
+
+            grid-row-end: 3;
+            grid-column-end:4;  
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+    <div class="grid-container">
+
+        <div class="grid-item item1">Header</div>
+        <div class="grid-item item2">menu</div>
+        <div class="grid-item item3">main</div>
+        <div class="grid-item item4">Right</div>
+        <div class="grid-item item5">footer</div>
+
+    </div>
+
+    <hr>
+
+    
+    
+</body>
+</html>
