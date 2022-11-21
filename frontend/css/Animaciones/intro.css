@@ -1,0 +1,135 @@
+.animado {
+    height: 100px;
+    width: 100px;
+    background-color: darkcyan;
+
+    /* para que funcione la animacion hay que asignarsela al elemnto */
+    animation-name: cambioColor;
+    /* como minimo,ademas del nombre hay que especificar la duracion */
+    animation-duration: 5s;
+}
+
+
+@keyframes cambioColor {
+    /* como minimo se debe especificar el estado inicial
+     y el estado final */
+
+     /* estado inicial */
+     from {
+        background-color:  darkcyan;
+     }
+     /* estado final */
+     to {
+        background-color: crimson;
+     }
+}
+
+/* con distintos estados */
+
+/* .estados {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: rgb(212, 33, 197);
+    display: flex;
+
+    
+    position: relative;
+
+    animation: cambioEstado 5s; */
+
+/* } */
+/* 
+@keyframes cambioEstado { */
+    /* Se pueden asignar porcentajes para definir distintos estados */
+    /* 0% {
+        background-color: rgb(212, 33, 197);
+        width: 100px;
+        left: 50%;
+    }
+
+    25% {
+        background-color: deepskyblue;
+        width: 200px;
+        
+       
+
+    }
+
+    50% {
+        background-color: greenyellow;
+        width: 100px;
+        right: 35%; 
+        top: 10%;
+    }
+
+    75% {
+        background-color: green;
+        left: 50%;
+        top: px;
+    }
+
+    100% {
+        background-color: deeppink;
+        left: 50%;
+        top: 0;
+
+    } */
+
+/* } */
+
+.circulo {
+    height: 100%;
+    width: 100px;
+    border-radius: 50%;
+    background-color: blueviolet;
+
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@keyframes moverTriangulo {
+
+    0% {
+        left: 50%;
+        top: 0;
+    }
+
+
+    33% {
+        left: 90%;
+        top: 200px;
+    }
+
+    66% {
+        left: 10%;
+        top: 200px;
+    }
+
+    100% {
+        left: 50%;
+        top: 0;
+    }
+}
+
+
+.boton {
+    position: relative;
+    background-color: rgb(15, 106, 116);
+    padding: 5ps 10px;
+    width: 80px;
+    text-align: center;
+    color: rgb(178, 175, 172);
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0 5px 0 0 rgb(186, 184, 184);
+}
+
+.boton:active {
+    top: 5px;
+    box-shadow: 0 0px 0 0 blanchedalmond;
+}
+
+
+
