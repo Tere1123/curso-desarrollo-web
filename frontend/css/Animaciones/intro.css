@@ -24,25 +24,24 @@
      }
 }
 
-/* con distintos estados */
+ /* con distintos estados  */
 
-/* .estados {
+ .estados {
+
     height: 100px;
     width: 100px;
     border-radius: 50%;
     background-color: rgb(212, 33, 197);
-    display: flex;
-
     
     position: relative;
 
-    animation: cambioEstado 5s; */
+    animation: cambioEstado 5s; 
 
-/* } */
-/* 
-@keyframes cambioEstado { */
-    /* Se pueden asignar porcentajes para definir distintos estados */
-    /* 0% {
+ } 
+ 
+@keyframes cambioEstado { 
+     /* Se pueden asignar porcentajes para definir distintos estados */ 
+     0% {
         background-color: rgb(212, 33, 197);
         width: 100px;
         left: 50%;
@@ -51,9 +50,7 @@
     25% {
         background-color: deepskyblue;
         width: 200px;
-        
-       
-
+    
     }
 
     50% {
@@ -62,6 +59,8 @@
         right: 35%; 
         top: 10%;
     }
+
+
 
     75% {
         background-color: green;
@@ -73,12 +72,11 @@
         background-color: deeppink;
         left: 50%;
         top: 0;
+    }
+}
 
-    } */
 
-/* } */
-
-.circulo {
+/* .circulo {
     height: 100%;
     width: 100px;
     border-radius: 50%;
@@ -87,8 +85,26 @@
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-}
+} */
 
+
+.circulo {
+    height: 100px;
+    width: 100px;
+    background-color: chartreuse;
+    border-radius: 50%;
+
+    position: relative;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+
+    animation: moverTriangulo 6s;
+    animation-delay: 4s;
+    animation-iteration-count: 4;
+    animation-direction: alternate-reverse;
+    animation-timing-function: linear;
+}
 @keyframes moverTriangulo {
 
     0% {
@@ -129,6 +145,45 @@
 .boton:active {
     top: 5px;
     box-shadow: 0 0px 0 0 blanchedalmond;
+}
+
+/* Velocidades */
+.velocidades {
+    position: relative;
+    height: 70px;
+    width: 100px;
+    background-color: cornflowerblue;
+    border: 1px solid black;
+    text-align: center;
+
+    animation-name: curvaVelocidad;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+
+#div1 {
+    animation-timing-function: linear;
+}
+#div2 {
+    animation-timing-function: ease;
+}
+#div3 {
+    animation-timing-function: ease-in;
+}
+#div4 {
+    animation-timing-function: ease-out;
+}
+#div5 {
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes curvaVelocidad {
+    from {
+        width: 100px;
+    }
+    to {
+        width: 100%;
+    }
 }
 
 
