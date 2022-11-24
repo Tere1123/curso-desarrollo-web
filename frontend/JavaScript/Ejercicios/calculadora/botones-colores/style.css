@@ -1,4 +1,7 @@
 body {
+    display: grid;
+    place-items: center;
+    gap: 0;
     
     height: 100vh;
     /* para que el color de la pantalla quede competo */
@@ -6,30 +9,45 @@ body {
 }
 
 h1 {
+    height: 20px;
     text-align: center;
     padding: 30px;
+    margin-bottom: 0;
     color: rgb(55, 53, 53);
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
 }
 
+.button {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 20px;
 
+    width: 400px;
+    margin-top: 0;
+    background: #244264aa;
+    padding: 10px;
+}
 
-button {
-    position: relative;
-  
-    text-align: center;
-    height: 40%;
-    width: 40%;
+.button button {
     background: rgb(10, 13, 10);
     cursor: pointer;
     border: solid rgb(175, 138, 239);
     padding: 40px 30px;
-    margin: 20px 20px;
+    /* margin: 20px 20px; */
     color: rgb(245, 240, 240);
     font-size: 15px;
     font-weight: bold;
     border-radius: 15px;
     box-shadow: 0 5px 0 0 rgb(163, 125, 228);
+}
+
+#button {
+    position: relative;
+  
+    text-align: center;
+    height: 40%;
+    width: 40%;
+    
    
 
 }
