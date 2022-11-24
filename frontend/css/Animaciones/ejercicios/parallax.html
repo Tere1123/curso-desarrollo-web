@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>parallas</title>
+    <style>
+
+        body {
+            color: rgb(190, 191, 191);
+            background: rgb(28, 29, 34);
+            text-align: center;
+            margin: 0;
+            padding: 0;
+
+
+        }
+
+        section {
+            /* height: 200px; */
+            background: rgb(22, 21, 21);
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer {
+            min-height: 100px;
+
+        }
+
+        .parallax div {
+            background:rgb(45, 45, 45) ;
+            max-width: 250px;
+            padding: 5px 10px;
+            
+
+        }
+
+        .parallax {
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* esto le da el efecto de parallax a las imagenes */
+            background-attachment: fixed;
+
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .parallax.uno {
+            background-image: url(../../../recursos/pexels-dinara-guseinova-10294596.jpg);
+        }
+
+        .parallax.dos {
+            background-image: url(../../../recursos/pexels-bruno-joseph-12179283.jpg);
+        }
+
+        .parallax.tres {
+            background-image: url(../../../recursos/pexels-uğurcan-özmen-14434280.jpg);
+        }
+    
+        @media screen and (min-width:720px) {
+            .parallax {
+                height: 900px;
+            }
+
+        
+        }
+
+    </style>
+
+
+
+</head>
+
+<body>
+
+    <header>
+        <h1>Efecto Parallax</h1>
+    </header>
+
+    <div class="parallax uno">
+        <div>Lugares</div>
+    </div>
+    <section>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, voluptatem placeat. Dolorem,
+            architecto quos. Ipsum eius totam eos blanditiis quos est ullam nostrum dicta laborum,
+            fugiat error libero, nesciunt debitis.</p>
+    </section>
+
+    <div class="parallax dos"></div>
+    <section>
+        <p>Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Repellat laborum vero consequuntur
+            culpa aspernatur, distinctio aut reiciendis delectus voluptas corporis veniam ab sequi nemo aliquam id non
+            accusantium. Facilis, nihil.</p>
+    </section>
+
+    <div class="parallax tres"></div>
+    <section>
+
+    </section>
+
+</body>
+
+</html>

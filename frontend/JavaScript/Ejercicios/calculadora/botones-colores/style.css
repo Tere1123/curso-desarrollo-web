@@ -1,0 +1,80 @@
+body {
+    
+    height: 100vh;
+    /* para que el color de la pantalla quede competo */
+    background: linear-gradient(#18f8b1, #244264);
+}
+
+h1 {
+    text-align: center;
+    padding: 30px;
+    color: rgb(55, 53, 53);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+}
+
+
+
+button {
+    position: relative;
+  
+    text-align: center;
+    height: 40%;
+    width: 40%;
+    background: rgb(10, 13, 10);
+    cursor: pointer;
+    border: solid rgb(175, 138, 239);
+    padding: 40px 30px;
+    margin: 20px 20px;
+    color: rgb(245, 240, 240);
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 15px;
+    box-shadow: 0 5px 0 0 rgb(163, 125, 228);
+   
+
+}
+button.fondo {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+}
+
+button:active {
+    /* esto da el efecto de que oprimes el boton */
+    top: 5px;
+    box-shadow: 0 2px 0 0 rgb(163, 125, 228);
+    /* los valores en 0 hacen que de el efecto
+         de que se mueva el boton, por que se elimina la sombra */
+}
+
+button.rojo:hover {
+    background: rgb(184, 13, 13);
+
+}
+
+button.rosa:hover {
+    background: rgb(239, 177, 239);
+
+}
+
+button.amarillo:hover {
+    background: rgb(172, 161, 13);
+    color: rgb(248, 247, 245);
+
+}
+
+button.violeta:hover {
+    background: rgb(184, 11, 237);
+
+}
+
+button.naranja:hover {
+    background: rgb(227, 140, 9);
+
+}
+
+button.azul:hover {
+    background: rgb(21, 14, 228);
+
+}
