@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+/* font-family: 'Roboto', sans-serif; */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+body {
+    background: rgb(6, 6, 75);
+
+}
+
+.wrapper {
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    height: 300px;
+    width: 300px;
+    background: none;
+    /* border: 1px solid white; */
+}
+
+.wrapper::before {
+
+    content: "border-radius";
+    color: rgb(253, 253, 253);
+    font-family: 'Roboto', sans-serif;
+
+    position: absolute;
+    top: 350px;
+    margin-left: -20px;
+
+}
+
+.output {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(rgb(159, 10, 159), rgb(108, 3, 237));
+    border-radius: 31% 69% 40% 60% / 40% 80% 20% 60%;
+    /* estos parametros del 'border radios' nos permite darle una forma
+    determinada al boton */
+
+}
+
+input[type='range'] {
+    appearance: none;
+    width: 300px;
+    background: none;
+    border: none;
+    outline: none;
+    border-bottom: 1px dashed rgb(112, 35, 227);
+}
+
+input[type='range']::-webkit-slider-thumb {
+    /* aqui le estamos dando el aspecto a los triangulos */
+    appearance: none;
+    height: 8px;
+    width: 8px;
+    background: rgb(13, 179, 244);
+
+    position: relative;
+    top: 5px;
+}
+
+input.range1 {
+
+    position: absolute;
+    top: -4%;
+}
+
+input.range2 {
+
+    position: absolute;
+    left: 155px;
+    top: 145px;
+    transform: rotate(90deg);
+
+}
+
+input.range3 {
+    position: absolute;
+    bottom: 0px;
+    /* transform: rotate(180deg); */
+
+}
+
+input.range4 {
+    position: absolute;
+    left: -145px;
+    top: 145px;
+    transform: rotate(90deg);
+}
+
+.output-code-div {
+    position: absolute;
+    top: 450px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+
+    height: 40px;
+    width: 350px;
+    background: rgb(207, 234, 254);
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    white-space: nowrap;
+    overflow: hidden;
+    /* overflow-x: scroll; */
+    border-radius: 5px;
+}
+
+.output-code {
+    white-space: nowrap;
+    position: relative;
+    left: 30px;
+    top: 8px;
+}
+
+.copy-btn {
+    all: unset;
+
+    position: absolute;
+    top: 500px;
+    left: 18%;
+    transform: translete(-50%, -50%);
+
+    color: azure;
+    background: violet;
+    font-family: 'Roboto', sans-serif;
+    padding: 5px;
+    width: 340px;
+    text-align: center;
+    border-radius: 3px;
+}
+
+input[type="number"] {
+
+    all:unset;
+    width: 50px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    background: white;
+    margin-left: 5px;
+}
+
+label {
+
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    margin-left: 25px;
+}
+
+.customize-dimensions {
+    position: absolute;
+    top: 580px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+
+}

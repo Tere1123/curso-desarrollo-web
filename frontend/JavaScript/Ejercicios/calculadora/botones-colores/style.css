@@ -26,6 +26,7 @@ h1 {
     margin-top: 0;
     background: #244264aa;
     padding: 10px;
+    border-radius: 10px;
 }
 
 .button button {
