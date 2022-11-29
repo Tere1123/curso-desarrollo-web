@@ -17,7 +17,7 @@ body {
 
     width: 400px;
     padding: 40px;
-    background: rgba(0, 0, 0, .5);
+    background: rgba(30, 17, 17, 0.5);
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
     border-radius: 10px;
@@ -35,13 +35,14 @@ body {
 }
 
 .login-box .user-box input {
+
     width: 100%;
     padding: 10px 0;
     font-size: 16px;
-    color: aliceblue;
+    color: #fff;
     margin-bottom: 30px;
-    border-bottom: 1px solid rgb(241, 236, 228);
     border: none;
+    border-bottom: 1px solid #fff;
     outline: none;
     background: transparent;
 }
@@ -115,6 +116,7 @@ form.invalid a {
 boton  */
 /* primer espan */
 .login-box form a span:nth-child(1) {
+
    top:0;
    left: -100%;
    width: 100%;
@@ -136,7 +138,7 @@ boton  */
     width: 2px;
     height: 100%;
     background: linear-gradient(180deg,transparent,rgb(84, 181, 196));
-    animation: span2 1s linear.25s infinite;
+    animation: span2 1s linear.25s infinite;    
 }
 
 @keyframes span2 {
@@ -217,5 +219,5 @@ animation: span3 1s linear.75s infinite;
     0% {
         right: -100%;
     }
-    50%,100% { right: 100%}
+    50%, 100% { right: 100%}
 }
