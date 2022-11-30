@@ -2,6 +2,7 @@
 box-sizing: border-box;
 }
 
+/* uso de variables */
 :root {
     --color-primary: #691ce5;
     --tab-width: 300px;
@@ -30,7 +31,8 @@ body {
     background: #1d0145;
     width: var(--tab-width);
     box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(83, 74, 203, 0.6);
+    /* con el box-sizing creamos un efecto sombra por detras */
+    box-shadow: 15px 15px 5px rgba(83, 74, 203, 0.6);
     border-radius: 8px;
 }
 
