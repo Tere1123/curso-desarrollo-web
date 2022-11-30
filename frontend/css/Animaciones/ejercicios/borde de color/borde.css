@@ -8,15 +8,8 @@ body {
 :root {
     --borde-color: linear-gradient(to left, rgb(153, 13, 141) 0%, rgb(5, 108, 252) 100%);
     --card-color: linear-gradient(50deg, rgb(128, 4, 120) 0%,rgb(28, 205, 221));
-}
+} 
 
-
-/* :root {
-    --border-color: linear-gradient( to rigth
-        violet, blue );
-
-    --card-color: black;
-} */
 
 .card {
     
