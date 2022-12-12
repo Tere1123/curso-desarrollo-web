@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrusel en 3D</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="carousel">
+
+            <div class="imagen"><span>Esto</span></div>
+            <div class="imagen"><span>Es</span></div>
+            <div class="imagen"><span>Una</span></div>
+            <div class="imagen"><span>Animacion</span></div>
+            <div class="imagen"><span>De</span></div>
+            <div class="imagen"><span>Carrusel</span></div>
+            <div class="imagen"><span>En</span></div>
+            <div class="imagen"><span>3D</span></div>
+            <div class="imagen"><span>!</span></div>
+           
+        </div>
+    </div>
+    
+</body>
+<script>
+
+ document.body.addEventListener('click', (e) => {
+    const element = document.createElement ('span')
+    element.className = 'circle'
+
+    element.style.left = e.clientX - 10 + 'px'
+    element.style.top = e.clientY - 10 + 'px'
+
+    document.body.append(element)
+
+    setTimeout( () =>{
+        element.remove()
+    },900)
+ })
+
+
+</script>
+</html>

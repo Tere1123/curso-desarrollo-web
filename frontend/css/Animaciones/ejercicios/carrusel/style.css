@@ -1,0 +1,136 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background-color: #072146;
+    text-align: center;
+    font-family: fantasy;
+    color: #cacad7;
+
+}
+
+.circle {
+    /* estas caracteristicas la usamos para crear una animacion con js
+    de un circilo al momneto de clicar, desde el css le damos la pariencia y la 
+    animacion con el @keyframes y con el js hacemos que suceda. */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    border: 1px solid #9696b8;
+    animation: wave 0.8s forwards;
+    opacity: 1;
+    box-shadow: 0 4px 8px 0 #5f92d9, 0 6px 20px 0 #cacad7;
+}
+
+@keyframes wave {
+    0% {
+        width: 5px;
+        height: 5px;
+        opacity: 1;
+    }
+    90% {
+        width: 50px;
+        height: 50px;
+        opacity: 0.5;
+    }
+    100% {
+        width: 50px;
+        height: 50px;
+        opacity: 0;
+    }
+}
+
+
+.container {
+
+    position: relative;
+    width: 320px;
+    margin: 150px auto 0 auto ;
+    perspective: 1000px;
+/* esta propiedad permite dar el efecto en 3D,hace que el usuario vea el objeto
+de forma mas lejana o no,  entre mayorsea el numero mas efecto de distancia 
+se podra apreciar */
+}
+
+.carousel {
+
+    
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: rotate360 40s infinite forwards linear;
+
+}
+
+.imagen {
+    position: absolute;
+    width: 300px;
+    height: 187px;
+    top: 30px;
+    left: 10px;
+    right: 10px;
+    background-size: cover;
+    box-shadow: inset 0 0 0 2000px #2e202080;
+    display: flex;
+
+}
+
+span {
+    margin: auto;
+    font-size: 2rem;
+
+}
+
+@keyframes rotate360 {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+       transform: rotateY(-360deg);
+    }
+}
+
+.imagen:nth-child(1) {
+    background-image: url(../../../../recursos/pexels-bruno-joseph-12179283.jpg);
+    transform: rotateY(0deg) translateZ(470px);
+}
+
+.imagen:nth-child(2) {
+    background-image: url(../../../../recursos/pexels-dinara-guseinova-10294596.jpg);
+    transform: rotateY(40deg) translatez(470px);
+}
+.imagen:nth-child(3) {
+    background-image: url(../../../../recursos/pexels-maria-loznevaya-14398103.jpg);
+    transform: rotatey(80deg) translatez(470px);
+}
+.imagen:nth-child(4) {
+    background-image:url(../../../../recursos/pexels-ozan-çulha-14341504.jpg);
+    transform: rotatey(120deg) translateZ(470px);
+}
+.imagen:nth-child(5) {
+    background-image: url(../../../../recursos/pexels-uğurcan-özmen-14434280.jpg);
+    transform: rotateY(160deg) translateZ(470px);
+}
+.imagen:nth-child(6) {
+    background-image: url(../../../../recursos/Bosque.jpg);
+    transform: rotateY(200deg) translateZ(470px);
+}
+
+.imagen:nth-child(7) {
+    background-image: url(../../../../recursos/pexels-céline-7325999.jpg);
+    transform: rotateY(240deg) translatez(470px);
+}
+
+.imagen:nth-child(8) {
+    background-image: url(../../../../recursos/pexels-eva-bronzini-6262609.jpg);
+    transform: rotatey(280deg) translateZ(470px);
+}
+.imagen:nth-child(9) {
+    background-image: url(../../../../recursos/pexels-mathilde-langevin-11719056.jpg);
+    transform: rotateY(320deg)  translateZ(470px);
+}
+
