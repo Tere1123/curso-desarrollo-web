@@ -1,9 +1,9 @@
     function colorChange() {
-        // una funa funcion es un bloque de codigo que se puede reutilizar
+        // una funcion es un bloque de codigo que se puede reutilizar
         // para cambiar el parrafo de color lo primero es identificar y 
         // apuntar al parrafo
 
-        document.getElementById("pColor").style.color = "#aabbcc";
+         document.getElementById("pColor").style.color = "#aabbcc";
     document.getElementById("pColor").style.backgroundColor = "rgb(60,60,60)";
 
     }
@@ -19,7 +19,7 @@
 
         var condition = document.getElementById("pHide").style.visibility;
 
-    // condition es una variable y guarda un dato,en este caso guarda el valo
+    // condition es una variable y guarda un dato,en este caso guarda el valor
     // de la visibilidad del dato hidden o visible
 
     // el simbolo = significa que estamos asignando un valor
