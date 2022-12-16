@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Strings con JS</title>
+        <link rel="stylesheet" href="../general.css">
+
+        <style>
+
+        form {
+            border: 1px solid rgb(224, 195, 195);
+            border-radius: 3px;
+        }
+    </style>
+    </head>
+    <body>
+        <h1>Strings en JS</h1>
+        <p>Un string es cero o mas caracteres escritos dentro de comillas,
+            esto lo combierte en una <b>cadena de caracteres</b>, se puede usar
+            comillas simples o dobles, un string puede usar comillas simples o
+            domebles siempre y cuando
+            sean distintas a las que rodean el string
+        </p>
+        <code>
+            let str = 'Tere "Terrere" Herrera'
+        </code>
+        <p>
+            Si se impreme este string seria : Tere "Terrere" Herrera
+        </p>
+
+        <h2>Metodos de strings</h2>
+
+        <p>
+            para obtener la longitud de de un string se usa el metodo length()
+        </p>
+
+        <code>
+            let txt = 'abcdefghijklmnñopqrmnstuvwxyz'
+            let longitud = txt.length;
+        </code>
+        <p id="texto"></p>
+
+        <h3>slice()</h3>
+        <p>Cortar y extraer una parte de un string y retornar como uno nuevo.
+            Slise() neceita dos parametros, pocision inicial y final.
+        </p>
+
+        <p id="pcorte"></p>
+        <p id="cort"></p>
+
+        <h3>Substr()</h3>
+        <p> indica la longitud del parametro a recortar <b>deprecado</b></p>
+        let str = "Apple, Banana, Kiwi";
+        let part = str.substr(7, 6);
+
+
+        <h3>replace()</h3>
+        <p>Remplaza una parte de un string y lo retorna como um strig nuevo.</p>
+        <p id="pReplace"></p>
+
+        <h3>toUpperCase()-toLowerCase()</h3>
+
+        <p>Transformar en minusculas y mayusculas.</p>
+
+        <p id="pMinus"></p>
+        <p id="pMayus"></p>
+        <p  id="pContact"></p>
+
+        <h3>Limpiar strings</h3>
+        <p>
+            podemos usar trim() para limpiar los espacios en blanco redundantesde un string
+        </p>
+        <p>
+            si tenemos un str nombre = "    Roman" el trim lo dejara como "Roman"
+        </p>
+
+
+        <h3>Charat()</h3>
+
+        <p>
+            retorna al indice especificado como parametro.
+        </p>
+        <p id="pCharAt"></p>
+
+        <h3>conertir strings en array con split()</h3>
+
+            <p>
+                Si tenemos un string cuyos valores estan separados por comas o 
+                cualquier otro caracter distingible, podemos servirnos de esto
+                para transformarlo en un array.
+            </p>
+            <P id="split"></P>
+
+
+        <form action="">
+            <input type="text">
+            <div>
+                <p><b>Definicion:</b>Texto</p>
+            </div>
+        </form>
+
+    </body>
+
+    <script src="strings.js"></script>
+
+</html>
