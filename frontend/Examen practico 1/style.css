@@ -1,0 +1,19 @@
+body {
+    background-color: rgb(194, 247, 241);
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(11, 223, 166);
+    padding: 0 10px 0 14px ;
+   
+}
+a {
+    color: rgb(59, 81, 101);
+    text-decoration: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
