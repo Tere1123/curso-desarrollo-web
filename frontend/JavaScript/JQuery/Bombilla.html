@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bombilla</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" 
+    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+    crossorigin="anonymous"></script>
+</head>
+<style>
+
+    #ligth {
+        width: 100px;
+        height: 180px;
+        margin-bottom: 20px;
+    }
+
+    .off {
+        background-image: url(../../recursos/bombilla.gif);
+
+    }
+    .on {
+        background-image: url(../../recursos/bombilla-encen.gif);
+
+    }
+
+</style>
+
+<body>
+
+    <div id="ligth" class="off"></div>
+    <button id="switch"> apagar/encender</button>
+    
+</body>
+<script>
+
+    $('#switch').click(function() {
+        $('#ligth').toggleClass('off');
+        $('#ligth').toggleClass('on');
+        
+    })
+</script>
+</html>

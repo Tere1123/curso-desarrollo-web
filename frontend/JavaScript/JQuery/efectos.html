@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Efectos</title>
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+            integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+            crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="../../general.css">
+
+        <style>
+            .blue {
+                background-color: rgb(17, 67, 167);
+                color: aliceblue;
+                text-align: center;
+                padding: 10px;
+                border: 1px solid white;
+            }
+            #divSlide {
+                height: 100px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <h1>efectos con JQuery</h1>
+        <h2>mostrar y esconder elementos</h2>
+
+        <p id="p">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, iure!
+        </p>
+
+        <div>
+            <button id="btnshow">mostrar</button>
+            <button id="btnHide">ocultar</button>
+        </div>
+
+        <h2>Fade</h2>
+
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam hic
+            laboriosam earum iusto quis qui?</p>
+
+        <div>
+            <button id="btnFadeIn">fadeIn</button>
+            <button id="btnFadeOut">fadeOut</button>
+            <button id="btnFaceToggle">fadeToggle</button>
+            <button id="btnFadeTo">fadeTo</button>
+        </div>
+
+        <h2>Deslizar</h2>
+        <div class="blue"> click para mostrar un efecto de deslizamiento</div>
+        <div class="blue" id="divSlide">Holi</div>
+
+
+    </body>
+    <script>
+   $(document).ready(function () {
+    $("#btnshow").click(function() {
+        $('#p').text('Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, iure!');
+    });
+    $("#btnHide").click(function() {
+        $('#p').text('');
+    });
+    
+//    fade
+     
+
+    $('#btnFadeIn').click(function () {
+        $('p').fadeIn();
+    });
+
+    $('#btnFadeOut').click(function () {
+        $('p').fadeOut();
+    });
+
+    $('#btnFadeToggle').click(function () {
+        $('p').fadeToggle('fast');
+    });
+
+    $('#btnFadeTo').click(function () {
+        $('p').fadeTo('slow', 0.3);
+    });
+
+
+    //deslizar
+    $('.blue').click( function(){
+    $('#divSlide').slideToggle();
+    });
+
+    
+
+});
+
+    
+  
+   
+
+</script>
+</html>
