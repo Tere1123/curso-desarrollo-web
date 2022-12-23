@@ -18,61 +18,13 @@
     <!-- Custom CSS -->
 
     <link rel="stylesheet" href="style.css">
-      <style>
-        body {
-            background-color: #2f234B;
-        }
-    
-        nav {
-            background-color: #a27cc8;
-        }
-    
-        .img {
-          width: 100%;
-          height: 200px;
-          background-position: center;
-          background-size: cover;
-          background-repeat: no-repeat;
-        }
-        .img-uno {
-          background-image: url('../../../curso-desarrollo-web/frontend/recursos/tecno.jpg')
-        }
-        .img-dos {
-          background-image: url(../recursos/pexels-garrett-morrow-682933.jpg);
-        }
-    
-        .img-tres {
-          background-image: url("../recursos/fondo.jpg");
-        }
-
-        .img-cuatro {
-          background-image: url(../recursos/pexels-lucie-liz-3165335.jpg);
-        }
-
-        .btn-uno {
-
-          background-color: #b1a9c3;
-          border-radius: 5px;
-          border-color: rgb(42, 37, 37);
-          width: 70px;
-          color: rgb(92, 84, 74);
-          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-
-        }
-
-        .btn-uno:hover {
-          background-color: rgb(3, 16, 16);
-          
-        }
-    </style>
   </head>
-
 
   <body>
     <!-- creamos el nav donde se desplieguen opciones-->
     <nav class="navbar navbar-expand-sm">
       <div class="container-fluid">
-        <!-- <a class="navbar-brand" href="#"><i class="bi bi-houses"></i></a> -->
+   
         <!--Creacion de boton para responsive-->
         <button class="navbar-toggler" type="button"
           data-bs-toggle="collapse"
@@ -89,6 +41,7 @@
               <a class="nav-link active" aria-current="page"
                 href="#">Quienes somos</a>
             </li>
+            <!-- menu desplegable -->
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#"
                 role="button" data-bs-toggle="dropdown"
@@ -150,19 +103,19 @@
           <div class="carousel-item active">
             <!--colocamos las fotos desde el css  -->
             <div class="img img-uno">
-              <div>
-                <h5>Regala innovacion</h5>
+              <div class="div-baner">
+                <h5>Kit experto</h5>
                 <p>Lorem ipsum dolor sit amet.</p>
                 <button class="btn btn-uno">Aqui</button>
               </div>
             </div>
-          
+         
           </div>
           <div class="carousel-item">
        
             <div class="img img-dos">
-              <div>
-                <h5>Regala innovacion</h5>
+              <div class="div-baner">
+                <h5>Se parte de la comunidad</h5>
                 <p>Lorem ipsum dolor sit amet.</p>
                 <button class="btn btn-uno">Aquí</button>
               </div>
@@ -172,7 +125,7 @@
           <div class="carousel-item">
 
             <div class="img img-tres">
-              <div>
+              <div class="div-baner">
                 <h5>Regala innovacion</h5>
                 <p>Lorem ipsum dolor sit amet.</p>
                 <button class="btn btn-uno">Aquí</button>
@@ -182,18 +135,18 @@
 
           <div class="carousel-item">
             <div class="img img-cuatro">
-              <div>
-                <h5>Regala innovacion</h5>
+              <div class="div-baner">
+                <h5>Innovacion</h5>
                 <p>Lorem ipsum dolor sit amet.</p>
                 <button class="btn btn-uno">Aquí!</button>
               </div>
             </div>
-    
+   
           </div>
         </div>
 
 
-        <!-- iconos para movimiento del carrusel -->
+     <!-- iconos para movimiento del carrusel -->
         <button class="carousel-control-prev" data-bs-target="#carrusel"
           data-bs-slide="prev">
           <span class="carousel-control-prev-icon"></span>
@@ -219,35 +172,37 @@
     <div class="container-sm text-center mt-4">
 
       <div class="row text-white">
-        <div class="col-sm-4 ">
+        <div class="col-sm-4 p-3">
           <h2>Noticias</h2>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-            Impedit, libero?</p>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur,
+            tempore eum? Nostrum eius ab molestiae?</p>
           <a href="#">New</a>
         </div>
 
-        <div class="col-sm-4 text-white">
-          <h2>Novedades</h2>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing..</p>
-          <a href="#">New</a>
-
-        </div>
-        <div class="col-sm-4 text-white">
+        <div class="col-sm-4 text-white p-3">
           <h2>Lo mas pedido</h2>
-          <img width="200px"
-            src="../../frontend/recursos/violeta (1).jpg"
+          <img width="150px" height="150px"
+            src="https://images.pexels.com/photos/3945683/pexels-photo-3945683.jpeg?auto=compress&cs=tinysrgb&w=1600"
             alt="">
         </div>
+
+        <div class="col-sm-4 text-white p-3">
+            <h2>Novedades</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Facere voluptatem quo omnis quos accusantium.</p>
+            <a href="#">New</a>
+ 
+          </div>
 
       </div>
 
     </div>
     <!-- footer -->
-    <footer class="container-fluit text-white text-center mt-5 p-4"
-      style="background-color: rgb(139, 115, 145);"><a href="·">Politicas de
-        Privacidad</a></footer>
-
-
+   
+     <footer class="container-fluit text-white text-center mt-5 p-5"
+      style="background-color: rgb(205, 64, 240);">Politicas de
+        Privacidad</footer> 
+       
   </body>
   <!-- JavaScript Bundle with Popper -->
   <script
@@ -256,6 +211,6 @@
     crossorigin="anonymous"></script>
 
   <!-- Efecto Nieve -->
-  <!-- <script defer src="https://app.embed.im/snow.js"></script> -->
+   <script defer src="https://app.embed.im/snow.js"></script> 
 
 </html
