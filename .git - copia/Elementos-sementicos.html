@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elementos semanticos</title>
+
+    <style>
+        .container {
+          
+            border: 1px solid black;
+            text-align: center;
+            
+        }
+        .general {
+            display: flex;
+        }
+        .izq {
+
+            display: flex;
+            width: 60%;
+            flex-direction: column;
+            
+        }
+
+        .der {
+
+            display: flex;
+            width:40% ;
+            justify-content: flex-start; 
+            flex-direction: column;   
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+
+    <h1>Elementos semanticos de HTML</h1>
+
+    <div class="container">
+        <header class="container">
+            <h1>Titulo</h1>
+        </header>
+        <nav class="container">
+            <h1>Menu de navegacion</h1>
+        </nav>
+
+    </div>
+
+<div class="general">
+    <div class="container izq" >
+        <section class="container">
+            <h1>seccion</h1>
+        </section>
+        <article class="container">
+            <h1>articulo</h1>
+        </article>
+    </div>
+
+    <div class="container der">
+        
+        <aside  class="container">
+            <h1>Lateral</h1>
+
+        </aside>
+
+    </div>
+
+    
+
+</div>
+<footer class="container " >
+    footer
+</footer>
+
+
+</body>
+
+</html>

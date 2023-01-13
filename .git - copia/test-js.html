@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="general.css">
+    <title>Prueba de Javascript</title>
+<Style>
+
+    #myHeader {
+        color: beige;
+        background-color: rgb(11, 52, 52);
+        border-radius: 15%;
+        border: darkseagreen;
+        text-align:end;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 20px;
+
+
+    }
+</Style>
+</head>
+
+<body>
+
+    <H1>Prueba de Javascript</H1>
+    <p>
+        si el HTML proporciona la estructura del documento,el CSS el estilo vusual
+        entonces el JS proporsiona la interactividad de la web con el usuario.
+    
+    </p>
+    <p>
+        Con JS podemos hacer que la pagina reacciones ante las distintas acciones
+         del usuario,hacer clic,pasar el raton sobre un objeto en concreto,
+         hacer scroll,usar el teclado
+    </p>
+    <p>
+        Al igual que el HTML nos provee de la etiqueta <code>style</code> para
+         insertar el css.tenemos la etiqueta <code>script</code> para escribir 
+         JS ,el codigo tambien puede incorporase como atributo de los elementos
+         (como sucede con el atributo style) por lo que su uso dependera del
+          criterio del desarrollador.
+    </p>
+
+    
+        <h2>Mi primer Javascript</h2>
+    <p id="txt"></p>
+
+    <button onclick="changeTxt()">Click me!</button>
+    <p>
+        JS tambien puede cambiar los estilos de los elemento
+    </p>
+
+    <p>
+        JS tambien puede cambiar los atributos
+    </p>
+
+    <img id="myImg" src="https://th.bing.com/th/id/R.88a4abdc736e172fd126a4b5e6c3384a?rik=o2tDzpE%2fsbYrtw&pid=ImgRaw&r=0" 
+    alt="" width="200">
+    <button onclick="changeImg()">Cambiar imagen</button>
+ 
+<h1 id="myHeader">Clase de DAW</h1>
+<button onclick="fixHeader()">Arreglar titulo</button>
+
+</body>
+
+<script>
+
+
+    // esta linea de codigo se ejecuta cuando el navegador la lee ya que no
+    // tiene ningun tipo de contexto
+document.getElementById("txt").innerHTML ="Hola mundo!"
+
+// una funcion es un bloque de codigo reutilizable que se ejecuta mediante
+// una accion dada
+
+function changeTxt() {
+    // Con document accedemos a una serie de funciones del documento "getElemenById()" 
+    // encuentra el elemento de que dicha id
+    // innerr
+    console.log("dsjkgfhd")
+document.getElementById("txt").innerHTML = 'he cambiado el texto usando JS'
+}
+
+function fixHeader() {
+    // es buscar el header y actuar sobre el
+    document.getElementById("myHeader").style.backgroundColor = '#255585'
+    // Correguir 
+    document.getElementById("myHeader").style.border = "none" ;
+    document.getElementById("myHeader").style.fontSize = "40px" ;
+    document.getElementById("myHeader").style.textAlign = "center" ;
+}
+
+function changeImg() {
+    document.getElementById("myImg").src = "https://www.escueladesarts.com/wp-content/uploads/perros-en-adopcion.jpg" ;
+
+}
+
+
+
+
+
+</script>
+
+</html>

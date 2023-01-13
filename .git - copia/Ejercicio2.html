@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina</title>
+    <style>
+        nav.menu {
+            display: flex;
+            background-color: rgb(222, 232, 251);
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .nav-img1 img {
+            border-radius: 10%;
+        }
+
+        /* nav.img2 {
+            display: flex;
+            align-items: center;
+        } */
+
+        nav:hover {
+            background-color: rgb(42, 138, 138);
+
+        }
+
+        .button1 {
+            border-radius: 5px;
+        }
+
+        header {
+            background-color: rgb(105, 182, 229);
+            display: flex;
+            padding: 30px;
+            font-size: 120%;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .left-container {
+            /* box-sizing: border-box; */
+            width: 50%;
+            padding: 5px;
+
+        }
+
+        .div-bg {
+            width: 100%;
+            height: 100%;
+
+            background-image: url(https://th.bing.com/th/id/OIP.xsg4SFbq8ScJ2Xu3A8dNNAHaIX?pid=ImgDet&rs=1);
+            background-position: center;
+            background-size: cover;
+
+
+        }
+
+        .right-container {
+            width: 50%;
+            display: flex;
+            /* align-items: center; */
+            flex-direction: column;
+            padding: 5px;
+
+        }
+
+        .right-container button {
+            width: 50%;
+            background-color: rgb(105, 182, 229);
+            color: white;
+            border: 1px solid white;
+
+            padding: 20px 10px;
+            font-size: 20px;
+        }
+
+        .right-container button:hover {
+            background-color: white;
+            color: rgb(80, 200, 251);
+        }
+
+        .sec-1 {
+            /* width: 100%; */
+            background-color: rgba(80, 200, 251, 0.734);
+            display: flex;
+            font-size: 120%;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .div-izq {
+            display: flex;
+            width: 50%;
+
+        }
+
+        /* .div-1 {
+            width: 20%;
+            display: flex;
+            align-items: center;
+
+        }
+
+        .div-2 {
+            width: 80%;
+            display: flex;
+            align-items: center;
+        } */
+        .div-der {
+            width: 50%;
+            display: flex;
+
+        }
+
+        .div-img {
+            display: flex;
+            width: 35%;
+            justify-content: center;
+            align-items: center;
+            /* box-sizing: border-box; */
+            padding: 0 5px;
+        }
+
+        .div-img img {
+            border-radius: 50%;
+            width: 95px;
+            height: 95px;
+        }
+
+        .div-img div {
+            width: 95px;
+            height: 95px;
+
+            border-radius: 50%;
+
+            background-image: url(https://www.saintlukeskc.org/sites/default/files/styles/hero/public/2020-03/2020-1391_System_COVID19_Web_HomePageBlock_342x256_200dpi_final_1.jpg?itok=vjl4lrh5);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .div-text {
+            width: 65%;
+            padding: 0 5px;
+
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .div-margen {
+            /*  colocando el contenedor principal dentro de otro podemos darle margenes para que este quede centrado */
+            margin: 0 auto;
+            width: 1200px;
+        }
+
+
+        .centro {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 120%;
+        }
+
+        .centro h1 {
+            color: rgb(13, 182, 182);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 300%;
+        }
+
+        .centro-inf {
+            display: flex;
+        }
+
+        .sec-der {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+
+        }
+
+        .sec-img img {
+            width: 80%;
+
+
+        }
+
+        .sec-izq {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+        }
+
+        .sec-tex {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 120%;
+
+        }
+
+        .int-izq {
+            display: flex;
+            text-align: center;
+
+
+        }
+
+        .int-der {
+            display: flex;
+            text-align: center;
+        }
+
+        .section2 {
+            display: flex;
+            background-color: rgb(100, 173, 245);
+        }
+
+        .margen-inf {
+            margin: auto;
+            width: 1000px;
+           
+        }
+
+
+        .sec-h1 {
+            display: flex;
+            justify-content: center;
+            font-size: 200%;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: aliceblue;
+        }
+
+        .sec-2tex {
+            display: flex;
+            font-size: 25px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: aliceblue;
+            width: 100%;
+
+
+        }
+
+        .sec-2tex1 {
+            width: 40%;
+
+        }
+
+        .sec-2tex2 {
+            width: 60%;
+            padding: 0 8px;
+            align-items: center;
+        }
+
+        .button2 {
+            border-radius: 5px;
+            background-color: rgb(100, 173, 245);
+            border-color: aliceblue;
+            color: aliceblue;
+            width: 200px;
+            padding: 15px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .button2:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .sec-3 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between ;
+            width: 80%;
+            margin: 50px;
+        }
+
+
+        .sec-3 h1 {
+            display: flex;
+            justify-content: center;
+
+        }
+
+    </style>
+</head>
+
+<body>
+    <nav class="menu">
+
+        <div class="nav-img1">
+            <img width="40px"
+                src="https://cdn1.vectorstock.com/i/1000x1000/70/65/health-medical-logo-template-design-vector-17357065.jpg"
+                alt="">
+        </div>
+        <div class="nav-img2">
+            <img width="40px" src="https://th.bing.com/th/id/OIP.Lm1sCuDJuZV9b5yKbQ9jPQHaHa?pid=ImgDet&rs=1" alt="">
+        </div>
+
+    </nav>
+
+    <header class="flex-container" style="height: 500px">
+
+
+        <div class="left-container">
+            <div class="div-bg"></div>
+        </div>
+
+        <div class="right-container">
+            <h3>MED CENTER HEALTH</h3>
+            <h1>Highest Quality</h1>
+            <p>
+                To learn more about our clinical programs, browse
+                our list of medical services
+                alphabetically or search by keyword in the box below.
+            </p>
+            <button class="button1">CONTACT US</button>
+        </div>
+
+
+    </header>
+
+    <div class="sec-1">
+        <div class="div-izq">
+            <div class="div-img">
+                <!-- <img width="100%"
+                    src="https://www.saintlukeskc.org/sites/default/files/styles/hero/public/2020-03/2020-1391_System_COVID19_Web_HomePageBlock_342x256_200dpi_final_1.jpg?itok=vjl4lrh5"
+                    alt=""> -->
+                <div></div>
+            </div>
+
+            <div class="div-text">
+                <h2>MEDICAL CARE</h2>
+                <p>
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur.
+                    Excepteur sint occaecat cupidatat non proident, sunt
+                </p>
+            </div>
+        </div>
+        <div class="div-der">
+            <div class="div-img">
+                <img width="100%"
+                    src="https://image.freepik.com/vector-gratis/estetoscopio-o-fonendoscopio-medico_169241-836.jpg"
+                    alt="">
+            </div>
+            <div class="div-text">
+                <h2>CARE PROGRAMS</h2>
+                <p>
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur.
+                    Excepteur sint occaecat cupidatat non proident, sunt
+                </p>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    <section>
+
+        <div class="div-margen">
+            <div class="centro">
+                <h1>Medical Services</h1>
+                <h3>Sample text. Click to select the text box. Click again or double click
+                    to start editing the text.</h3>
+            </div>
+
+            <div class="centro-inf">
+
+                <div class="sec-izq">
+
+                    <div class="int-izq">
+                        <div class="sec-img"><img
+                                src="https://th.bing.com/th/id/R.79274584b31b11ce57e3e73faccfb1d2?rik=iZOqRbi%2bVpPRZg&pid=ImgRaw&r=0"
+                                alt=""></div>
+
+                        <div class="sec-tex">
+                            <h1>Hospitalists</h1>
+                            <p>Sample text. Click to select the text box. Click again or double click to start editing
+                                the text
+                            </p>
+                            <p>
+                                <a href="#">Lear more</a>
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="int-der">
+                        <div class="sec-img">
+                            <img src="https://th.bing.com/th/id/R.4c746adc0867d9b8ce7c0d6914e44e34?rik=cRRCAU4sPh5z6g&pid=ImgRaw&r=0"
+                                alt="">
+                        </div>
+
+                        <div class="sec-tex">
+                            <h1>Hospitalists</h1>
+                            <p>Sample text. Click to select the text box. Click again or double click to start editing
+                                the
+                                text
+                            </p>
+                            <p>
+                                <a href="#">Lear more</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sec-der">
+                    <div class="int-izq">
+                        <div class="sec-img">
+                            <img src="https://okjuridico.okdiario.com/wp-content/uploads/2019/08/Noticia-1.jpg" alt="">
+                        </div>
+
+                        <div class="sec-tex">
+                            <h1>Hospitalists</h1>
+                            <p>Sample text. Click to select the text box. Click again or double click to start editing
+                                the
+                                text</p>
+                            <p>
+                                <a href="#"> Learn more</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="int-der">
+                        <div class="sec-img"><img
+                                src="https://todaslasoraciones.net/wp-content/uploads/2021/05/1566997655_681671_1566998503_noticia_normal.jpg"
+                                alt=""></div>
+
+                        <div class="sec-tex">
+                            <h1>Hospitalists</h1>
+                            <p>Sample text. Click to select the text box. Click again or double click to start editing
+                                the
+                                text</p>
+                            <p>
+                                <a href="#">Lear more</a>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="section2">
+        <div class="margen-inf">
+
+            <div>
+                <img class="sec2-img" src="https://thumbs.dreamstime.com/b/happy-medical-team-showing-thumbs-up-standing-row-happy-medical-team-showing-thumbs-up-standing-row-hospital-150329688.jpg"
+                    alt="">
+            </div>
+            <div class="sec-h1">
+                <h1>How We Work</h1>
+            </div>
+            <div class="sec-2tex">
+                <div class="sec-2tex1">
+                    <p>Its departments are equipped with state-of-the-art diagnostic and therapeutic equipment and
+                        operated by top-category physicians, Ph.D. and Doctors of Medicine, associate professors and
+                        professors knowledgeable of the best available practices of European schools. Partnerships with
+                        specialized clinics and research centers in Russia and Europe make possible consultations by
+                        doctors of unique specialties.</p>
+                </div>
+                <div class="sec-2tex2">
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                        mollit anim id est laborum</p>
+                    <button class="button2">
+                        CONTACT US
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="sec-3">
+     
+            <div>
+                <h1>A</h1>
+                <h2>Goals and Mission</h2>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <div>
+                <h1>B</h1>
+                <h2>About Clinic</h2>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <div>
+                <h1>C</h1>
+                <h2>Work with Us</h2>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+        
+    </section>
+
+</body>
+
+</html>
