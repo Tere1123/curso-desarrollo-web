@@ -121,7 +121,39 @@ from city
 WHERE country = 'spain';
 
 --26. Mostrar el nombre de la película y el nombre de los actores
-SELECT title, first_name,last_name from film, actor ;
+-- SELECT title, first_name,last_name from film, actor ;
+SELECT title,first_name,last_name FROM film f
+JOIN film_actor fa on f.film_id = fa.film_id
+JOIN actor a on fa.actor_id = a.actor_id;
+
+--27. Mostrar el nombre de la película y el de sus categorías.
+SELECT f.title, c.name as category FROM film f
+JOIN film f on fc.film_id = f.film_id
+JOIN film_category fc on fc.category_id = c.category_id; -- pendiente
+
+-- 28. Mostrar el country, la ciudad y dirección de cada miembro del staff.
+
+SELECT co.country, c.city, a.address, s.first_name,s.last_name from staff s
+JOIN address a on a.address_id = s.address_id
+JOIN city c on c.city_id = a.city_id
+JOIN country co on c.country_id = co.country_id;
+-- cuando unimos tablas primero de debe colocar el nombre de la tabla y despues description
+-- si sus columnas ejemplo tabla city con las columnas c.city_id= a.city_id
+
+
+-- 29. Mostrar el country, la ciudad y dirección de cada customer.
+
+
+--30. Numero de películas de cada rating
+SELECT rating, COUNT(*) 
+FROM film
+ORDER BY rating;
+
+--31. Cuantas películas ha realizado el actor ED CHASE.
+
+
+
+--32. Media de duración de las películas cada categoría.
 
 
 
