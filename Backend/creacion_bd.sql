@@ -27,7 +27,7 @@ INSERT INTO productos(codigo,nombre,precio) VALUES ( 'a01','Afilador',2.50);
 INSERT INTO productos(codigo,nombre,precio) VALUES ( 's01','Silla mod ZAZ',20);
 INSERT INTO productos(codigo,nombre,precio) VALUES ( 's02','Silla mod XAX',25);
 
-
+--ADD SE URILIZA PARA AGREGAR UNA COLUMNA EN UNA TABLA YA EXISTENTE
 SELECT*FROM PRODUCTOS;
 
 -- añadir una nueva columna con una nueva categoria de os productos
