@@ -121,7 +121,7 @@ ADD
         horario in ('hor1', 'hor2', 'hor3')
     );
 
-ALTER TABLE existencias ADD CONSTRAINT CHECK (precio <> 0);
+ALTER TABLE existencias ADD CONSTRAINT CHECK (precio > 0);
 
 
 
