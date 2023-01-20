@@ -71,15 +71,28 @@ CREATE TABLE empleados (
 
     -- agregamos restricciones
 
+--2. atributo sexo
     ALTER TABLE empleados ADD CONSTRAINT ck_sexo CHECK (sexo = 'h' or 'm');
-
+--3. departamentos con unico nombre.
     ALTER TABLE departamentos ADD CONSTRAINT uk_dep_nombre UNIQUE(nombre_dpto);
 
     ALTER TABLE trabajos ADD CONSTRAINT uk_tra_nombre UNIQUE (nombre_trab); -- utilizo unique para que el dato sea unico y no se repita
 
+--4. cada empleado con salario en unico momento,con unico trabajo.
+ ALTER TABLE historial_salarial ADD CONSTRAINT pk_salario_unico PRIMARY KEY ( empleado_dni, fecha_comienzo);
 
+ ALTER TABLE historial_laboral ADD CONSTRAINT pk_trabajo_unico PRIMARY KEY ( empleado_dni,fecha_inicio);
 
+ --5. estblecer claves primarias
 
+ ALTER TABLE empleados ADD CONSTRAINT pk_empleados PRIMARY KEY (dni);
 
+ ALTER TABLE departamentos ADD CONSTRAINT pk_dpto PRIMARY KEY (dpto_cod);
 
+ ALTER TABLE estudios ADD CONSTRAINT pk_emp_dni PRIMARY KEY (empleado_dni);
+
+ ALTER TABLE universidades ADD CONSTRAINT pk_cod_uni PRIMARY KEY (univ_cod);
+ ALTER TABLE trabajos ADD CONSTRAINT pk_trabajo_cod PRIMARY KEY ( trabajo_cod);
+
+ 
 
