@@ -18,13 +18,71 @@
     <!-- Custom CSS -->
 
     <link rel="stylesheet" href="style.css">
+      <style>
+        body {
+          
+            background-color: #2f234B;
+        }
+   
+        nav {
+            background-color: #a27cc8;
+        }
+   
+        .img {
+          width: 100%;
+          height: 200px;
+          background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+        .img-uno {
+          background-image: url(https://media.istockphoto.com/id/1170073824/es/foto/concepto-de-espacio-de-trabajo-del-jugador-vista-superior-de-un-equipo-de-juego-rat%C3%B3n-teclado.jpg?s=612x612&w=0&k=20&c=c-45gU0ge_3OM0TtJnfxixE3Q8KoJ4koeSMssE6vYGs=);
+        }
+        .img-dos {
+          background-image: url(https://images.pexels.com/photos/1601774/pexels-photo-1601774.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+        }
+   
+        .img-tres {
+          background-image: url(https://images.pexels.com/photos/682933/pexels-photo-682933.jpeg?auto=compress&cs=tinysrgb&w=600);
+        }
+
+        .img-cuatro {
+          background-image: url(https://images.pexels.com/photos/1298601/pexels-photo-1298601.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+        }
+
+        .btn-uno {
+
+          background-color: #1ef2f6;
+          border-radius: 10px;
+          border-color:solid 2px rgb(18, 17, 17);
+          width: 90px;
+          color: rgb(49, 84, 77);
+          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+ 
+        }
+      
+        .btn-uno:hover {
+          background-color: rgb(88, 173, 219);
+          color:rgb(250, 246, 250)
+          
+        } 
+
+        .div-baner {
+            color: rgb(250, 248, 250);
+            font-size: 20px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+          
+        }
+
+    </style>
   </head>
+
 
   <body>
     <!-- creamos el nav donde se desplieguen opciones-->
     <nav class="navbar navbar-expand-sm">
       <div class="container-fluid">
-   
+    
         <!--Creacion de boton para responsive-->
         <button class="navbar-toggler" type="button"
           data-bs-toggle="collapse"
@@ -41,7 +99,7 @@
               <a class="nav-link active" aria-current="page"
                 href="#">Quienes somos</a>
             </li>
-            <!-- menu desplegable -->
+            <!-- menu deplegable -->
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#"
                 role="button" data-bs-toggle="dropdown"
@@ -146,7 +204,7 @@
         </div>
 
 
-     <!-- iconos para movimiento del carrusel -->
+        <!-- iconos para movimiento del carrusel -->
         <button class="carousel-control-prev" data-bs-target="#carrusel"
           data-bs-slide="prev">
           <span class="carousel-control-prev-icon"></span>
@@ -174,35 +232,35 @@
       <div class="row text-white">
         <div class="col-sm-4 p-3">
           <h2>Noticias</h2>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur,
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur, 
             tempore eum? Nostrum eius ab molestiae?</p>
           <a href="#">New</a>
         </div>
 
         <div class="col-sm-4 text-white p-3">
           <h2>Lo mas pedido</h2>
-          <img width="150px" height="150px"
-            src="https://images.pexels.com/photos/3945683/pexels-photo-3945683.jpeg?auto=compress&cs=tinysrgb&w=1600"
+          <img width="200px" height="200px"
+            src="https://images.pexels.com/photos/3945655/pexels-photo-3945655.jpeg?auto=compress&cs=tinysrgb&w=600"
             alt="">
         </div>
 
         <div class="col-sm-4 text-white p-3">
             <h2>Novedades</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Facere voluptatem quo omnis quos accusantium.</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+              Facere voluptatem quo omnis quos accusantium. Autem.</p>
             <a href="#">New</a>
- 
+  
           </div>
 
       </div>
 
     </div>
     <!-- footer -->
-   
-     <footer class="container-fluit text-white text-center mt-5 p-5"
+    
+     <footer class="container-fluit text-white text-center  mt-5 p-5"
       style="background-color: rgb(205, 64, 240);">Politicas de
         Privacidad</footer> 
-       
+        
   </body>
   <!-- JavaScript Bundle with Popper -->
   <script
@@ -211,6 +269,6 @@
     crossorigin="anonymous"></script>
 
   <!-- Efecto Nieve -->
-   <!-- <script defer src="https://app.embed.im/snow.js"></script>  -->
+  <!-- <script defer src="https://app.embed.im/snow.js"></script> -->
 
 </html
