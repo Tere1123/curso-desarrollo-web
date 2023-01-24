@@ -1,3 +1,10 @@
+<?php
+
+// include ejecuta el codigo, esto conecta con la base de datos
+include 'conm.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -42,6 +49,22 @@
                 href="#">Quienes somos</a>
             </li>
             <!-- menu desplegable -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#"
+                role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Usuario</a>
+                <table>
+                  <tr>
+                      
+                      <th>usuario</th>
+                      <th>contraseña</th>
+              
+                  </tr>
+                </table>
+              
+            </li>
+
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#"
                 role="button" data-bs-toggle="dropdown"
@@ -170,6 +193,17 @@
     </div>
     <!-- contenedores externos -->
     <div class="container-sm text-center mt-4">
+
+      <div class="row text-white">
+  <!--formulario de entrada  -->
+        <h1> Registrate</h1>
+        <form action="welcome.php" method="post">
+            <input type="email" placeholder="Email" name="email" required >
+            <input type="text" placeholder="contraseña" name="contraseña" required >
+            <input type="submit" value="Enviar">
+        </form>
+
+    </div>
 
       <div class="row text-white">
         <div class="col-sm-4 p-3">

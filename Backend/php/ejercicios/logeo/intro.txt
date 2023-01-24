@@ -1,4 +1,4 @@
-#vamos a crear una web donde podamos cerar un usuario(registro) para que,cuando entremos a
+#vamos a crear una web donde podamos crear un usuario(registro) para que,cuando entremos a
 la web con este usuario ,podamos acceder a cierto contenido que solo esta disponible para usuarios logeados.
 
 # primer paso: crear dos formularios,login y registro,
