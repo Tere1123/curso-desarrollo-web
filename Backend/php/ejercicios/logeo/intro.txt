@@ -10,7 +10,7 @@ al formularioa de login.
 en registro se nos llevara a login despues de crear un usuario correctamente.
 
 #cuarto: cuando nos logeamos con exito iremos a la pagina principal ,pero esta vez habra una sesión.
-un panel de usuario enel que podamos modificar nuestros datos o cerrar sesion.
+un panel de usuario en el que podamos modificar nuestros datos o cerrar sesion.
 
 #bonus: crear un panel de administracion, al que solo se puede acceder siendo administrador.
 desde aqui podermos agregar usuarios, convertirlos en admi, borrarlos o simplemente consultar sus datos(tablas)
