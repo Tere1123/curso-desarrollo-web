@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -60,9 +61,10 @@ session_start();
         <?php
 // creamos un if donde este nos indicara que si hay un error en los datos o no coinsiden con los de la base de datos 
 // no llevara a traves de un link a regisrarnos nuevamente.
+
         if (isset($_SESSION['fallo'])) {
             echo '<p>email o contraseña incorrectos. Por favor, 
-            compruebe los datos o pulsa <a href="registro-de-datos.php">aquí</a> para registrarse</p>';
+            compruebe los datos o pulsa <a href="registro-de-datos.php">aquí</a> para registrarte</p>.';
         
 
             unset($_SESSION['fallo']);
