@@ -21,12 +21,21 @@ if ($_SERVER['REQUEST_METHOD'] = 'POST') {
         echo "Hola  $user <br>";
 
         $_SESSION['logged'] = true;
+        // este session nuevo se crea para mostrar los datos en la tabla
+        while ($row = $result->fetch_assoc()) {
+            // se crea un array $row con los resultados de la query del usuario
+            
+            $_SESSION['username'] = $row['email'];
+
+            $_SESSION['usertype'] = $row['user_type'];
+        }
         //    redirigir 
         echo '<a href="pag-principal.php">
             <button>Página principal</button>
                 </a>';
 
         $conn->close();
+
     } elseif ($result->num_rows === 0) {
         // si no se encuentra ningun resultado mostrara este aviso y nos devolvera al formulario de login
 
