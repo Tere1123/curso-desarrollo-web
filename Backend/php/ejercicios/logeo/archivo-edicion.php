@@ -1,25 +1,31 @@
 <?php
+session_start();
 
 include 'conn.php';
-// creamos las variables con los datos que pedimos en el formulario
+// con las variables que tenemos agregamos una nueva variable 'ID' que es la que nos permitira
+// guardar los datos nuevos cuando se realice el cambio
 $user = $_POST['user'];
 $clave = $_POST['clave'];
+$id = $_SESSION['username']; // esta variable la tomamos del documento login-usuario
 
-// en insert intro van el encabezado que estan en la base de datos ejemp: email y clave
+// usamos el update para indicar que el usuario quiere actualizar sus datos y estos datos nuevos quedaran 
+//guardados en el ID.
 
-$sql = "INSERT INTO usuarios (email,clave)
-     VALUES ('$user','$clave')";
-
-     
+$sql = "UPDATE usuarios SET email = '$user', clave = '$clave'  WHERE  email = '$id'";
+// $result = $conn->query($sql);
 // ejecutamos la query y comprobamos si ha sido exitosa
 
-if($conn->query($sql) === TRUE) {
-    echo 'Datos guardados con exito';
+if($conn->query($sql) ) {
+
+    $_SESSION['username'] = $user;
+    echo 'Actualizar datos';
+    echo '<button><a href="pag-principal.php"></a> Salir</button>';
+  
 } else { echo "error: ".$sql . "<br>" .$conn->error;
 
 }
 
-// creamos la conxion con la base de datos
+
 $conn->close();
 
 ?>
@@ -35,7 +41,8 @@ $conn->close();
 
 <body>
 
-    <p>Bienvenido, <?php echo $_POST['user']; ?> </p>
+    <p>Datos actualizados, <?php echo $_POST['user']; ?></p>
+     <!-- <button><a href="pag-principal.php"></a> Salir</button> -->
 
 </body>
 </html>

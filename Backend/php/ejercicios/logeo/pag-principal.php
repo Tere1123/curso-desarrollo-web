@@ -90,7 +90,7 @@ if (isset($_POST['logout'])) {
 
     <nav>
 
-            <a href="login.php"><i class="bi bi-people"></i>Cuenta</a>
+            <a href="panel-edicion.php"><i class="bi bi-people"></i>Cuenta</a>
             <a href="registro-de-datos.php"><i class="bi bi-archive">Registro</i></a>
             <a href="pag-principal.php"><i class="bi bi-house">Home</i></a>
 

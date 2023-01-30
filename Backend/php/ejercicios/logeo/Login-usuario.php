@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] = 'POST') {
         echo "Hola  $user <br>";
 
         $_SESSION['logged'] = true;
-        // este session nuevo se crea para mostrar los datos en la tabla
+        // esta session nueva se crea para mostrar los datos en la tabla
         while ($row = $result->fetch_assoc()) {
             // se crea un array $row con los resultados de la query del usuario
             

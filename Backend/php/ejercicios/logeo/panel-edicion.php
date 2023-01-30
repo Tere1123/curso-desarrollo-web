@@ -27,22 +27,19 @@ $result = $conn->query($sql);
 <?php
     
     while ($row = $result->fetch_assoc()) {
-        $user = $_POST['user'];
-        $clave = $_POST['clave'];
+        $user = $row['email'];
+        $clave = $row['clave'];
 
-    }
-    ?>
-    
-    <form action="archivo-edicion.php" method="post">
->       <h1> Login</h1>
-        <input type="text"  name="user" required>
-        <input type="text"  name="clave" required>
-        <input type="submit" value="Enviar">
+    echo "<form action='archivo-edicion.php' method='post'>
+     <h1> Login</h1>
+    <input type='text' placeholder='Emaili' name='user' value='$user'>
+    <input type='text' placeholder='contraseña' name='clave' value='$clave'>
+    <input type='submit' value='actualizar'>
+    </form>";
 
+}
 
-    </form>
-
-
+?>
 
 </body>
 
