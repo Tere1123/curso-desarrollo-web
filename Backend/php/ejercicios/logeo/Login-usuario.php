@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] = 'POST') {
             // se crea un array $row con los resultados de la query del usuario
             
             $_SESSION['username'] = $row['email'];
-
+            // $_SESSION['id'] = $row['id'];
             $_SESSION['usertype'] = $row['user_type'];
         }
         //    redirigir 
