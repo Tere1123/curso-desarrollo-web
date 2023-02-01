@@ -6,6 +6,8 @@ if ($_SERVER['REQUEST_METHOD'] = 'POST') {
     $user = $_POST['user'];
     $clave = $_POST['clave'];
 
+    
+
     include 'conn.php'; // esta conecta con la base de datos
 
     // realizamos una query para buscar la existencia del usuario en la BD
@@ -24,9 +26,8 @@ if ($_SERVER['REQUEST_METHOD'] = 'POST') {
         // esta session nueva se crea para mostrar los datos en la tabla
         while ($row = $result->fetch_assoc()) {
             // se crea un array $row con los resultados de la query del usuario
-            
-            $_SESSION['username'] = $row['email'];
-            // $_SESSION['id'] = $row['id'];
+            $_SESSION['id'] = $row['id'];
+            // $_SESSION['username'] = $row['email'];
             $_SESSION['usertype'] = $row['user_type'];
         }
         //    redirigir 

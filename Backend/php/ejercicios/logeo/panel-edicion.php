@@ -3,9 +3,9 @@ session_start();
 
 include 'conn.php';
 
-$user = $_SESSION['username']; 
+$user = $_SESSION['id']; 
 
-$sql = "SELECT * From usuarios WHERE email = '$user'";
+$sql = "SELECT * From usuarios WHERE id = '$user'";
 
 $result = $conn->query($sql);
 
@@ -31,7 +31,7 @@ $result = $conn->query($sql);
         $clave = $row['clave'];
 
     echo "<form action='archivo-edicion.php' method='post'>
-     <h1> Login</h1>
+     <h1> Edicion de datos</h1>
     <input type='text' placeholder='Emaili' name='user' value='$user'>
     <input type='text' placeholder='contraseña' name='clave' value='$clave'>
     <input type='submit' value='actualizar'>

@@ -3,11 +3,15 @@
 session_start();
 
 include 'conn.php';
+// validamos que tipo de usuario es el que quiere acceder para saber que informacion mostrar
 
+// si eres admi mostrar todos los datos de la tabla
 if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
   
     $sql = 'SELECT * FROM usuarios';
+    echo "<form action='panel-edicion-admi.php' method='post'></form>";
 
+// si eres usuario solo mostrar sus datos
 } elseif ($_SESSION['usertype'] == 'user') {
 
      $user = $_SESSION['username']; 
@@ -65,6 +69,8 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
     <th>nombre</th>
     <th>contraseña</th>
     <th>tipo de usuario</th>
+    <th>id</th>
+
     </tr>";
 
   //imprimir datos de cada fila

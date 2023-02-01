@@ -5,19 +5,25 @@ include 'conn.php';
 // con las variables que tenemos agregamos una nueva variable 'ID' que es la que nos permitira
 // guardar los datos nuevos cuando se realice el cambio
 $user = $_POST['user'];
+
 $clave = $_POST['clave'];
+
+$user_type = $_POST['user_type'];
+
 $id = $_SESSION['id']; // esta variable la tomamos del documento login-usuario
 
-// usamos el update para indicar que el usuario quiere actualizar sus datos y estos datos nuevos quedaran 
+// usamos el update para indicar que el admi quiere actualizar datos y estos datos nuevos quedaran 
 //guardados en el ID.
 
-$sql = "UPDATE usuarios SET email = '$user', clave = '$clave'  WHERE  id = '$id'";
-// $result = $conn->query($sql);
+$sql = "UPDATE usuarios SET email = '$user', clave = '$clave', user_type = '$user_type' WHERE  id = '$id'";
+
+$result = $conn->query($sql);
 // ejecutamos la query y comprobamos si ha sido exitosa
 
 if ($conn->query($sql)) {
 
-    $_SESSION['username'] = $user;
+    $_SESSION['id'] = $user;
+
 } else {
     echo "error: " . $sql . "<br>" . $conn->error;
 
