@@ -3,9 +3,11 @@ session_start();
 
 if (isset($_POST['logout'])) {
     unset($_SESSION['logged']);
-    session_destroy();// se coloca para carrar todas las sesiones del usuario
+    session_destroy(); // se coloca para carrar todas las sesiones del usuario
 
 }
+
+
 ?>
 
 
@@ -16,7 +18,7 @@ if (isset($_POST['logout'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <title>pagina principal</title>
 
     <style>
@@ -44,7 +46,7 @@ if (isset($_POST['logout'])) {
 
         }
 
-        
+
         nav {
 
             padding: 10px;
@@ -61,21 +63,21 @@ if (isset($_POST['logout'])) {
             font-family: sans-serif;
             font-weight: bold;
             padding: 10px;
-           
+
 
         }
 
         nav a:hover {
-            color: #bdf7f7; 
-            background-color:#35383c;
+            /* color: #bdf7f7;
+            background-color: #35383c; */
         }
 
         button {
 
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            /* position: absolute; */
+            /* top: 50%; */
+            /* left: 50%; */
+            /* transform: translate(-50%, -50%); */
 
             border-radius: 5px;
             background: #6492fd;
@@ -83,43 +85,75 @@ if (isset($_POST['logout'])) {
             color: #bdf7f7;
         }
 
+        button:hover {
+            /* box-shadow: 0px 0px 8px 5px rgba(20, 20, 20, .35); */
+            background: #6492fdAD;
+        }
     </style>
 </head>
 
 <body>
 
     <header>Usando PHP</header>
-
+    <!-- creamos una pagina principal y creamos este if donde se pregunta si el usuario está logeado -->
     <nav>
-
-            <a href="panel-edicion.php"><i class="bi bi-people"></i>Cuenta</a>
-            <a href="registro-de-datos.php"><i class="bi bi-archive">Registro</i></a>
-            <a href="pag-principal.php"><i class="bi bi-house">Home</i></a>
-
-    </nav>
-
-    <div>
 
         <?php
 
-        // creamos una pagina principal y creamos este if donde se pregunta si el usuario está logeado
-
         if (isset($_SESSION['logged'])) {
-            // aquí va el panel/botón/contenido del usuario
-            echo '<button>Ir a mi cuenta</button>';
+            if ($_SESSION['usertype'] == 'admin') {
+                $link = 'panel-edicion-admi.php';
+            } else $link = 'panel-edicion.php';
+
+            echo "<a href='$link'><button>Ir a mi cuenta</button></a>";
             echo "<form action='pag-principal.php' method='post'>
-    <input type='submit' value='Cerrar sesión' name='logout'>
-    </form>";
-        } else {
+            <input type='submit' value='Cerrar sesión' name='logout'>
+            </form>";
+            
+        }  else {
             // Si no está logeado, mostramos el botón de iniciar sesion
             echo '<a href="login.php">
-            <button>Iniciar sesión</button>
-         </a>';
+        <button>Iniciar sesión</button> </a>';
         }
+        ?>
+        <!-- <a href="registro-de-datos.php"><i class="bi bi-archive">Registro</i></a>
+        <a href="pag-principal.php"><i class="bi bi-house">Home</i></a> -->
+
+    </nav>
+
+    <!-- <div>
+
+      
+
+        // // creamos una pagina principal y creamos este if donde se pregunta si el usuario está logeado
+
+        // if (isset($_SESSION['logged'])  && $_SESSION['usertype'] == 'admin') {
+
+        //     echo '<button>Ir a mi cuenta</button>';
+        //     echo "<form action='panel-edicion-admi.php' method='post'></form>";
+        //     echo "<form action='panel-edicion-admi.php' method='post'>
+        //     <input type='submit' value='Cerrar sesión' name='logout'>
+        //     </form>";
+        //     // aquí va el panel/botón/contenido del usuario
+        //     //         echo '<button>Ir a mi cuenta</button>';
+        //     //         echo "<form action='pag-principal.php' method='post'>
+        //     // <input type='submit' value='Cerrar sesión' name='logout'>
+        //     // </form>";
+        // } elseif ($_SESSION['usertype'] == 'user') {
+
+        //     $user = $_SESSION['username'];
+
+        //     $sql = "SELECT * From usuarios WHERE email = '$user'";
+        // }
+        // // Si no está logeado, mostramos el botón de iniciar sesion
+        // echo '<a href="login.php">
+        //     <button>Iniciar sesión</button>
+        //  </a>';
+
         ?>
 
     </div>
 
-    </body>
+</body>
 
 </html>
