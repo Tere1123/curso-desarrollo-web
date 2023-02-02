@@ -24,6 +24,29 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
     <title>Formilario de usuarios</title>
 
     <style>
+        html {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background: linear-gradient(#3e2e70, #86def4);
+        }
+
+        .box {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        h1 {
+            text-align: center;
+            
+        }
+
         table {
             /* border: 2px solid black; */
             border-collapse: collapse;
@@ -44,56 +67,72 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
         }
 
         td {
+            background-color: #aabbcc;
             text-align: center;
             border: 1px solid black;
-            padding: 2px 5px;
+            padding: 3px 6px;
         }
 
-        
+        input {
+            border: none;
+            background-color: #aabbcc;
+        }
+
+        select {
+            background-color: #aabbcc;
+        }
     </style>
 </head>
 
 <body>
-    <h1>Panel de Administración</h1>
 
-    <?php
+    <div class="box">
 
-    if ($result->num_rows > 0) {
+        <h1>Panel de Administración</h1>
 
-        echo "<table>
+        <?php
+
+        if ($result->num_rows > 0) {
+
+            echo "<table>
             <tr>
             <th>nombre</th>
             <th>contraseña</th>
             <th>tipo de usuario</th>
-            <th>id</th>
             <th>Acciones</th>
             </tr>";
 
-        while ($row = $result->fetch_assoc()) {
-            $user = $row['email'];
-            $clave = $row['clave'];
-            $user_type = $row['user_type'];
-            $id = $row['id'];
+            while ($row = $result->fetch_assoc()) {
+                $user = $row['email'];
+                $clave = $row['clave'];
+                $user_type = $row['user_type'];
+                $id = $row['id'];
 
-            echo "<tr>
+                echo "<tr>
                 <form action='archivo-edi-admi.php' method='post'>
                 <td>
                 <input type='text' placeholder='Email' name='user' value='$user'>
                 </td><td>
                 <input type='text' placeholder='contraseña' name='clave' value='$clave'>
                 </td><td>
-                <input type='text' placeholder='user_type' name='user_type' value='$user_type'>
+                <input type='text' placeholder='user_type' name='tipo usuario' value='$user_type'>
+                <select  name='user_type'>
+                <option value ='$user_type'>Admi</option>
+                <option value ='$user_type'>User</option>
+                </select>
                 </td><td>
-                <input type='text' placeholder='id' name='id' value='$id'>
-                </td><td>
+                <input type='text' placeholder='id' name='id' value='$id' hidden>
+                
                 <input type='submit' value='actualizar'>
                 </td>
                 </form>
                 </tr>";
+            }
+            echo "</table>";
         }
-        echo "</table>";
-    }
-    ?>
+        ?>
+
+    </div>
 
 </body>
 

@@ -10,14 +10,14 @@ $clave = $_POST['clave'];
 
 $user_type = $_POST['user_type'];
 
-$id = $_SESSION['id']; // esta variable la tomamos del documento login-usuario
+$id = $_POST['id']; // esta variable la tomamos del documento login-usuario
 
 // usamos el update para indicar que el admi quiere actualizar datos y estos datos nuevos quedaran 
 //guardados en el ID.
 
 $sql = "UPDATE usuarios SET email = '$user', clave = '$clave', user_type = '$user_type' WHERE  id = '$id'";
 
-$result = $conn->query($sql);
+// $result = $conn->query($sql);
 // ejecutamos la query y comprobamos si ha sido exitosa
 
 if ($conn->query($sql)) {
@@ -41,6 +41,7 @@ if ($conn->query($sql)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienvenido</title>
     <style>
+
         html {
             height: 100%;
         }
