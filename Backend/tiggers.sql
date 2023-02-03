@@ -27,8 +27,8 @@ CREATE TRIGGER if NOT EXISTS after_usuario_update
 AFTER UPDATE --GUARDA UN CAMBIO QUE SE A REALIZADO CON LOS DATOS ANTIGUOS Y NUEVOS
 ON  usuarios FOR EACH ROW
  BEGIN
-   INSERT INTO audit (id_user,old_user,new_user,old_email,new_email,old_usertype,new_usertype)
-    VALUES(old.id,old.user,new.user,old.old_email,new.new_email,old.old_usertype,new.new_usertype);
+   INSERT INTO audit (id_user,old_email,new_email,old_usertype,new_usertype,query_type)
+    VALUES(old.id,old.email,new.email,old.usertype,new.usertype);
 
 
  END $$
@@ -51,7 +51,7 @@ on usuarios FOR EACH ROW
  BEGIN
 
  INSERT INTO audit (id_user,old_user,old_email,old_usertype,query_type)
- VALUES(old.id,old.user,old.old_email,old.old_usertype,'before_delete');
+ VALUES(old.id,old.user,old.email,old.usertype,'before_delete');
 
   END $$
 DELIMITER;
