@@ -63,7 +63,7 @@ session_start();
                     // se crea un array $row con los resultados de la query del usuario
                     $_SESSION['id'] = $row['id'];
                     // $_SESSION['username'] = $row['email'];
-                    $_SESSION['usertype'] = $row['user_type'];
+                    $_SESSION['usertype'] = $row['usertype'];
                 }
                 //    redirigir 
                 echo '<a href="pag-principal.php">

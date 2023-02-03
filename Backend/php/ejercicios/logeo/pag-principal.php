@@ -67,10 +67,10 @@ if (isset($_POST['logout'])) {
 
         }
 
-        nav a:hover {
+        /* nav a:hover {
             /* color: #bdf7f7;
-            background-color: #35383c; */
-        }
+            background-color: #35383c;} */
+      
 
         button {
 
@@ -95,11 +95,11 @@ if (isset($_POST['logout'])) {
 <body>
 
     <header>Usando PHP</header>
-    <!-- creamos una pagina principal y creamos este if donde se pregunta si el usuario está logeado -->
+    <!-- creamos una pagina principal y creamos este if donde se pregunta si el usuario o admi para mostrar el contenido en el boton de mi cuenta-->
     <nav>
 
         <?php
-
+    // creamos una variable para el link segun el usuario que se logea.
         if (isset($_SESSION['logged'])) {
             if ($_SESSION['usertype'] == 'admin') {
                 $link = 'panel-edicion-admi.php';
@@ -118,7 +118,7 @@ if (isset($_POST['logout'])) {
         ?>
         <!-- <a href="registro-de-datos.php"><i class="bi bi-archive">Registro</i></a>
         <a href="pag-principal.php"><i class="bi bi-house">Home</i></a> -->
-
+       <a href="registro-de-datos.php"><button>Registrate</button></a>
     </nav>
 
     <!-- <div>

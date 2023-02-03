@@ -105,7 +105,7 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
             while ($row = $result->fetch_assoc()) {
                 $user = $row['email'];
                 $clave = $row['clave'];
-                $user_type = $row['user_type'];
+                $user_type = $row['usertype'];
                 $id = $row['id'];
 
                 echo "<tr>
