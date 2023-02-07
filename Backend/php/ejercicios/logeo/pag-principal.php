@@ -22,6 +22,7 @@ if (isset($_POST['logout'])) {
     <title>pagina principal</title>
 
     <style>
+
         html {
             height: 100%;
         }
@@ -35,10 +36,10 @@ if (isset($_POST['logout'])) {
 
         header {
 
-            background-color: #6492fd;
+            /* background-color: #6492fd; */
             color: rgb(225, 227, 227);
             font-family: sans-serif;
-            font-size: 40px;
+            font-size: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -46,49 +47,53 @@ if (isset($_POST['logout'])) {
 
         }
 
+        .box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
 
-        nav {
-
-            padding: 10px;
-            display: flex;
-            background-color: #bdf7f7;
-            justify-content: space-around;
-            align-items: center;
+            width: 400px;
+            height: 350px;
+            padding: 40px;
+            background: #53117c80;
+            box-sizing: border-box;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+            border-radius: 10px;
         }
 
-        nav a {
-
-            text-decoration: none;
-            color: #494a4b;
-            font-family: sans-serif;
-            font-weight: bold;
-            padding: 10px;
-
-
-        }
-
-        /* nav a:hover {
-            /* color: #bdf7f7;
-            background-color: #35383c;} */
-      
+    
+        
 
         button {
 
-            /* position: absolute; */
-            /* top: 50%; */
-            /* left: 50%; */
-            /* transform: translate(-50%, -50%); */
+         
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 65px;
+            width: 180px;
+            margin: 50px;
+            
+            font-family: sans-serif;
+            font-size: 20px;
 
-            border-radius: 5px;
+            border-radius: 8px;
             background: #6492fd;
             border-color: #494a4b;
             color: #bdf7f7;
+
         }
 
         button:hover {
-            /* box-shadow: 0px 0px 8px 5px rgba(20, 20, 20, .35); */
             background: #6492fdAD;
         }
+
+        a {
+            text-decoration: none;
+        }
+
+       
     </style>
 </head>
 
@@ -96,8 +101,8 @@ if (isset($_POST['logout'])) {
 
     <header>Usando PHP</header>
     <!-- creamos una pagina principal y creamos este if donde se pregunta si el usuario o admi para mostrar el contenido en el boton de mi cuenta-->
-    <nav>
-
+   
+    <div class="box">   
         <?php
     // creamos una variable para el link segun el usuario que se logea.
         if (isset($_SESSION['logged'])) {
@@ -119,7 +124,7 @@ if (isset($_POST['logout'])) {
         <!-- <a href="registro-de-datos.php"><i class="bi bi-archive">Registro</i></a>
         <a href="pag-principal.php"><i class="bi bi-house">Home</i></a> -->
        <a href="registro-de-datos.php"><button>Registrate</button></a>
-    </nav>
+    </div> 
 
     <!-- <div>
 

@@ -25,20 +25,7 @@ include 'conn.php';
             background: linear-gradient(#578cee, #6dddc7);
         }
 
-        header {
 
-            background-color: rgb(116, 212, 247);
-            color: rgb(225, 227, 227);
-            font-family: sans-serif;
-            font-size: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 65px;
-
-        }
-
-       
 
         .login-box {
             position: absolute;
@@ -46,19 +33,65 @@ include 'conn.php';
             left: 50%;
             transform: translate(-50%, -50%);
 
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
             width: 400px;
+            height: 400px;
             padding: 40px;
             background: #53117c80;
             box-sizing: border-box;
             box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
             border-radius: 10px;
+
         }
 
         .login-box h1 {
             margin: 0 0 30px;
             padding: 0;
-            color: #fff;
+            color: #bdf7f7;
             text-align: center;
+        }
+
+
+        .login-box input {
+
+            Width: 100%;
+            padding: 10px 10px;
+            font-size: 16px;
+            color: #bdf7f7;
+            margin-bottom: 30px;
+            border: none;
+            border-bottom: 1px solid #bdf7f7;
+            background: transparent;
+
+
+        }
+
+        .button {
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 320%);
+
+            text-align: center;
+            width: 100px !important;
+            height: 40px;
+            padding: 10px 20px;
+            border-radius: 6px;
+            background: #6492fd;
+            color: #bdf7f7;
+            letter-spacing: 4px;
+
+        }
+
+        .button:hover {
+
+            background: #6492fdAD;
         }
     </style>
 
@@ -66,7 +99,7 @@ include 'conn.php';
 
 <body>
 
-    <header>Usando PHP</header>
+
 
     <div>
 
@@ -75,7 +108,8 @@ include 'conn.php';
             <h1> Registrate</h1>
             <input type="email" placeholder="Email" name="user" required>
             <input type="text" placeholder="contraseña" name="clave" required>
-            <input type="submit" value="Enviar">
+            <input class="button" type="submit" value="Enviar">
+
         </form>
 
     </div>
