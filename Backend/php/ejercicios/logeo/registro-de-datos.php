@@ -33,13 +33,12 @@ include 'conn.php';
             left: 50%;
             transform: translate(-50%, -50%);
 
-
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
 
-            width: 400px;
+            min-width: 300px;
             height: 400px;
             padding: 40px;
             background: #53117c80;

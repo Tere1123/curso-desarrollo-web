@@ -36,14 +36,11 @@ if (isset($_POST['logout'])) {
 
         header {
 
-            /* background-color: #6492fd; */
+            text-align: center;
             color: rgb(225, 227, 227);
             font-family: sans-serif;
             font-size: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 65px;
+            padding: 40px;
 
         }
 
@@ -53,9 +50,9 @@ if (isset($_POST['logout'])) {
             left: 50%;
             transform: translate(-50%, -50%);
 
-            width: 400px;
+            min-width: 250px;
             height: 350px;
-            padding: 40px;
+            padding: 10px;
             background: #53117c80;
             box-sizing: border-box;
             box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
@@ -67,12 +64,11 @@ if (isset($_POST['logout'])) {
 
         button {
 
-         
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 65px;
-            width: 180px;
+            height: 60px;
+            width: 170px;
             margin: 50px;
             
             font-family: sans-serif;
@@ -80,7 +76,7 @@ if (isset($_POST['logout'])) {
 
             border-radius: 8px;
             background: #6492fd;
-            border-color: #494a4b;
+            border: 1px solid #8bb2df;
             color: #bdf7f7;
 
         }
@@ -91,6 +87,28 @@ if (isset($_POST['logout'])) {
 
         a {
             text-decoration: none;
+        }
+
+        input {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 60px;
+            width: 170px;
+            margin: 50px;
+            
+            font-family: sans-serif;
+            font-size: 20px;
+
+            border-radius: 8px;
+            background: #6492fd;
+            border: 1px solid #8bb2df;
+            color: #bdf7f7;
+        }
+
+        input:hover {
+            background: #6492fdAD;
         }
 
        
@@ -116,48 +134,20 @@ if (isset($_POST['logout'])) {
             </form>";
             
         }  else {
-            // Si no está logeado, mostramos el botón de iniciar sesion
+            // Si  está logeado, mostramos el botón de iniciar sesion
             echo '<a href="login.php">
-        <button>Iniciar sesión</button> </a>';
+            <button>Iniciar sesión</button> </a>';
+            echo '<a href="registro-de-datos.php"><button>Registrate</button></a>';
+
+
         }
+
         ?>
         <!-- <a href="registro-de-datos.php"><i class="bi bi-archive">Registro</i></a>
         <a href="pag-principal.php"><i class="bi bi-house">Home</i></a> -->
-       <a href="registro-de-datos.php"><button>Registrate</button></a>
+       
     </div> 
 
-    <!-- <div>
-
-      
-
-        // // creamos una pagina principal y creamos este if donde se pregunta si el usuario está logeado
-
-        // if (isset($_SESSION['logged'])  && $_SESSION['usertype'] == 'admin') {
-
-        //     echo '<button>Ir a mi cuenta</button>';
-        //     echo "<form action='panel-edicion-admi.php' method='post'></form>";
-        //     echo "<form action='panel-edicion-admi.php' method='post'>
-        //     <input type='submit' value='Cerrar sesión' name='logout'>
-        //     </form>";
-        //     // aquí va el panel/botón/contenido del usuario
-        //     //         echo '<button>Ir a mi cuenta</button>';
-        //     //         echo "<form action='pag-principal.php' method='post'>
-        //     // <input type='submit' value='Cerrar sesión' name='logout'>
-        //     // </form>";
-        // } elseif ($_SESSION['usertype'] == 'user') {
-
-        //     $user = $_SESSION['username'];
-
-        //     $sql = "SELECT * From usuarios WHERE email = '$user'";
-        // }
-        // // Si no está logeado, mostramos el botón de iniciar sesion
-        // echo '<a href="login.php">
-        //     <button>Iniciar sesión</button>
-        //  </a>';
-
-        ?>
-
-    </div>
 
 </body>
 

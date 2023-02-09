@@ -37,7 +37,7 @@ session_start();
             justify-content: center;
 
 
-            width: 400px;
+            min-width: 250px;
             height: 400px;
             padding: 40px;
             background: #53117c80;
@@ -51,6 +51,7 @@ session_start();
             padding: 0;
             color: #bdf7f7;
             text-align: center;
+            font-size: 40px;
         }
 
         .login-box input {
@@ -79,10 +80,10 @@ session_start();
             width: 100px !important;
             height: 40px;
             padding: 10px 20px;
-            border-radius: 6px;
-            background: #6492fd;
+            border-radius: 6px ;
+            background: transparent;
             color: #bdf7f7;
-            letter-spacing: 4px; 
+           
     
         }
 

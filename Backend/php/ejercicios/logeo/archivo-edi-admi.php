@@ -15,7 +15,14 @@ $id = $_POST['id']; // esta variable la tomamos del documento login-usuario
 // usamos el update para indicar que el admi quiere actualizar datos y estos datos nuevos quedaran 
 //guardados en el ID.
 
-$sql = "UPDATE usuarios SET email = '$user', clave = '$clave', usertype = '$user_type' WHERE  id = '$id'";
+if (isset($_POST['update'])) {
+    $sql = "UPDATE usuarios SET email = '$user', clave = '$clave', usertype = '$user_type' WHERE  id = '$id'";
+}
+//para poder eliminar un usuario debemos crear un delete donde se eliminara toda la info
+if (isset($_POST['delete'])) {
+
+    $sql = "DELETE FROM usuarios WHERE id = '$id'";
+}     
 
 // $result = $conn->query($sql);
 // ejecutamos la query y comprobamos si ha sido exitosa
@@ -23,8 +30,8 @@ $sql = "UPDATE usuarios SET email = '$user', clave = '$clave', usertype = '$user
 if ($conn->query($sql)) {
 
     $_SESSION['id'] = $user;
-
-} else {
+    
+}else {
     echo "error: " . $sql . "<br>" . $conn->error;
 
     $conn->close();

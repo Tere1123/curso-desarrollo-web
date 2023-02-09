@@ -31,20 +31,52 @@ include 'conn.php';
             left: 50%;
             transform: translate(-50%, -50%);
 
-            width: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            min-width: 250px;
+            height: 200px;
             padding: 40px;
             background: #53117c80;
             box-sizing: border-box;
             box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
             border-radius: 10px;
+            color: #bdf7f7;
         }
 
         .box p {
+
             margin: 0 0 30px;
             padding: 0;
-            color: #fff;
+            color: #bdf7f7;
             text-align: center;
+            font-size: 16px;
+            font-family: sans-serif;
         }
+
+
+        button {
+
+            text-align: center;
+            width: 120px;
+            height: 40px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: 1px solid #8bb2df;
+    
+            background: transparent;
+            font-size: 16px;
+            color: #bdf7f7;
+
+        }
+
+        button:hover {
+
+            background: #6492fdAD;
+        }
+
     </style>
 </head>
 
@@ -61,13 +93,13 @@ include 'conn.php';
         // en insert intro van el encabezado que estan en la base de datos ejemp: email y clave
 
         $sql = "INSERT INTO usuarios (email,clave)
-     VALUES ('$user','$clave')";
+         VALUES ('$user','$clave')";
 
 
         // ejecutamos la query y comprobamos si ha sido exitosa
 
         if ($conn->query($sql) === TRUE) {
-            echo 'Datos guardados con exito <br>';
+            echo '<p>Datos guardados con exito.</p>';
         } else {
             echo "error: " . $sql . "<br>" . $conn->error;
         }
@@ -81,7 +113,7 @@ include 'conn.php';
 
         <p>Bienvenido, <?php echo $_POST['user'];
                         echo '<br>  <a href="login.php">
-     <button>Iniciar sesión</button> </a>'; ?> </p>
+     <button>Login</button> </a>'; ?> </p>
 
     </div>
 

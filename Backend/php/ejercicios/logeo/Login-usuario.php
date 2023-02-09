@@ -23,11 +23,47 @@ session_start();
         }
 
         .box {
+
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            min-width: 250px;
+            height: 200px;
+            padding: 40px;
+            background: #53117c80;
+            box-sizing: border-box;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+            border-radius: 10px;
+            color: #bdf7f7;
         }
+
+        button {
+
+            text-align: center;
+            width: 120px;
+            height: 40px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: 1px solid #8bb2df;
+    
+            background: transparent;
+            font-size: 16px;
+            color: #bdf7f7;
+           
+        }
+
+        button:hover {
+
+            background: #6492fdAD;
+        }
+
     </style>
 </head>
 
@@ -54,8 +90,8 @@ session_start();
 
             if ($result->num_rows > 0) { // esto quiere decir: el resultado recorrera todas las filas y 
                 //si encuentra un resultado mayor a 0 que coinsida con los datos de la query dara acceso  
-                echo 'Has iniciado sesíon con exito ';
-                echo "Hola  $user <br>";
+                echo '<p>Has iniciado sesíon con exito.</p>';
+                echo "<p>Hola  $user </p><br>";
 
                 $_SESSION['logged'] = true;
                 // esta session nueva se crea para mostrar los datos en la tabla
@@ -67,7 +103,7 @@ session_start();
                 }
                 //    redirigir 
                 echo '<a href="pag-principal.php">
-            <button>Página principal</button>
+                <button>Inicio</button>
                 </a>';
 
                 $conn->close();
