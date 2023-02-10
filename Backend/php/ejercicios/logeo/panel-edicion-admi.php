@@ -8,6 +8,7 @@ $user = $_SESSION['id'];
 if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
 
     $sql = "SELECT * From usuarios";
+
     $result = $conn->query($sql);
 }
 
@@ -48,11 +49,6 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
             justify-content: center;
 
 
-            padding: 40px;
-            background: #0d1a4f;
-            box-sizing: border-box;
-            box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
-            border-radius: 10px;
         }
 
         h1 {
@@ -77,7 +73,7 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
 
         tbody {
             height: 100%;
-                      
+
             /* border-collapse: collapse;  */
             border-radius: 6px;
             border: 2px solid #cdd0dc;
@@ -103,12 +99,14 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
             background-color: #cdd0dc;
         }
 
-       td:nth-child(4) {
+        td:nth-child(4) {
             background: transparent;
         }
+
         td:nth-child(5) {
             background: transparent;
         }
+
         td:nth-child(6) {
             background: transparent;
         }
@@ -132,7 +130,7 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
 
         a .button {
 
-           
+
             margin: 15%;
             padding: 5%;
 
@@ -142,7 +140,7 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
             font-size: 16px;
             color: #0d1a4f;
             text-decoration: none;
-            
+
 
             /* top: 60%;
             position: absolute;
@@ -151,6 +149,21 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
 
         }
 
+        @media screen and (max-width: 600px) {
+            td {
+                font-size: 4px;
+                /* width: 200px;
+            height: 400px; */
+            }
+
+            th {
+                font-size: 10px;
+                /* width: 200px;
+            height: 400px; */
+            }
+
+
+        }
     </style>
 </head>
 
@@ -203,6 +216,7 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
                 <input type='submit' class='button'name='update' value='Actualizar'>
                 </td><td>
                 <input type='submit'class='button' name='delete' value='Eliminar'>
+
                 </td>
 
                 </form>
@@ -211,9 +225,16 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
             echo "</table>";
         }
 
-        //                <input type='text' name='usertype' placeholder='tipo usuario' value='$usertype' required>
-
         ?>
+
+        <form action='intro-datos.php' method='post'>
+         
+         <input type="email" placeholder="Email" name="user" required>
+         <input type="text" placeholder="contraseña" name="clave" required>
+         <input type='submit' class='button' name='update' value='Actualizar'>
+         
+ 
+         </form>
 
         <a href="pag-principal.php"><input type="button" class="button" value='Inicio'></a>
 
