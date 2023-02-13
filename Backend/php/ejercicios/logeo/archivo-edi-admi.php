@@ -17,11 +17,32 @@ $id = $_POST['id']; // esta variable la tomamos del documento login-usuario
 
 if (isset($_POST['update'])) {
     $sql = "UPDATE usuarios SET email = '$user', clave = '$clave', usertype = '$user_type' WHERE  id = '$id'";
+
+    ?>
+    <div class="login-box">
+        <p>Datos actualizados 
+            <?php echo $_POST['user'];
+            echo  '<a href="panel-edicion-admi.php"> 
+            <br><button>Salir</button>
+            </a>'; ?></p>
+
+    </div>
+    <?php
 }
 //para poder eliminar un usuario debemos crear un delete donde se eliminara toda la info
 if (isset($_POST['delete'])) {
 
     $sql = "DELETE FROM usuarios WHERE id = '$id'";
+    ?>
+    <div class="login-box">
+        <p>Usuario eliminado.
+            <?php 
+            echo  '<a href="panel-edicion-admi.php"> 
+            <br><button>Salir</button>
+            </a>'; ?></p>
+
+    </div>
+    <?php
 }     
 
 // $result = $conn->query($sql);
@@ -75,13 +96,15 @@ if ($conn->query($sql)) {
 
         button {
            
+        
             height:30px;
             width: 50px;
 
-            border-radius: 5px;
             background: #6492fd;
-            border-color: #494a4b;
-            color: #35383c;
+            border-radius: 5px;
+            border: 1px solid #8bb2df;
+            color: #bdf7f7;
+
           
         }
 
@@ -91,13 +114,15 @@ if ($conn->query($sql)) {
         }
 
         button:hover {
-            color: #bdf7f7; 
-            background-color:#35383c;
+          
+            background-color: #6492fdAD;
         }
         p {
             display: flex;
             flex-direction: column;
+            align-items: center;
             justify-content: center;
+            color: #bdf7f7;
 
         }
 
@@ -105,14 +130,7 @@ if ($conn->query($sql)) {
 </head>
 
 <body>
-    <div class="login-box">
-        <p>Datos actualizados
-            <?php echo $_POST['user'];
-            echo  ' <a href="pag-principal.php"> <br>
-    <button>Salir</button>
-        </a>'; ?></p>
-
-    </div>
+    
 
 </body>
 
