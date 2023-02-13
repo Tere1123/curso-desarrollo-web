@@ -75,7 +75,7 @@ include 'conn.php';
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, 320%);
+            transform: translate(-50%, 250%);
 
             text-align: center;
             width: 100px !important;
@@ -89,6 +89,22 @@ include 'conn.php';
         }
 
         .button:hover {
+
+            background: #6492fdAD;
+        }
+
+        a {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 600%);
+            color: #bdf7f7;
+            font-family: sans-serif;
+            letter-spacing: 4px;
+
+        }
+
+        a:hover:hover {
 
             background: #6492fdAD;
         }
@@ -108,8 +124,11 @@ include 'conn.php';
             <input type="email" placeholder="Email" name="user" required>
             <input type="text" placeholder="contraseña" name="clave" required>
             <input class="button" type="submit" value="Enviar">
+            
 
         </form>
+        <a href="pag-principal.php">Inicio</a>
+
 
     </div>
 

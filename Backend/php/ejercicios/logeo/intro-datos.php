@@ -60,12 +60,12 @@ include 'conn.php';
         button {
 
             text-align: center;
-            width: 120px;
-            height: 40px;
+            width: 110px;
+            height: 30px;
             padding: 10px 20px;
             border-radius: 5px;
             border: 1px solid #8bb2df;
-    
+
             background: transparent;
             font-size: 16px;
             color: #bdf7f7;
@@ -77,6 +77,14 @@ include 'conn.php';
             background: #6492fdAD;
         }
 
+        a {
+            text-decoration: none;
+            color: #bdf7f7;
+        }
+
+        a:hover {
+            background: #6492fdAD;
+        }
     </style>
 </head>
 
@@ -92,28 +100,42 @@ include 'conn.php';
 
         // en insert intro van el encabezado que estan en la base de datos ejemp: email y clave
 
-        $sql = "INSERT INTO usuarios (email,clave)
+
+        $sql = "SELECT * From usuarios WHERE email = '$user'";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            echo '<p>Error correo ya existente.</p>';
+            echo  '<a href="registro-de-datos.php"><button>Regresar</button></a>';
+        } else {
+
+
+            $sql = "INSERT INTO usuarios (email,clave)
          VALUES ('$user','$clave')";
 
+            // ejecutamos la query y comprobamos si ha sido exitosa
 
-        // ejecutamos la query y comprobamos si ha sido exitosa
+            if ($conn->query($sql) === TRUE) {
+                echo '<p>Datos guardados con exito.</p>';
+            
+            } else {
+                echo "error: " . $sql . "<br>" . $conn->error;
+            }
 
-        if ($conn->query($sql) === TRUE) {
-            echo '<p>Datos guardados con exito.</p>';
-        } else {
-            echo "error: " . $sql . "<br>" . $conn->error;
+        ?>
+            <p>Bienvenido, <?php echo $_POST['user'];
+                            echo '<br>  <a href="login.php">
+                <button>Login</button> </a>'; ?> </p>
+
+        <?php
         }
 
         $conn->close();
 
-        // creamos la conxion con la base de datos
+        // cerramos la conexion con la base de datos
 
 
         ?>
-
-        <p>Bienvenido, <?php echo $_POST['user'];
-                        echo '<br>  <a href="login.php">
-     <button>Login</button> </a>'; ?> </p>
 
     </div>
 

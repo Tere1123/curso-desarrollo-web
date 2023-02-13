@@ -149,21 +149,11 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
 
         }
 
-        @media screen and (max-width: 600px) {
-            td {
-                font-size: 4px;
-                /* width: 200px;
-            height: 400px; */
-            }
-
-            th {
-                font-size: 10px;
-                /* width: 200px;
-            height: 400px; */
-            }
-
-
+        form {
+            padding: 10px;
         }
+
+       
     </style>
 </head>
 
@@ -171,7 +161,7 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
 
     <div class="box">
 
-        <h1>Hola dministrador</h1>
+        <h1>Hola administrador</h1>
 
         <?php
 
@@ -215,7 +205,7 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
     
                 <input type='submit' class='button'name='update' value='Actualizar'>
                 </td><td>
-                <input type='submit'class='button' name='delete' value='Eliminar'>
+                <input type='submit'class='button' name='delete' value='Eliminar'> 
 
                 </td>
 
@@ -226,18 +216,20 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
         }
 
         ?>
-
-        <form action='intro-datos.php' method='post'>
+  
+        <form class="form" action='intro-datos.php' method='post'>
          
          <input type="email" placeholder="Email" name="user" required>
-         <input type="text" placeholder="contraseña" name="clave" required>
+         <input type="text" placeholder="Contraseña" name="clave" required>
+         <select  name='usertype'>
+                <option value='$usertype1'>User</option>
+                <option value='$usertype2'>Admin</option>
+                </select>
          <input type='submit' class='button' name='update' value='Actualizar'>
-         
- 
          </form>
 
         <a href="pag-principal.php"><input type="button" class="button" value='Inicio'></a>
-
+       
 
     </div>
 
