@@ -225,7 +225,7 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
                 <option value='$usertype1'>User</option>
                 <option value='$usertype2'>Admin</option>
                 </select>
-         <input type='submit' class='button' name='update' value='Actualizar'>
+         <input type='submit' class='button' name='update' value='Crear'>
          </form>
 
         <a href="pag-principal.php"><input type="button" class="button" value='Inicio'></a>

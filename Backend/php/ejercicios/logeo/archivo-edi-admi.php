@@ -17,11 +17,22 @@ $id = $_POST['id']; // esta variable la tomamos del documento login-usuario
 
 if (isset($_POST['update'])) {
     $sql = "UPDATE usuarios SET email = '$user', clave = '$clave', usertype = '$user_type' WHERE  id = '$id'";
+    echo  '<div class="login-box">
+           <p>Datos actualizados<a href="panel-edicion-admi.php"> 
+        <br> <button>Salir</button>
+        </a></p></div>';
+
+
 }
 //para poder eliminar un usuario debemos crear un delete donde se eliminara toda la info
 if (isset($_POST['delete'])) {
 
     $sql = "DELETE FROM usuarios WHERE id = '$id'";
+
+    echo  '<div class="login-box">
+    <p>Usuario eliminado<a href="panel-edicion-admi.php"> 
+ <br> <button>Salir</button>
+ </a></p></div>';
 }     
 
 // $result = $conn->query($sql);
@@ -111,7 +122,7 @@ if ($conn->query($sql)) {
 </head>
 
 <body>
-    <div class="login-box">
+    <!-- <div class="login-box">
 
         <p>Datos actualizados 
             <?php echo $_POST['user'];
@@ -119,7 +130,7 @@ if ($conn->query($sql)) {
             <br><button>Salir</button>
             </a>'; ?></p>
 
-    </div>
+    </div> -->
 
 </body>
 

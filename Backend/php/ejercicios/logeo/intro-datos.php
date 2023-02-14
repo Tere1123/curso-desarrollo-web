@@ -1,6 +1,6 @@
 <?php
 
-include 'conn.php';
+session_start();
 
 ?>
 
@@ -116,19 +116,30 @@ include 'conn.php';
             // ejecutamos la query y comprobamos si ha sido exitosa
 
             if ($conn->query($sql) === TRUE) {
-                echo '<p>Datos guardados con exito.</p>';
-            
+                // echo '<p>Datos guardados con exito.</p>'
+
             } else {
                 echo "error: " . $sql . "<br>" . $conn->error;
             }
-
-        ?>
-            <p>Bienvenido, <?php echo $_POST['user'];
-                            echo '<br>  <a href="login.php">
-                <button>Login</button> </a>'; ?> </p>
-
-        <?php
+            // dentro del else insertamos otro if para dividir la info que se mostrara si eres usuario o admi
+            // usamos la session logeed de admi para identificar que vamos a mostrar
+            if (isset($_SESSION['logged'])) {
+                if ($_SESSION['usertype'] == 'admin') {
+                    $link = 'panel-edicion-admi.php';
+                    echo 'Usuario creado con exito.';
+                    echo "<a href='$link'><button>Regresar</button></a>";
+                }
+            } else {
+                $link = 'login.php';
+                echo 'Datos Guardados con exito.';
+                echo $_POST['user'];
+                echo "<a href='$link'><button>Login</button></a>";
+            }
         }
+        
+
+
+
 
         $conn->close();
 
