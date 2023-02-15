@@ -114,8 +114,6 @@ include 'conn.php';
 
 <body>
 
-
-
     <div>
 
         <form class="login-box" action="intro-datos.php" method="post">

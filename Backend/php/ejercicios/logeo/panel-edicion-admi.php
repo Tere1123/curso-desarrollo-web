@@ -12,7 +12,6 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
     $result = $conn->query($sql);
 }
 
-
 ?>
 
 <!DOCTYPE html>
@@ -53,13 +52,23 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
 
         h1 {
 
-            margin: 0px 0 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin: 20px 0 15px 0;
             padding: 0;
             color: #bdf7f7;
             text-align: center;
             font-size: 30px;
 
 
+        }
+        .search input{
+            padding: 10px ;
+            margin: 20px 0 15px 0;
+            border-radius: 5px;
+            width: 100%;
         }
 
         table {
@@ -113,6 +122,7 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
 
         select {
             background-color: #cdd0dc;
+            border-radius: 5px;
         }
 
         .button {
@@ -149,19 +159,28 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
 
         }
 
-        form {
+        .form {
             padding: 10px;
+            border-radius: 5px;
         }
 
-       
+
     </style>
 </head>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+
+<script src="usuario.js"></script>
 
 <body>
 
     <div class="box">
 
         <h1>Hola administrador</h1>
+
+        <div class="search">
+            <input type="text" autocomplete="off" placeholder="Buscar usuario">
+            <div class="display"></div>
+        </div>
 
         <?php
 
@@ -216,20 +235,20 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
         }
 
         ?>
-  
+
         <form class="form" action='intro-datos.php' method='post'>
-         
-         <input type="email" placeholder="Email" name="user" required>
-         <input type="text" placeholder="Contraseña" name="clave" required>
-         <select  name='usertype'>
+
+            <input type="email" placeholder="Email" name="user" required>
+            <input type="text" placeholder="Contraseña" name="clave" required>
+            <select name='usertype'>
                 <option value='$usertype1'>User</option>
                 <option value='$usertype2'>Admin</option>
-                </select>
-         <input type='submit' class='button' name='update' value='Crear'>
-         </form>
+            </select>
+            <input type='submit' class='button' name='update' value='Crear'>
+        </form>
 
         <a href="pag-principal.php"><input type="button" class="button" value='Inicio'></a>
-       
+
 
     </div>
 

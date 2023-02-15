@@ -2,8 +2,6 @@
 
 require('conn.php');
 
-
-
 $text = '%' . $_REQUEST['term'] .'%';
 
 $sql = "SELECT email FROM usuarios WHERE email LIKE '$text'";
@@ -14,11 +12,12 @@ $array[] = '';
 if($result ->num_rows > 0){
     while($row = $result -> fetch_assoc()) {
         $array[] =$row['email'];
-    
     }
-    echo '#d33c74';  
+    
+    echo '#d33c74'; 
 
-} else  echo '#d2e3f4';
+} else  echo '#3cd3c2';
+   
 
 
 
