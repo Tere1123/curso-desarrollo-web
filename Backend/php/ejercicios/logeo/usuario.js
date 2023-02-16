@@ -1,7 +1,7 @@
 $(document).ready (function () {
     // Vamos a crear el buscador de usuario
     // aqui se recoge el valor del input
-        $('.search input[type="text"]').on("change", function () {
+        $('.login-box input[type="email"]').on("change", function () {
     
             let text = $(this).val();
     
@@ -10,8 +10,9 @@ $(document).ready (function () {
             if (text.length > 0) {
                 // si el valor del input no esta vacio llamamos al php
                 $.get("buscador.php",{term: text}).done(function (data){
-                    // resultList.html(data);
-                    $('.search input[type="text"]').css("background",data);
+                    resultList.html(data);
+                    // $('.loging-box input[type="email"]').css("borderColor",data);
+      
     
                 });
     
@@ -22,7 +23,9 @@ $(document).ready (function () {
     
     
         })
-    
-    
+                  
+        function colorChange(color) {
+            $('.login-box input[type="email"]').css("background", color)
+        };
     
     });

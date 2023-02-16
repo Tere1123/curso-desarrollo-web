@@ -109,21 +109,24 @@ include 'conn.php';
             background: #6492fdAD;
         }
     </style>
+   
 
 </head>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+
+<script src="usuario.js"></script>
 
 <body>
 
     <div>
 
         <form class="login-box" action="intro-datos.php" method="post">
-
             <h1> Registrate</h1>
             <input type="email" placeholder="Email" name="user" required>
+            <div class="display"></div>
             <input type="text" placeholder="contraseña" name="clave" required>
             <input class="button" type="submit" value="Enviar">
             
-
         </form>
         <a href="pag-principal.php">Inicio</a>
 
