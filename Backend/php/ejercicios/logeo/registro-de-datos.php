@@ -120,7 +120,7 @@ include 'conn.php';
 
     <div>
 
-        <form class="login-box" action="intro-datos.php" method="post">
+        <form class="login-box" action="intro-datos.php" method="post"  onSubmit="return validar();" >
             <h1> Registrate</h1>
             <input type="email" placeholder="Email" name="user" required>
             <div class="display"></div>

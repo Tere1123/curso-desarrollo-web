@@ -1,5 +1,5 @@
 $(document).ready (function () {
-    // Vamos a crear el buscador de usuario
+    // verificar un usuario existente
     // aqui se recoge el valor del input
         $('.login-box input[type="email"]').on("change", function () {
     
@@ -12,7 +12,6 @@ $(document).ready (function () {
                 $.get("buscador.php",{term: text}).done(function (data){
                     resultList.html(data);
                     // $('.loging-box input[type="email"]').css("borderColor",data);
-      
     
                 });
     
@@ -21,11 +20,12 @@ $(document).ready (function () {
                 resultList.empty();
             }
     
-    
+           
         })
-                  
-        function colorChange(color) {
-            $('.login-box input[type="email"]').css("background", color)
-        };
+
+        
+        // function colorChange(color) {
+        //     $('.login-box input[type="email"]').css("background", color)
+        // };
     
     });

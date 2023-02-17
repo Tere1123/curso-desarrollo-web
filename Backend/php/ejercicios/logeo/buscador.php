@@ -12,18 +12,17 @@ $array[] = '';
 if($result ->num_rows > 0){
     while($row = $result -> fetch_assoc()) {
         // $array[] =$row['email'];
-        echo "<script>
-        colorChange('green');
-        </script>";
-        // echo  '#d33c74';
-        // echo 'usuario no disponible'; 
+       
+        echo '<p>usuario no disponible</p>'; 
     }
     
     // echo  '#d33c74';
     // echo 'usuario no disponible'; 
 
-} else  echo '#3cd3c2';
-echo 'usuario disponible';
+} else 
+echo '<p>usuario disponible</p>';
+
+
    
 
 // foreach ($array as $user) {
