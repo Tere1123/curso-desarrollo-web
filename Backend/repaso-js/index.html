@@ -7,40 +7,77 @@
         <title>Repaso JS</title>
         <!-- css -->
         <link rel="stylesheet" href="style.css">
-       <!-- js -->
+        <!-- js -->
         <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
         <script src="script.js"></script>
     </head>
 
     <body>
-        <div class="container">
-            <h1>Formulario de registro</h1>
+        <div class="box">
+            <button id="btnShow">Mostrar/ocultar</button>
+            <button id="btnFade">Desvanecer</button>
+            <button id="btnSlide">Deslizar</button>
 
-            <form action="">
-               
-
-                <div>
-                    <input type="text" name="user" maxlength="10" required>
-                    <label for="">Usuario</label>
-       
-                </div>
-                <div>
-                    <input class="pass" type="text" name="pass" required>
-                    <label for="">Contraseña</label required>
-                   
-                </div>
-                <div>
-                    <input class="pass" type="text" name="confirmar" required>
-                    <label for="">Confirme contraseña</label >
-                  
-                </div>
-
-                <div>
-                    <input type="submit" value="Resgistrate" disabled >
-                </div>
-            </form>
 
         </div>
+
+        <div class="big-container">
+            <div class="container signup">
+
+                <h1>Formulario de registro</h1>
+                <form action="">
+
+                    <div>
+                        <input type="text" name="user" maxlength="10" required>
+                        <label for="">Usuario</label>
+
+                    </div>
+                    <div>
+                        <input class="pass" type="text" name="pass" required>
+                        <label for="">Contraseña</label required>
+
+                    </div>
+                    <div>
+                        <input class="pass" type="text" name="confirmar"
+                            required>
+                        <label for="">Confirme contraseña</label>
+
+                    </div>
+
+                    <div>
+                        <input type="submit" value="Resgistrate" disabled>
+                    </div>
+                </form>
+                <p class="cambiar cambioForm"> Realiza tu login</p>
+              
+            </div>
+
+            <div class="container login">
+
+                <h1>Formulario de login</h1>
+
+
+                <form action="">
+
+                    <div>
+                        <input type="text" name="user" maxlength="10" required>
+                        <label for="">Usuario</label>
+
+                    </div>
+                    <div>
+                        <input class="pass" type="text" name="pass" required>
+                        <label for="">Contraseña</label required>
+
+                    </div>
+
+
+                    <div>
+                        <input type="submit" value="Entrar" disabled>
+                    </div>
+                </form>
+                <p class="cambiar cambioForm">Sí aun no estas registrado haz click <a href=""></a>Aqui</p>
+        </div>
+
 
     </body>
 </html>

@@ -37,13 +37,15 @@ session_start();
             justify-content: center;
 
 
-            min-width: 250px;
+            width: 350px;
             height: 400px;
             padding: 40px;
             background: #53117c80;
             box-sizing: border-box;
             box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
             border-radius: 10px;
+
+            transition: all 1s;
         }
 
         .login-box h1 {
@@ -53,6 +55,7 @@ session_start();
             text-align: center;
             font-size: 40px;
         }
+      
 
         .login-box input {
 
@@ -69,6 +72,13 @@ session_start();
 
         }
 
+        .container.reg {
+            display: none;
+        }
+        .camForm:hover {
+            cursor: pointer;
+        }
+
         .button {
 
             position: absolute;
@@ -80,11 +90,11 @@ session_start();
             width: 100px !important;
             height: 40px;
             padding: 10px 20px;
-            border-radius: 6px ;
+            border-radius: 6px;
             background: transparent;
             color: #bdf7f7;
-           
-    
+
+
         }
 
         .button:hover {
@@ -99,32 +109,59 @@ session_start();
     </style>
 
 </head>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+
+<script src="usuario.js"></script>
 
 <body>
     <div class="login-box">
-        <form action="login-usuario.php" method="post">
 
-            <h1> Login</h1>
-            <input type="email" placeholder="Email" name="user" required>
-            <input type="text" placeholder="contraseña" name="clave" required><br>
-            <input class="button" type="submit" value="Enviar">
+        <div class="container login">
+            <form action="login-usuario.php" method="post">
 
-
-        </form>
-        <?php
-        // creamos un if donde este nos indicara que si hay un error en los datos o no coinsiden con los de la base de datos 
-        // no llevara a traves de un link a regisrarnos nuevamente.
-
-        if (isset($_SESSION['fallo'])) {
-            echo '<p>email o contraseña incorrectos. Por favor, 
-            compruebe los datos o pulsa <a href="registro-de-datos.php">aquí</a> para registrarte.</p>';
+                <h1> Login</h1>
+                <input type="email" placeholder="Email" name="user" required>
+                <input type="text" placeholder="contraseña" name="clave" required><br>
+                <input class="button" type="submit" value="Enviar">
 
 
-            unset($_SESSION['fallo']);
+            </form>
+            <p class="camForm">Sí aun no estas registrado haz click</p>
+            <?php
+            // creamos un if donde este nos indicara que si hay un error en los datos o no coinsiden con los de la base de datos 
+            // no llevara a traves de un link a regisrarnos nuevamente.
 
-            // si se inicia secion este aviso se eliminara
-        }
-        ?>
+            if (isset($_SESSION['fallo'])) {
+                echo '<p>email o contraseña incorrectos. Por favor, 
+                compruebe los datos o pulsa <a href="registro-de-datos.php">aquí</a> para registrarte.</p>';
+
+
+                unset($_SESSION['fallo']);
+
+                // si se inicia secion este aviso se eliminara
+            }
+            ?>
+        </div>
+
+        <div class="container reg">
+
+            <form class="login-box" action="intro-datos.php" method="post">
+                <h1> Registrate</h1>
+                <input type="email" placeholder="Email" name="user" required>
+                <div class="display"></div>
+                <input type="text" placeholder="contraseña" name="clave" required>
+                <input class="button" type="submit" value="Enviar">
+
+                <a href="pag-principal.php">Inicio</a><br>
+            <p class="camForm">Sí ya estas registrado haz click</p>
+
+            </form>
+
+            <!-- <a href="pag-principal.php">Inicio</a><br>
+            <p class="camForm">Sí estas registrado haz click</p> -->
+
+
+        </div>
     </div>
 
 </body>

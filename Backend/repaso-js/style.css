@@ -9,14 +9,34 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
-
-div.container {
+.box{
 
     display: flex;
-    justify-content: center;
-    flex-direction: column;
+    justify-content: space-between ;
+    width: 285px ;
+    margin: 20px;
+
+ 
+ }
+
+.box button{
+
+    background: #5e75d1;
+    color: rgb(237, 235, 232);
+    border-radius: 5px;
+    border: none;
+    transition: all .5s;
+    padding: 5px;
+}
+
+.box button:hover {
+    box-shadow: inset 0 0 2px 2px rgb(32, 2, 73);
+    cursor: pointer;
     
+}
+.big-container {
     padding: 0 35px;
     padding-bottom: 15px;
 
@@ -27,9 +47,25 @@ div.container {
     color: aliceblue;
 }
 
+div.container {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    
+}
+
+.container.signup {
+    display: none;
+}
+.cambiar.cambioForm:hover{
+    cursor: pointer;
+}
+
 h1{
 align-items: center;
 }
+
 
 form div{
     position: relative;
@@ -90,3 +126,6 @@ input[type='submit']:not(:disabled):hover{
 input:focus {
     transition: all 1000000000s;
 }
+
+
+
