@@ -37,6 +37,20 @@ $('#btnSlide').click(function () {
   
 });
 
+// cambiar fondo
+
+// $('div#background').fadeToggle(1000);
+
+$('#btnClass').click(function () {
+  $('body').toggleClass('cuerpo');
+  console.log('funciona');
+});
+
+$('#btnBG').click(function () {
+  $('div#background').fadeToggle(1000);
+  console.log('funciona');
+
+});
 
 let contador = 0;
 let pos = 'login';

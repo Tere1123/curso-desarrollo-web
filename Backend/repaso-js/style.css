@@ -55,6 +55,31 @@ div.container {
     
 }
 
+div#background {
+    background-image: linear-gradient(to bottom right, #2d085b, #49b4a2);;
+    width: 100vw;
+    height: 100vh;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -5;
+}
+
+.container.login {
+
+
+    padding: 0 35px;
+    padding-bottom: 15px;
+
+    background: #23beae;
+    height: 350px;
+    width: 300px;
+    border-radius: 15px;
+    color: aliceblue;
+
+}
+
 .container.signup {
     display: none;
 }

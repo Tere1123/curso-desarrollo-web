@@ -64,8 +64,9 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
 
 
         }
-        .search input{
-            padding: 10px ;
+
+        .search input {
+            padding: 10px;
             margin: 20px 0 15px 0;
             border-radius: 5px;
             width: 100%;
@@ -164,12 +165,24 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
             border-radius: 5px;
         }
 
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
 
+        }
+
+        #display {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+
+        }
     </style>
 </head>
-<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-
-<script src="usuario.js"></script>
 
 <body>
 
@@ -177,10 +190,26 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
 
         <h1>Hola administrador</h1>
 
-        <div class="search">
-            <input type="text" autocomplete="off" placeholder="Buscar usuario">
-            <div class="display"></div>
-        </div>
+        <div class="container">
+            <form action="">
+                <!-- <select name="" id=""></select> -->
+                <input type="text" placeholder='Email' name="users" onkeyup="showUser(this.value)">
+                <select onchange="showUser(this.value, 'tabla-filteradmin.php')">
+                <option value="" disabled selected>Filtrar por permisos</option>
+                <option value="admin">Mostrar administradores</option>
+                <option value="user">Mostrar usuarios</option>
+            </select>
+            </form> <br>
+            <div id="display">
+                <table>
+                    <tr>
+                        <th>Correo</th>
+                        <th>Contraseña</th>
+                        <th>Tipo de usuario</th>
+                    </tr>
+                </table>
+            </div>
+        </div><br>
 
         <?php
 
@@ -188,7 +217,7 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
 
             echo "<table>
             <tr>
-            <th>Nombre</th>
+            <th>Correo</th>
             <th>Contraseña</th>
             <th>Tipo de usuario</th>
             <th>Acciones</th>
@@ -253,5 +282,27 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
     </div>
 
 </body>
+<script>
+    //buscador en la base de datos del admi
+    function showUser(text, php) {
+        let display = document.getElementById('display');
+        // Si el input está vacío, el div tb se vacía
+        if (text == '') {
+            display.innerHTML = '';
+            return;
+        } else {
+            let ajax = new XMLHttpRequest();
+            ajax.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+
+                    display.innerHTML = this.responseText;
+                }
+            };
+            ajax.open('GET', 'tabla-get.php?q=' + text, true);
+            ajax.send();
+        }
+    }
+    // showUser('text', 'php');
+</script>
 
 </html>

@@ -38,7 +38,7 @@ session_start();
 
 
             width: 350px;
-            height: 400px;
+            height: 450px;
             padding: 40px;
             background: #53117c80;
             box-sizing: border-box;
@@ -105,6 +105,15 @@ session_start();
         p {
             color: #cae4e8;
             text-align: center;
+            padding: 15px;
+            font-size: 13px;
+      
+        }
+
+        a {
+            color: #bdf7f7;
+            padding: 0 0 45px;
+            text-align: center;
         }
     </style>
 
@@ -124,9 +133,12 @@ session_start();
                 <input type="text" placeholder="contraseña" name="clave" required><br>
                 <input class="button" type="submit" value="Enviar">
 
-
+                <p class="camForm">Sí aun no estas registrado haz click aquí</p>
+            
+                <a href="pag-principal.php">Inicio</a><br>
+             
             </form>
-            <p class="camForm">Sí aun no estas registrado haz click</p>
+    
             <?php
             // creamos un if donde este nos indicara que si hay un error en los datos o no coinsiden con los de la base de datos 
             // no llevara a traves de un link a regisrarnos nuevamente.
@@ -152,8 +164,9 @@ session_start();
                 <input type="text" placeholder="contraseña" name="clave" required>
                 <input class="button" type="submit" value="Enviar">
 
-                <a href="pag-principal.php">Inicio</a><br>
-            <p class="camForm">Sí ya estas registrado haz click</p>
+            <p class="camForm">Sí ya estas registrado haz click aquí.</p>
+            
+            <a href="pag-principal.php">Inicio</a><br>
 
             </form>
 

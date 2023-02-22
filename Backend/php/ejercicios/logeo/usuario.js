@@ -1,7 +1,7 @@
 $(document).ready(function () {
     // verificar un usuario existente
     // aqui se recoge el valor del input
-    $('.login-box input[type="email"]').on("change", function () {
+    $('.login-box input[type="email"]').on("keyup input", function () {
 
         let text = $(this).val();
 
@@ -46,5 +46,6 @@ $(document).ready(function () {
 
 
     });
+
     
 });
