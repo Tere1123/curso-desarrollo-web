@@ -193,13 +193,14 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
         <div class="container">
             <form action="">
                 <!-- <select name="" id=""></select> -->
-                <input type="text" placeholder='Email' name="users" onkeyup="showUser(this.value)">
-                <select onchange="showUser(this.value, 'tabla-filteradmin.php')">
-                <option value="" disabled selected>Filtrar por permisos</option>
-                <option value="admin">Mostrar administradores</option>
-                <option value="user">Mostrar usuarios</option>
+            <input type="text" placeholder='Email' name="users" onkeyup="showUser(this.value)"> 
+            <select onchange="showUser(this.value, 'filtro-admi.php')">
+                 <option value="" disabled selected>Filtrar por permisos</option>
+                 <option value="admin">Mostrar administradores</option>
+                 <option value="user">Mostrar usuarios</option>
             </select>
             </form> <br>
+
             <div id="display">
                 <table>
                     <tr>
