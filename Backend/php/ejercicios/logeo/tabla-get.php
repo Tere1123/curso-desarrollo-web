@@ -6,44 +6,78 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tabla-getuser</title>
-    <style>
-     
-    </style>
+  
 </head>
 
 <body>
 
     <?php
     // recogemos la variable enviada por GET
-    $q =  $_GET['q'] ;
+    $q =  $_GET['q'];
 
     // realizamos la conexión a la BD
     $conn = mysqli_connect('localhost', 'root', 'maria8221');
 
-    mysqli_select_db($conn,'registro');
+    mysqli_select_db($conn, 'registro');
     $sql = "SELECT * FROM usuarios WHERE email LIKE '$q%' ORDER BY id ASC";
     // $sql = "SELECT*FROM usuarios WHERE usertype LIKE '$q%'";
     $result = mysqli_query($conn, $sql);
 
-    // Imprimimos los datos en una tabla
-     echo "<table>
-         <tr>
-         <th>Correo</th>
-         <th>Contraseña</th>
-         <th>Tipo de usuario</th>
-         </tr>";
-     // Contenido de la tabla
-     while ($row = mysqli_fetch_array($result)) {
-         echo "<tr>";
-        echo "<td>" . $row['email'] . "</td>";
-        echo "<td>" . $row['clave'] . "</td>";
-        echo "<td>" . $row['usertype'] . "</td>";
-        echo "</tr>";
-     }
+    if ($result->num_rows > 0) {
 
-     echo "</table>";
+        // Imprimimos los datos en una tabla
+        
+        echo "<table>
+        <tr>
+        <th>Correo</th>
+        <th>Contraseña</th>
+        <th>Tipo de usuario</th>
+        <th>Acciones</th>
+        <th>Eliminar</th>
+        </tr>";
 
-     mysqli_close($conn);
+        while ($row = $result->fetch_assoc()) {
+            $user = $row['email'];
+            $clave = $row['clave'];
+            $usertype = $row['usertype'];
+            $id = $row['id'];
+            $usertype1 = 'admin';
+            $usertype2 = 'user';
+
+            if ($usertype != 'admin') {
+                $usertype1 = 'user';
+                $usertype2 = 'admin';
+            }
+
+            echo "<tr>
+            <form action='archivo-edi-admi.php' method='post'>
+            <td>
+            <input type='text' placeholder='Email' name='user' value='$user' required>
+            </td><td>
+            <input type='text' placeholder='contraseña' name='clave' value='$clave' required>
+            </td><td>
+            <select  name='usertype'>
+            <option value='$usertype1'>$usertype1</option>
+            <option value='$usertype2'>$usertype2</option>
+            </select>
+            </td><td>
+            <input type='text'  placeholder='id' name='id' value='$id' hidden>
+
+            <input type='submit' class='button'name='update' value='Actualizar'>
+            </td><td>
+            <input type='submit'class='button' name='delete' value='Eliminar'> 
+
+            </td>
+
+            </form>
+            </tr>";
+        }
+        echo "</table>";
+    } else {
+        echo "<p>Usuario no existe</p>";
+    }
+
+    mysqli_close($conn);
     ?>
 </body>
 

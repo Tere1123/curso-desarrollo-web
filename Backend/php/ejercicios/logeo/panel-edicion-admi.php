@@ -25,10 +25,12 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
 
     <style>
         html {
-            height: 100%;
+            width: 100vw;
+            height: 100vh;
         }
 
         body {
+         
             margin: 0;
             padding: 0;
             font-family: sans-serif;
@@ -40,7 +42,7 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
             position: absolute;
             top: 40%;
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translate(-50%, -30%);
 
             display: flex;
             flex-direction: column;
@@ -181,6 +183,18 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
 
 
         }
+        p {
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin: 20px 0 15px 0;
+            padding: 0;
+            color: #bdf7f7;
+            text-align: center;
+            font-size: 15px;
+        }
     </style>
 </head>
 
@@ -193,23 +207,19 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
         <div class="container">
             <form action="">
                 <!-- <select name="" id=""></select> -->
-            <input type="text" placeholder='Email' name="users" onkeyup="showUser(this.value)"> 
+            <input type="text" placeholder='Email' name="users" onkeyup="showUser(this.value,'tabla-get.php')"> 
             <select onchange="showUser(this.value, 'filtro-admi.php')">
-                 <option value="" disabled selected>Filtrar por permisos</option>
+                 <option value="" disabled selected>Filtrar por permiso</option>
                  <option value="admin">Mostrar administradores</option>
                  <option value="user">Mostrar usuarios</option>
             </select>
+            <input type="text" placeholder='Id' name="users" onkeyup="showUser(this.value,'id.php')">
+            <input type="text" placeholder='creacion' name="users" onkeyup="showUser(this.value,'filtro-creacion.php')">
+
             </form> <br>
 
-            <div id="display">
-                <table>
-                    <tr>
-                        <th>Correo</th>
-                        <th>Contraseña</th>
-                        <th>Tipo de usuario</th>
-                    </tr>
-                </table>
-            </div>
+            <div id="display"></div>
+
         </div><br>
 
         <?php
@@ -288,8 +298,8 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
     function showUser(text, php) {
         let display = document.getElementById('display');
         // Si el input está vacío, el div tb se vacía
-        if (text == '') {
-            display.innerHTML = '';
+        if (text == ' ') {
+            display.innerHTML = '@';
             return;
         } else {
             let ajax = new XMLHttpRequest();
@@ -297,9 +307,9 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
                 if (this.readyState == 4 && this.status == 200) {
 
                     display.innerHTML = this.responseText;
-                }
+                } 
             };
-            ajax.open('GET', 'tabla-get.php?q=' + text, true);
+            ajax.open('GET', php + '?q=' + text, true);
             ajax.send();
         }
     }

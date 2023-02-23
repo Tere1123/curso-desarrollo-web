@@ -6,32 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tabla-getuser</title>
-    <style>
-        /* body {
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        table {
-            border: 3px solid black;
-            border-collapse: collapse;
-        }
-
-        th {
-            background-color: #aabbcc;
-            border: 2px solid black;
-            padding: 2px 5px;
-        }
-
-        td {
-            border: 1px solid black;
-            padding: 2px 5px;
-            user-select: none;
-        }
-
-        tr:hover {
-            background-color: lightblue;
-        } */
-    </style>
+   
 </head>
 
 <body>
@@ -44,15 +19,16 @@
     $conn = mysqli_connect('localhost', 'root', 'maria8221');
 
     mysqli_select_db($conn, 'registro');
-    $sql = "SELECT * FROM usuarios WHERE usertype LIKE '$q' ORDER BY email ASC";
+    $sql = "SELECT * FROM audit WHERE create_time LIKE '$q' ORDER BY id ASC";
     $result = mysqli_query($conn, $sql);
 
+    if ($result->num_rows > 0){
     // Imprimimos los datos en una tabla
     echo "<table>
         <tr>
             <th>Id</th>
+            <th>Usuario</th>
             <th>Email</th>
-            <th>Contraseña</th>
             <th>Usertype</th>
         </tr>";
     // Contenido de la tabla
@@ -66,6 +42,9 @@
     }
 
     echo "</table>";
+} else {
+    echo "<p>Usuario no existe</p>";
+}
 
     mysqli_close($conn);
     ?>
