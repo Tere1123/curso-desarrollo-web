@@ -1,26 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tabla-getuser</title>
-  
-</head>
+<?php
 
-<body>
+session_start();
 
-    <?php
+include 'conn.php';
+
+$user = $_SESSION['id'];
+
     // recogemos la variable enviada por GET
-    $q =  $_GET['q'];
+    $value =  $_GET['value'] . "%";
+    $filtro = $_GET['filtro'];
 
     // realizamos la conexión a la BD
     $conn = mysqli_connect('localhost', 'root', 'maria8221');
 
+
     mysqli_select_db($conn, 'registro');
-    $sql = "SELECT * FROM usuarios WHERE email LIKE '$q%' ORDER BY id ASC";
+    $sql = "SELECT * FROM usuarios WHERE $filtro LIKE '$value'";
     // $sql = "SELECT*FROM usuarios WHERE usertype LIKE '$q%'";
+    // se elimina esta sql para optimizar los filtros creando otra variable llamada $filtro
+
     $result = mysqli_query($conn, $sql);
 
     if ($result->num_rows > 0) {
@@ -29,6 +28,7 @@
         
         echo "<table>
         <tr>
+        <th>Id</th>
         <th>Correo</th>
         <th>Contraseña</th>
         <th>Tipo de usuario</th>
@@ -52,6 +52,8 @@
             echo "<tr>
             <form action='archivo-edi-admi.php' method='post'>
             <td>
+            <input type='text'  placeholder='id' name='id' value='$id'>
+            </td><td>
             <input type='text' placeholder='Email' name='user' value='$user' required>
             </td><td>
             <input type='text' placeholder='contraseña' name='clave' value='$clave' required>
@@ -61,7 +63,7 @@
             <option value='$usertype2'>$usertype2</option>
             </select>
             </td><td>
-            <input type='text'  placeholder='id' name='id' value='$id' hidden>
+            
 
             <input type='submit' class='button'name='update' value='Actualizar'>
             </td><td>
@@ -79,6 +81,3 @@
 
     mysqli_close($conn);
     ?>
-</body>
-
-</html>

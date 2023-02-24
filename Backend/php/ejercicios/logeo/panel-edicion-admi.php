@@ -207,14 +207,18 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
         <div class="container">
             <form action="">
                 <!-- <select name="" id=""></select> -->
-            <input type="text" placeholder='Email' name="users" onkeyup="showUser(this.value,'tabla-get.php')"> 
-            <select onchange="showUser(this.value, 'filtro-admi.php')">
+            <input type="text" placeholder='Email' name="users" onkeyup="showUser(this.value,'email')"> 
+            <select onchange="showUser(this.value, 'usertype')">
                  <option value="" disabled selected>Filtrar por permiso</option>
                  <option value="admin">Mostrar administradores</option>
                  <option value="user">Mostrar usuarios</option>
             </select>
             <input type="text" placeholder='Id' name="users" onkeyup="showUser(this.value,'id.php')">
-            <input type="text" placeholder='creacion' name="users" onkeyup="showUser(this.value,'filtro-creacion.php')">
+            
+            <input type='text' placeholder='fecha' class='button' name='usuarios' onclick="showUser(this.value,'filtro-creacion.php')">
+
+             <!-- <input type="text" placeholder='creacion' name="users" onkeyup="showUser(this.value,'filtro-creacion.php')"> -->
+
 
             </form> <br>
 
@@ -222,59 +226,6 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
 
         </div><br>
 
-        <?php
-
-        if ($result->num_rows > 0) {
-
-            echo "<table>
-            <tr>
-            <th>Correo</th>
-            <th>Contraseña</th>
-            <th>Tipo de usuario</th>
-            <th>Acciones</th>
-            <th>Eliminar</th>
-            </tr>";
-
-            while ($row = $result->fetch_assoc()) {
-                $user = $row['email'];
-                $clave = $row['clave'];
-                $usertype = $row['usertype'];
-                $id = $row['id'];
-                $usertype1 = 'admin';
-                $usertype2 = 'user';
-
-                if ($usertype != 'admin') {
-                    $usertype1 = 'user';
-                    $usertype2 = 'admin';
-                }
-
-                echo "<tr>
-                <form action='archivo-edi-admi.php' method='post'>
-                <td>
-                <input type='text' placeholder='Email' name='user' value='$user' required>
-                </td><td>
-                <input type='text' placeholder='contraseña' name='clave' value='$clave' required>
-                </td><td>
-                <select  name='usertype'>
-                <option value='$usertype1'>$usertype1</option>
-                <option value='$usertype2'>$usertype2</option>
-                </select>
-                </td><td>
-                <input type='text'  placeholder='id' name='id' value='$id' hidden>
-    
-                <input type='submit' class='button'name='update' value='Actualizar'>
-                </td><td>
-                <input type='submit'class='button' name='delete' value='Eliminar'> 
-
-                </td>
-
-                </form>
-                </tr>";
-            }
-            echo "</table>";
-        }
-
-        ?>
 
         <form class="form" action='intro-datos.php' method='post'>
 
@@ -295,7 +246,7 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
 </body>
 <script>
     //buscador en la base de datos del admi
-    function showUser(text, php) {
+    function showUser(text, filtro)  {
         let display = document.getElementById('display');
         // Si el input está vacío, el div tb se vacía
         if (text == ' ') {
@@ -309,8 +260,12 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
                     display.innerHTML = this.responseText;
                 } 
             };
-            ajax.open('GET', php + '?q=' + text, true);
+
+            ajax.open('GET', 'tablaget-user.php?value=' + text 
+            + '&filtro=' + filtro, true);
             ajax.send();
+            // ajax.open('GET', php + '?q=' + text, true);
+            // ajax.send();
         }
     }
     // showUser('text', 'php');
