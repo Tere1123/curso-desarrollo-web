@@ -63,7 +63,6 @@ $user = $_SESSION['id'];
             <option value='$usertype2'>$usertype2</option>
             </select>
             </td><td>
-            
 
             <input type='submit' class='button'name='update' value='Actualizar'>
             </td><td>
