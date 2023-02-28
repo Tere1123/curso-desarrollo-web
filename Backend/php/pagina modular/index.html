@@ -1,69 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pgina modular</title>
-    <!-- link css -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pgina modular</title>
+        <!-- link css -->
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+        <!--js-->
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+        <script src="script.js"></script>
+    </head>
+
+    <body>
+
+        <nav class="nav-cont">
+
+            <div class="home">LUSH</div>
+
+            <nav class="nav">
+
+                <div>
+                    <a href="#"><i class="bi bi-house-heart"></i></a>
+                    <a href="#"><i class="bi bi-person-heart"></i></a>
+                    <a href="#"><i class="bi bi-handbag-fill"></i></a>
+                </div>
+
+            </nav>
+        </nav>
+
+        <header>
+
+            <div class="img-uno">
+
+                <div class="cont-uno">
+                    <p>Por que todas somos diferentes, conoce nuestra nueva
+                        linea de maquillaje. <br><button>Aquí</button></p>
+                </div>
 
 
-</head>
-
-<body>
-
-<header class="header">
-
-    <div class="home">LUSH</div>
-
-    <nav class="nav">
-
-        <div>
-            <a href="#"><i class="bi bi-house-heart"></i></a>
-            <a href="#"><i class="bi bi-person-heart"></i></a>
-            <a href="#"><i class="bi bi-handbag-fill"></i></a>
-        </div>
-        
-    </nav>
-</header>
-
-    <section class="container">
-
-        <div class="img-uno">
-
-            <div class="cont-uno">
-                <p>Por que todas somos diferentes, conoce nuestra nueva linea de maquillage. <br><button>Aquí</button></p>
             </div>
+        </header>
+
+        <section>
+            <div class="cont-dos">
+
+                <div class="cont">
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+                <div class="cont">
+                    <p>Lorem ipsum dolor sit amet consectetu</p>
+                </div>
+                 <div class="cont">
+                    <p> Registrate y se parte de LUSH </p>
+                    <button id="btnSlide">Aqui</button>
+                </div>
+                <div class="cont-tres">
+                    <form action="" class="form">
+                        <h1> Registrate</h1>
+                        <input type="email" placeholder="Email" name="user"
+                            required>
+                        <div class="display"></div>
+                        <input type="text" placeholder="contraseña" name="clave"
+                            required>
+                        <input class="button" type="submit" value="Enviar">
+                    </form>
+                </div>
 
 
-        </div>
-
-        <div class="cont-dos">
-
+            </div>
+        </section>
+        <section>
             <div class="img-dos">
-                <p></p>
+                <div class="cont-cinco">
+                    <p>
+                        Que nos hace unicos...Tú:
+                        <ul>
+                            <li>Lorem ipsum dolor sit amet.</li>
+                            <li>Lorem, ipsum dolor.</li>
+                            <li>Lorem ipsum dolor sit amet.</li>
+                            <li>Lorem ipsum dolor sit.</li>
+                        </ul>
+                    </p>
+                </div>
+                <img class="cont-img"
+                    src="https://images.pexels.com/photos/6476116/pexels-photo-6476116.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="">
+
             </div>
-            
+        </section>
+        <section>
+            <div class="img-tres">
+
+                <div class="item-1">
+                    <img
+                        src="https://images.pexels.com/photos/1964737/pexels-photo-1964737.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="">
+                </div>
+                <div class="item-2">
+                    <div class="galeria-1"><img
+                            src="https://images.pexels.com/photos/7712476/pexels-photo-7712476.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            alt=""> </div>
+                    <div class="galeria-2"><img
+                            src="https://images.pexels.com/photos/8101525/pexels-photo-8101525.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            alt=""></div>
+                    <div class="galeria-3"><img
+                            src="https://images.pexels.com/photos/2116631/pexels-photo-2116631.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            alt=""></div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+
+        <footer>
             <div>
-                <form action="" class="form">
-                    <h1> Registrate</h1>
-                    <input type="email" placeholder="Email" name="user" required>
-                    <div class="display"></div>
-                    <input type="text" placeholder="contraseña" name="clave" required>
-                    <input class="button" type="submit" value="Enviar">
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-pinterest"></i></a>
+                <a href=""><i class="bi bi-paypal"></i></a>
+                <a href=""><i class="bi bi-credit-card-2-back"></i></a>
+                <p class="footer"> 2023, LUSH</p>
 
-                </form>
             </div>
-
-          
-        </div>
-        <div class="img-tres"></div>
-
-    </section>
-   
-    
-    <footer></footer>
-</body>
+        </footer>
+    </body>
 </html>
