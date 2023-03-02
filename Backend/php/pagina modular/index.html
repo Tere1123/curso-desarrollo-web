@@ -9,10 +9,13 @@
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-
+        <!--bootstrap  -->
+        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script> -->
         <!--js-->
         <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
         <script src="script.js"></script>
+        <!-- <script src="//unslider.com/unslider.js"></script> -->
     </head>
 
     <body>
@@ -33,41 +36,73 @@
         </nav>
 
         <header>
+            <div class="slider">
 
-            <div class="img-uno">
+                <div class="img-uno">
 
-                <div class="cont-uno">
+                    <div class="cont-uno">
                     <p>Por que todas somos diferentes, conoce nuestra nueva
                         linea de maquillaje. <br><button>Aquí</button></p>
                 </div>
-
+                </div>
+                <div class="img-uno"></div>
+                <div class="img-uno"></div>
 
             </div>
+            <!-- <div id="carouselExampleIndicators" class="carousel slide">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="https://images.pexels.com/photos/1038041/pexels-photo-1038041.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://images.pexels.com/photos/4938511/pexels-photo-4938511.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://images.pexels.com/photos/971493/pexels-photo-971493.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="...">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div> -->
         </header>
 
         <section>
             <div class="cont-dos">
 
-                <div class="cont">
-                    <p>Lorem ipsum dolor sit amet.</p>
+                <div class="box">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
                 </div>
-                <div class="cont">
-                    <p>Lorem ipsum dolor sit amet consectetu</p>
-                </div>
-                 <div class="cont">
+
+                <div class="box-btn">
                     <p> Registrate y se parte de LUSH </p>
                     <button id="btnSlide">Aqui</button>
                 </div>
-                <div class="cont-tres">
+                <div class="box-form">
                     <form action="" class="form">
                         <h1> Registrate</h1>
-                        <input type="email" placeholder="Email" name="user"
+                        <input class="input" type="email" placeholder="Email"
+                            name="user"
                             required>
-                        <div class="display"></div>
-                        <input type="text" placeholder="contraseña" name="clave"
+
+                        <input class="input" type="text"
+                            placeholder="contraseña" name="clave"
                             required>
                         <input class="button" type="submit" value="Enviar">
                     </form>
+                </div>
+                <div class="box">
+                    <p>Lorem ipsum dolor sit amet consectetu</p>
                 </div>
 
 
@@ -75,7 +110,7 @@
         </section>
         <section>
             <div class="img-dos">
-                <div class="cont-cinco">
+                <div class="cont-tres">
                     <p>
                         Que nos hace unicos...Tú:
                         <ul>
@@ -93,26 +128,56 @@
             </div>
         </section>
         <section>
-            <div class="img-tres">
+            <div class="cont-cuatro">
 
                 <div class="item-1">
                     <img
                         src="https://images.pexels.com/photos/1964737/pexels-photo-1964737.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                         alt="">
+                    <p class="texto-uno">Que te hace unica.</p>
                 </div>
                 <div class="item-2">
-                    <div class="galeria-1"><img
+                    <div class="galeria"><img
                             src="https://images.pexels.com/photos/7712476/pexels-photo-7712476.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                            alt=""> </div>
-                    <div class="galeria-2"><img
+                            alt="">
+                        <p class="texto"><a href="">Maquillaje para cada ocación</a></p>
+                    </div>
+                    <div class="galeria"><img
                             src="https://images.pexels.com/photos/8101525/pexels-photo-8101525.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                            alt=""></div>
-                    <div class="galeria-3"><img
+                            alt="">
+                        <p class="texto"><a href="">Cuidado facil.</a></p>
+                    </div>
+                    <div class="galeria"><img
                             src="https://images.pexels.com/photos/2116631/pexels-photo-2116631.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                            alt=""></div>
+                            alt="">
+                        <p class="texto"><a href="">Cuidado capilar.</a></p>
+                    </div>
                 </div>
 
             </div>
+        </section>
+
+        <section>
+
+            <div class="cont-cinco">
+
+                <div class="iconos">
+                    <i class="bi bi-file-lock2-fill"><br>
+                        Pago seguro.</i>
+                </div>
+                <div class="iconos">
+                    <i class="bi bi-truck"><br>
+                        Entrega de 2 a 5 días.</i>
+                </div>
+                <div class="iconos">
+                    <i class="bi bi-stars"><br>
+                        Muestras en tus pedidos<br> de alta
+                        perfumería.</i>
+                </div>
+            </div>
+
+
+
         </section>
 
 
