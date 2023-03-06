@@ -1,0 +1,30 @@
+
+.img-dos {
+
+    position: relative;
+    /* display: inline-block; */
+    text-align: center;
+   
+
+
+}
+
+.cont-tres {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 25px;
+    color: rgb(71, 71, 62);
+    text-align: center;
+
+}
+
+.cont-img {
+
+    width: 800px;
+    height: 600px;
+    border-radius: 10px;
+
+}

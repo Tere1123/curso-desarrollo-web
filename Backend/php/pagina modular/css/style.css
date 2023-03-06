@@ -1,5 +1,5 @@
 body {
-    background: rgb(169, 225, 249);
+    background: #a9e1f9;
 
     height: 100vh;
     width: 100vw;
@@ -9,7 +9,7 @@ body {
     margin: 0;
 }
 
-/* nav */
+/* menu */
 .nav-cont {
 
     display: flex;
@@ -456,7 +456,7 @@ img {
     width: 42.8%;
 }
 
-/* informativa de envios */
+/*  envios */
 .cont-cinco {
 
     display: flex;

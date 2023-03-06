@@ -1,0 +1,58 @@
+.cont-cuatro {
+
+    display: flex;
+    justify-content: center;
+    width: 900px;
+    /* height: 700px; */
+
+    padding: 20px;
+    margin: 20px;
+
+}
+
+.galeria {
+    position: relative;
+    /* display: inline-block; */
+    text-align: center;
+    padding: 15px;
+
+}
+
+.texto {
+
+    text-align: center;
+    color: #eeee92;
+
+}
+
+
+
+.item-1 {
+    position: relative;
+    justify-content: center;
+
+    text-align: center;
+    width: 70%;
+    padding: 40px;
+
+}
+
+.texto-uno {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #eeee92;
+    font-size: 30px;
+}
+
+img {
+    width: 100%;
+
+
+}
+
+.item-2 {
+    width: 42.8%;
+}
