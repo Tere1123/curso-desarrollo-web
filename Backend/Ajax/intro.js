@@ -5,7 +5,7 @@ $(document).ready (function () {
 
         let text = $(this).val();
 
-        let resultList = $(this).siblings(".display");// buscamos a los hemanos del input con clase display
+        let resultList = $(this).siblings(".display");// buscamos a los hermanos del input con clase display
 
         if (text.length > 0) {
             // si el valor del input no esta vacio llamamos al php
@@ -22,7 +22,6 @@ $(document).ready (function () {
 
 
     })
-
 
 
 });
