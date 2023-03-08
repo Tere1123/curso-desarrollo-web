@@ -17,8 +17,8 @@ $id = $_SESSION['id']; // esta variable la tomamos del documento login-usuario
 //guardados en el ID.
 
 
-$sql = "UPDATE empelados SET email = '$user', clave = '$clave',nombre='$nombre', apellido='$apellido', dni = '$dni ',
- biometrica='$bio', n_mac='$mac' WHERE  id = '$id'";
+$sql = "UPDATE empleados SET email = '$user', clave = '$clave', nombre = '$nombre', apellido = '$apellido', dni = '$dni ',
+ biometrica = '$bio', n_mac='$mac' WHERE  id = '$id'";
 // $result = $conn->query($sql);
 // ejecutamos la query y comprobamos si ha sido exitosa
 
@@ -43,7 +43,14 @@ if ($conn->query($sql)) {
 </head>
 
 <body>
+<div class="login-box">
+        <p>Datos actualizados
+            <?php echo $_POST['user'];
+            echo  ' <a href="info-usuario.php"> <br>
+    <button>Volver</button>
+        </a>'; ?></p>
 
+    </div>
 </body>
 
 </html>  

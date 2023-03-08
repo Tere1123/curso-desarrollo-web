@@ -12,9 +12,12 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LUSH</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+<div class="container"> 
+
 <?php
 
 if ($_SERVER['REQUEST_METHOD'] = 'POST') {
@@ -22,8 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] = 'POST') {
             // recibimos las variables datos 
             $user = $_POST['user'];
             $clave = $_POST['clave'];
-
-            
+           
             include 'conn.php';
             // realizamos una query para buscar la existencia del usuario en la BD
 
@@ -42,10 +44,20 @@ if ($_SERVER['REQUEST_METHOD'] = 'POST') {
                     $_SESSION['id'] = $row['id'];   
                     $_SESSION['user_type'] = $row['user_type'];
                 }
-               
-                echo '<a href="info-usuario.php">
+
+                // Reenviamos al usuario dependiendo del tipo
+
+                // es user:
+               $link = 'info-usuario.php';
+
+               // admin:
+               if ($_SESSION['user_type'] == 'admin') $link = 'info-admi.php';
+               // colaborador:   
+               if ($_SESSION['user_type'] == 'colaborador') $link = 'info-colab.php';
+
+                echo "<a href='$link'>
                 <button>Tu Cuenta</button>
-                </a>';
+                </a>";
 
                 $conn->close();
             } elseif ($result->num_rows === 0) {
@@ -54,15 +66,15 @@ if ($_SERVER['REQUEST_METHOD'] = 'POST') {
              
                 $_SESSION["fallo"] = true;
 
-                header("Location: login.php");
+                header("Location: pag.principal.php");
 
 
                 exit();
             }
-
-
 }
  ?>
+
+</div>
 
 </body>
 

@@ -21,11 +21,12 @@ $result = $conn->query($sql);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LUSH</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="box">
+    <div class="container">
 
         <?php
         if ($result->num_rows > 0) {
@@ -59,7 +60,7 @@ $result = $conn->query($sql);
             </td><td>
             <input type='text' placeholder='Apellido' name='apellido' value='$apellido'> <br>
             </td><td>
-            <input type='text' placeholder='Email' name='user' value='$user'> <br>
+            <input type='text' placeholder='Email' readonly name='user' value='$user'> <br>
             </td><td>
             <input type='text' placeholder='contraseña' name='clave' value='$clave'> <br>
             </td><td>
@@ -77,12 +78,11 @@ $result = $conn->query($sql);
             }
             echo "</table>";
         }
-
+        mysqli_close($conn);
         ?>
         <a href="pag.principal.php"><input type="button" class="button" value='inicio'></a>
 
     </div>
-
 
 
 

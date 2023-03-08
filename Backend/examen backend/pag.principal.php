@@ -10,11 +10,13 @@ include 'conn.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LUSH</title>
+    <link rel="stylesheet" href="style.css">
+    
 </head>
 
 <body>
 
-<div class="container login">
+<div class="container">
     
 
             <form action="login-usuario.php" method="post">
@@ -26,7 +28,20 @@ include 'conn.php';
 
     
             </form>
-    
+            <?php
+            // creamos un if donde este nos indicara que si hay un error en los datos o no coinsiden con los de la base de datos 
+            // no llevara a traves de un link a regisrarnos nuevamente.
+
+            if (isset($_SESSION['fallo'])) {
+                echo '<p>email o contraseña incorrectos. Por favor, 
+                compruebe los datos </p>';
+
+
+                unset($_SESSION['fallo']);
+
+                // si se inicia secion este aviso se eliminara
+            }
+            ?>
 </div>
 
 </body>
