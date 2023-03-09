@@ -70,7 +70,7 @@ $result = $conn->query($sql);
             </td><td>
             <input type='text' placeholder='# Mac' name='n_mac' value='$mac'> <br>
             </td><td>
-            <input class='button' type='submit' value='actualizar'>
+            <input class='button' name='update' type='submit' value='actualizar'>
             </td>
             </form>
 

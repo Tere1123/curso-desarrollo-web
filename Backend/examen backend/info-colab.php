@@ -8,7 +8,6 @@ $user = $_SESSION['id'];
 if (isset($_SESSION['logged']) && $_SESSION['user_type'] == 'colaborador') {
 
     $sql = "SELECT * From empleados";
-
     $result = $conn->query($sql);
 }
 
@@ -25,16 +24,17 @@ if (isset($_SESSION['logged']) && $_SESSION['user_type'] == 'colaborador') {
 </head>
 
 <body>
-
+<div class="container">
 <?php
 
 if ($result->num_rows > 0) {
 
     // Imprimimos los datos en una tabla
 
-    echo    "<h1>Tus datos</h1>
+    echo    "<h1>Hola colaborador</h1>
     <table>
     <tr>
+    <th>Id</th>
     <th>Nombre</th>
     <th>Apellido</th>
     <th>Email</th>
@@ -44,7 +44,9 @@ if ($result->num_rows > 0) {
     <th>N.mac</th>
     </tr>";
 
+// creamos las variables
     while ($row = $result->fetch_assoc()) {
+        $id = $row['id'];
         $apellido = $row['apellido'];
         $nombre = $row['nombre'];
         $user = $row['email'];
@@ -52,26 +54,59 @@ if ($result->num_rows > 0) {
         $dni = $row['dni'];
         $bio = $row['biometrica'];
         $mac = $row['n_mac'];
+        $estado = $row['estado']; 
 
+        $estado1 = 'ok';
+        $estado2 = 'pe';
+        $estado3 = 'nd';
 
+        if ( $estado != 'admin' ) {      
+            $estado1 = 'ok';
+            $estado2 = 'pe';
+            $estado3 = 'nd';
+
+        }
+
+        $fila = '<tr>';
+
+        if ($row['estado'] == 'ok' ) {
+            $fila = '<tr style=background-color: green; >';
+        }
+        if ($row['estado'] == 'pe' ) {
+            $fila = '<tr style=background-color: yellow; >';
+        }
+        if ($row['estado'] == 'nd' ) {
+            $fila = '<tr style=background-color: red; >';
+        }
+
+// incorporamos  el contenido de la tabla
         echo " <tr>
     <form action='archivo-colab.php' method='post'>
     <td>
-    <input type='text' placeholder='Nombre' name='nombre' value='$nombre'> <br>
+    
+    <input type='text' placeholder='Id' readonly name='id' value='$id'> <br>    
+    </td><td>    
+    <input type='text' placeholder='Nombre' readonly name='nombre' value='$nombre'> <br>
     </td><td>
-    <input type='text' placeholder='Apellido' name='apellido' value='$apellido'> <br>
+    <input type='text' placeholder='Apellido' readonly name='apellido' value='$apellido'> <br>
     </td><td>
     <input type='text' placeholder='Email' readonly name='user' value='$user'> <br>
     </td><td>
-    <input type='text' placeholder='Email' readonly name='user' value='$usertype'> <br>
+    <input type='text' placeholder='Email' readonly name='user_type' value='$usertype'> <br>
     </td><td>
-    <input type='text' placeholder='N.Dni' name='dni' value='$dni'> <br>
+    <input type='text' placeholder='N.Dni'readonly name='dni' value='$dni'> <br>
     </td><td>
-    <input type='text' placeholder='Foto' name='biometrica' value='$bio'> <br>
+    <input type='text' placeholder='Foto' readonlyname='biometrica' value='$bio'> <br>
     </td><td>
-    <input type='text' placeholder='# Mac' name='n_mac' value='$mac'> <br>
+    <input type='text' placeholder='# Mac'readonly name='n_mac' value='$mac'> <br>
     </td><td>
-    <input class='button' type='submit' value='actualizar'>
+    <select  name='estado'>
+            <option value='$estado1'>$estado1</option>
+            <option value=' $estado2'>$estado2</option>
+            <option value=' $estado3'> $estado3</option>
+    </select>
+            </td><td>
+    <input type='submit' class='button'name='update' value='Actualizar'>
     </td>
     </form>
  
@@ -84,8 +119,8 @@ if ($result->num_rows > 0) {
 
 mysqli_close($conn);
 ?>
-   <a href="pag.principal.php"><input type="button" class="button" value='cerrar sesion'></a>
-
+   <a href="pag.principal.php"><input type="button" class="button" value='Inicio'></a>
+   </div>
 </body>
 
 </html> 

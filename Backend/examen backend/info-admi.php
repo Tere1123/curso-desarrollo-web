@@ -33,9 +33,10 @@ if (isset($_SESSION['logged']) && $_SESSION['user_type'] == 'admin') {
 
         // Imprimimos los datos en una tabla
 
-        echo "<table>
-        <h1>Hola Admi<h1>
+        echo "  <h1>Hola Admi<h1>
+        <table>
         <tr>
+        <th>Id</th>
         <th>Nombre</th>
         <th>Apellido</th>
         <th>Email</th>
@@ -43,18 +44,24 @@ if (isset($_SESSION['logged']) && $_SESSION['user_type'] == 'admin') {
         </tr>";
 
         while ($row = $result->fetch_assoc()) {
-
+            $id = $row['id'];
             $apellido = $row['apellido'];
             $nombre = $row['nombre'];
             $user = $row['email'];
             $usertype = $row['user_type'];
-            $mac = $row['n_mac'];
-
+           
+          // creamos variables para usuarios
             $usertype1 = 'admin';
-            $usertype2 = 'user';
+            $usertype2 = 'usuario';
             $usertype3 = 'colaborador';
 
-            if ($usertype != 'admin') {
+        //     if ($usertype != 'usuario'){
+        //     if ($usertype == 'admin') $usertype1 = 'admin';
+        //     if ($usertype == 'usuario') $usertype2 = 'usuario';
+        //     if ($usertype == 'colaborador') $usertype3 = 'colaborador';
+        // }
+            if ($usertype != 'admin' ) {
+            
                 $usertype1 = 'usuario';
                 $usertype2 = 'admin';
                 $usertype3 = 'colaborador';
@@ -64,6 +71,8 @@ if (isset($_SESSION['logged']) && $_SESSION['user_type'] == 'admin') {
             echo "<tr>
             <form action='archivo-admi.php' method='post'>
             <td>
+            <input type='text' placeholder='Id' readonly name='id' value='$id'> <br>
+            </td><td>
             <input type='text' placeholder='Nombre' readonly name='nombre' value='$nombre'> <br>
             </td><td>
             <input type='text' placeholder='Apellido' readonly name='apellido' value='$apellido'> <br>
@@ -81,15 +90,16 @@ if (isset($_SESSION['logged']) && $_SESSION['user_type'] == 'admin') {
             <input type='submit'class='button' name='delete' value='Eliminar'> 
             </td>
             </form>
-         
             </tr>";
+       
         }
         echo "</table>";
     } 
 
     mysqli_close($conn);
     ?>
-
+                 <a href="pag.principal.php"> 
+            <br> <button>Volver</button>;
 </div>
 </body>
 

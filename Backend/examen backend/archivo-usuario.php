@@ -2,8 +2,7 @@
 session_start();
 
 include 'conn.php';
-// con las variables que tenemos agregamos una nueva variable 'ID' que es la que nos permitira
-// guardar los datos nuevos cuando se realice el cambio
+
 $user = $_POST['user'];
 $clave = $_POST['clave'];
 $nombre = $_POST['nombre'];
@@ -11,20 +10,20 @@ $apellido = $_POST['apellido'];
 $dni = $_POST['dni'];
 $bio = $_POST['biometrica'];
 $mac = $_POST['n_mac'];
-$id = $_SESSION['id']; // esta variable la tomamos del documento login-usuario
+$id = $_SESSION['id']; 
 
 // usamos el update para indicar que el usuario quiere actualizar sus datos y estos datos nuevos quedaran 
 //guardados en el ID.
 
+$sql = "UPDATE empleados SET email = '$user', clave = '$clave', nombre = '$nombre', apellido = '$apellido', dni = '$dni',
+ biometrica = '$bio', n_mac ='$mac' WHERE  id = '$id'";
+$result = $conn->query($sql);
 
-$sql = "UPDATE empleados SET email = '$user', clave = '$clave', nombre = '$nombre', apellido = '$apellido', dni = '$dni ',
- biometrica = '$bio', n_mac='$mac' WHERE  id = '$id'";
-// $result = $conn->query($sql);
 // ejecutamos la query y comprobamos si ha sido exitosa
 
 if ($conn->query($sql)) {
 
-    $_SESSION['username'] = $user;
+    $_SESSION['user_type'] = $user;
 } else {
     echo "error: " . $sql . "<br>" . $conn->error;
 
@@ -43,7 +42,7 @@ if ($conn->query($sql)) {
 </head>
 
 <body>
-<div class="login-box">
+<div class="container">
         <p>Datos actualizados
             <?php echo $_POST['user'];
             echo  ' <a href="info-usuario.php"> <br>
