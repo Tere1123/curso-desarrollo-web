@@ -1,0 +1,82 @@
+body{
+
+    margin: 0;
+    padding: 0;
+    background: rgb(3, 3, 77);
+    color: rgb(248, 222, 187);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+ }
+ .container{
+ 
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+ 
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+ 
+   
+ }
+ h1 {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+ 
+/* tabla colaborador */
+
+
+
+th {
+    text-align: center;
+    background-color: #1a2e7c;
+    border-radius: 5px;
+    border: 2px solid black;
+    padding: 1px 1px;
+}
+
+select {
+    background-color:transparent;
+    color: rgb(24, 22, 22);
+}
+
+input {
+ 
+    background-color: transparent;
+}
+td {
+    margin: 5px;
+    background-color: transparent;
+}
+tr {
+    margin: 15px;
+    padding:15px ;
+}
+
+.fila {
+    background-color: rgb(37, 240, 128);
+}
+.fila-dos {
+    background-color: rgb(247, 247, 136);
+}
+.fila-tres {
+    background-color: rgb(236, 103, 103);
+}
+a .button {
+
+    height: 30px;
+    width: 60px;
+    border-radius: 5px;
+
+    background-color: rgb(194, 252, 242);
+    color: rgb(54, 49, 49);
+}
+
+a .button:hover {
+    background: rgb(140, 230, 222,0.5);
+
+    
+}

@@ -40,6 +40,7 @@ $result = $conn->query($sql);
             <th>Dni</th>
             <th>Biometrica</th>
             <th>N.mac</th>
+            <th>Actualizar</th>
             </tr>";
 
             while ($row = $result->fetch_assoc()) {

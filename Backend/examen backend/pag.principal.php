@@ -1,6 +1,13 @@
 <?php
 
 include 'conn.php';
+session_start();
+
+if (isset($_POST['logout'])) {
+    unset($_SESSION['logged']);
+    session_destroy(); // carrar todas las sesiones del usuario
+
+}
 
 ?>
 <!DOCTYPE html>

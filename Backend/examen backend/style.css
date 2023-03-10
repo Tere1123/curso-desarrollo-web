@@ -3,13 +3,14 @@ body{
    margin: 0;
    padding: 0;
    background: rgb(3, 3, 77);
-   color: antiquewhite;
+   color: rgb(248, 222, 187);
    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 .container{
 
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
 
     position: absolute;
@@ -17,17 +18,83 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
 
-    /* min-width: 250px;
-    height: 350px;
-    padding: 10px;
-    background: rgba(149, 148, 150, 0.502,0.5);
-    box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(80, 78, 78, 0.6);
-    border-radius: 10px; */
 }
+
 h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* css de las tablas */
+
+
+tbody {
+    height: 100%;
+
+    /* border-collapse: collapse;  */
+    border-radius: 6px;
+    border: 2px solid #58585a;
+}
+
+th {
+    text-align: center;
+    background-color: #1a2e7c;
+    border-radius: 5px;
+    border: 2px solid black;
+    padding: 1px 1px;
+}
+
+td {
+    background-color: #cdd0db;
+    text-align: center;
+    padding: 1px 1px;
+}
+
+input {
+    border: none;
+    border-radius: 3px;
+    background-color: #cdd0dc;
+}
+
+
+select {
+    background-color: #cdd0dc;
+    border-radius: 5px;
+}
+
+/* .button {
+
+    text-align: center;
+   
+    border-radius: 5px;
+
+} */
+
+.button:hover {
+
+    background: #6492fdAD;
+}
+
+a .button {
+
+    margin: 5px;
+    padding: 5px;
+
+    border: none;
+    border-bottom: 1px solid #969fe4;
+    font-weight: bold;
+    font-size: 16px;
+    color: #0d1a4f;
+    text-decoration: none;
+
+
+
+
+}
+
+.form {
+    padding: 10px;
+    border-radius: 5px;
 }
 

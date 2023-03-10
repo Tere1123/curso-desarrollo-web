@@ -33,7 +33,7 @@ if (isset($_SESSION['logged']) && $_SESSION['user_type'] == 'admin') {
 
         // Imprimimos los datos en una tabla
 
-        echo "  <h1>Hola Admi<h1>
+        echo "  <h1>Hola Admi</h1>
         <table>
         <tr>
         <th>Id</th>
@@ -41,6 +41,8 @@ if (isset($_SESSION['logged']) && $_SESSION['user_type'] == 'admin') {
         <th>Apellido</th>
         <th>Email</th>
         <th>User_type</th>
+        <th>Actualizar</th>
+        <th>Eliminar</th>
         </tr>";
 
         while ($row = $result->fetch_assoc()) {
@@ -50,22 +52,26 @@ if (isset($_SESSION['logged']) && $_SESSION['user_type'] == 'admin') {
             $user = $row['email'];
             $usertype = $row['user_type'];
            
-          // creamos variables para usuarios
-            $usertype1 = 'admin';
-            $usertype2 = 'usuario';
+          // creamos variables para usuarios para el selector
+            $usertype1 = 'usuario';
+            $usertype2 = 'admin';
             $usertype3 = 'colaborador';
 
         //     if ($usertype != 'usuario'){
         //     if ($usertype == 'admin') $usertype1 = 'admin';
-        //     if ($usertype == 'usuario') $usertype2 = 'usuario';
+        //     if ($usertype == 'usuario') 
         //     if ($usertype == 'colaborador') $usertype3 = 'colaborador';
         // }
-            if ($usertype != 'admin' ) {
+            if ($usertype == 'admin' ) {
             
-                $usertype1 = 'usuario';
-                $usertype2 = 'admin';
+                $usertype1 = 'admin';
+                $usertype2 = 'usuario';
                 $usertype3 = 'colaborador';
 
+            }elseif ($usertype == 'colaborador') {
+                $usertype1 = 'colaborador';
+                $usertype2 = 'usuario';
+                $usertype3 = 'admin';
             }
 
             echo "<tr>
@@ -91,15 +97,18 @@ if (isset($_SESSION['logged']) && $_SESSION['user_type'] == 'admin') {
             </td>
             </form>
             </tr>";
-       
+            
         }
         echo "</table>";
     } 
 
+
     mysqli_close($conn);
     ?>
-                 <a href="pag.principal.php"> 
-            <br> <button>Volver</button>;
+   
+
+   <a href="pag.principal.php"><input type="button" class="button" value='volver'></a>
+    
 </div>
 </body>
 
