@@ -269,14 +269,127 @@ echo "</table>";// se cierra la tabla
 echo '<h3> 11. Crear un programa en php que integre  los numero de 1 al 50.Al imprimirlos los multiplos de 3 se sustituiran  por fizz  los multiplos de 5 por buzz y
 los que sean mulpiplos de los dos por fizBuzz </h3>';
 
-
+// dos formas de hacerlo con los ifelse y switch
 for ($i=1; $i <=50 ; $i++) { 
-    echo $i;
-    
-    if ($i % 5 == 0) {
-        echo $i = 'fizz';
-    }
+
+    if ($i % 3 == 0 && $i % 5 == 0) {
+        echo 'fizzbuz-';
    
+    }elseif ($i % 3 == 0) {
+
+       echo 'fizz-';
+
+     }elseif ($i % 5 == 0) {
+
+        echo 'buzz-';
+    } else {
+     echo "$i-";
+    }
+
 }
 
+
+echo'<hr>';
+
+for ($i=1; $i <=50 ; $i++) {
+
+switch ($i) {
+
+    case $i % 3 == 0 && $i % 5 == 0;
+    echo 'fizzbuzz- ';
+    break;
+
+    case $i % 3 == 0;
+    echo 'fizz- ';
+    break;
+    
+    case $i % 5 == 0;
+     echo 'buzz-';
+     break;
+
+     default:
+     echo "$i - ";
+     break;
+
+} 
+
+}
+
+echo'<hr>';
+
 echo '<h3> 12-crear un triangulo de floyd </h3>';
+
+
+
+$nfila = 12;
+$contador = 1;
+$espacio = "&nbsp;&nbsp;";
+
+for ($i=0; $i <=$nfila ; $i++) { 
+
+    for ($c=1; $c <= $i; $c++) { 
+        echo  $espacio;
+        echo  $contador++;
+      
+    }
+    echo'<br>';
+}
+
+
+echo'<hr> por el profe';
+
+
+$nfila = 12;
+$contador = 1;
+
+for ($i=1; $i <=$nfila ; $i++) { 
+ 
+    for ($b=1; $b <=$i; $b++ ) {
+
+       echo $contador;
+       echo  $espacio;
+        $contador++;
+       
+    }
+    echo'<br>';
+}
+
+echo '<h3> 13-escribir un bucle de php que imprima una letra del abecedario  
+//   * * *
+// *       *
+// *       *
+// * * * * *
+// *       *
+// *       *
+// *       *
+// *       * </h3>';
+
+
+// for ($i=0; $i < ; $i++) { 
+   
+// }
+
+echo '<h3> 13- 14. Escribir un bucle de PHP que sea capaz de imprimir este patrón:
+
+// 1 5 9 <br>
+// 2 6 10 <br>
+// 3 7 11 <br>
+// 4 8 12 <br></h3>';
+
+
+
+
+$nfila1 = 4;
+$conta = 1;
+// $espacio = "&nbsp;&nbsp;";
+
+for ($i=1; $i <=$nfila1 ; $i++) { 
+//    echo $i;
+     for ($b=1; $b <= $nfila1 ; $c++) { 
+
+        $conta;
+        
+    }
+    echo $$conta;
+    echo'<br>';
+}
