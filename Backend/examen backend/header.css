@@ -1,0 +1,25 @@
+header {
+
+    /* position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -20%); */
+
+    height: 100px;
+    width:100%;
+
+    background: rgba(245, 245, 244, 0.733);
+  
+    color: #3c3e41;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+
+}

@@ -356,9 +356,19 @@ echo '<h3> 13-escribir un bucle de php que imprima una letra del abecedario
 // *       *
 // *       *
 // *       * </h3>';
+// hay dos formas de hacerlo #1
 
+echo "<h3>13. Escribir un bucle de PHP que imprima una A</h3>";
+for ($i = 1; $i <= 8; $i++) {
+    if ($i <= 1) echo "&nbsp;&nbsp;&nbsp;* * *&nbsp;";
+    if ($i == 4) echo "* *  * * *";
+    if ($i != 1 && $i != 4) echo "*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*";
+    echo '<br>';
+}
 
+echo "<hr>";
 
+// #2 por el profe 
 $espacios = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 echo "<pre>";
 for ($i = 1; $i <= 8; $i++) {

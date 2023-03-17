@@ -17,6 +17,7 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+   
 
 }
 
@@ -39,14 +40,14 @@ tbody {
 
 th {
     text-align: center;
-    background-color: #1a2e7c;
+    background-color:#e9eaf0;
     border-radius: 5px;
     border: 2px solid black;
     padding: 1px 1px;
 }
 
 td {
-    background-color: #cdd0db;
+    background-color:#e9eaf0;
     text-align: center;
     padding: 1px 1px;
 }
@@ -54,12 +55,12 @@ td {
 input {
     border: none;
     border-radius: 3px;
-    background-color: #cdd0dc;
+    background-color: #e9eaf0;
 }
 
 
 select {
-    background-color: #cdd0dc;
+    background-color:#a6a8b8; 
     border-radius: 5px;
 }
 
@@ -97,4 +98,5 @@ a .button {
     padding: 10px;
     border-radius: 5px;
 }
+
 

@@ -25,6 +25,8 @@ if (isset($_SESSION['logged']) && $_SESSION['user_type'] == 'colaborador') {
 </head>
 
 <body>
+<?php require "header.php"; ?>
+
   <div class="container">
     <?php
 
@@ -67,6 +69,7 @@ if (isset($_SESSION['logged']) && $_SESSION['user_type'] == 'colaborador') {
             $fila = '<tr class= "fila-tres" >';
         }
 
+
         // incorporamos  el contenido de la tabla
         echo " 
                     <form action='archivo-colab.php' method='post'>
@@ -90,6 +93,7 @@ if (isset($_SESSION['logged']) && $_SESSION['user_type'] == 'colaborador') {
                                 <option value='ok'>ok</option>
                                 <option value='pe'>pe</option>
                                 <option value='nd'>nd</option>
+                      
                         </select>
                                 </td><td>
                         <input type='submit' class='button' name='updatecolab' value='Actualizar'>

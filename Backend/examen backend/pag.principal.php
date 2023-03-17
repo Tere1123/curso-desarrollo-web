@@ -22,6 +22,8 @@ if (isset($_POST['logout'])) {
 </head>
 
 <body>
+    
+<?php require "header.php"; ?>
 
 <div class="container">
     

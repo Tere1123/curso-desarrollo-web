@@ -26,6 +26,8 @@ if (isset($_SESSION['logged']) && $_SESSION['user_type'] == 'admin') {
 </head>
 
 <body>
+
+<?php require "header.php"; ?>
 <div class="container">
     <?php
    

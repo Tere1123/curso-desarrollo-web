@@ -21,11 +21,11 @@ $result = $conn->query($sql);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LUSH</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-colab.css">
 </head>
 
 <body>
-
+<?php require "header.php"; ?>
     <div class="container">
 
         <?php
@@ -40,6 +40,7 @@ $result = $conn->query($sql);
             <th>Dni</th>
             <th>Biometrica</th>
             <th>N.mac</th>
+            <th>Estado</th>
             <th>Actualizar</th>
             </tr>";
 
@@ -51,11 +52,41 @@ $result = $conn->query($sql);
                 $dni = $row['dni'];
                 $bio = $row['biometrica'];
                 $mac = $row['n_mac'];
+                $estado = $row['estado'];
+
+                $fila = '<tr>';
+    //usando un switch
+                switch ($estado) {
+                    case 'ok' :
+                        $fila = '<tr class= "fila" >';
+                        break;
+                    case 'pe' :
+                        $fila = '<tr class= "fila-dos" >';
+                        break;
+                    case 'nd' :
+                        $fila = '<tr class= "fila-tres" >';
+                        break;
+
+                    default:
+                    $fila = '<tr>';
+                        break;
+                }
+         //usando un switch
+                // if ($row['estado'] == 'ok' ) {
+                //     $fila = '<tr class= "fila" >';
+                // }
+                // if ($row['estado'] == 'pe' ) {
+                //     $fila = '<tr class= "fila-dos" >';
+                // }
+                // if ($row['estado'] == 'nd' ) {
+                //     $fila = '<tr class= "fila-tres" >';
+                // }
 
 
                 echo "<tr>
                 <h1>Tus datos</h1>
             <form action='archivo-usuario.php' method='post'>
+            $fila
             <td>
             <input type='text' placeholder='Nombre' name='nombre' value='$nombre'> <br>
             </td><td>
@@ -71,6 +102,8 @@ $result = $conn->query($sql);
             </td><td>
             <input type='text' placeholder='# Mac' name='n_mac' value='$mac'> <br>
             </td><td>
+            <input type='text' placeholder='estado' name='estado' value='$estado'> <br>
+            </td><td>
             <input class='button' name='update' type='submit' value='actualizar'>
             </td>
             </form>
@@ -84,8 +117,6 @@ $result = $conn->query($sql);
         <a href="pag.principal.php"><input type="button" class="button" value='inicio'></a>
 
     </div>
-
-
 
 </body>
 
