@@ -8,8 +8,6 @@ let cartascasa = [
 
 ];
 
-
-
 let puntosJugador = 0;
 let manojugador = [];
 let cartasjugador = [
@@ -17,17 +15,22 @@ let cartasjugador = [
 
 ];
 
-//creamos la funcion para escoger la acrtas aleatoriamante
+//creamos la funcion para escoger la cartas aleatoriamante
 function start() {
 
     //usamos el numero randon
+    jugar("casa");
+    jugar("casa");
 
-    manocasa.push(cartascasa[Math.floor(Math.random() * cartascasa.length)]);
-    manocasa.push(cartascasa[Math.floor(Math.random() * cartascasa.length)]);
+    jugar("jugador");
+    jugar("jugador");
+
+    // manocasa.push(cartascasa[Math.floor(Math.random() * cartascasa.length)]);
+    // manocasa.push(cartascasa[Math.floor(Math.random() * cartascasa.length)]);
 
 
-    manojugador.push(cartasjugador[Math.floor(Math.random() * cartasjugador.length)]);
-    manojugador.push(cartasjugador[Math.floor(Math.random() * cartasjugador.length)]);
+    // manojugador.push(cartasjugador[Math.floor(Math.random() * cartasjugador.length)]);
+    // manojugador.push(cartasjugador[Math.floor(Math.random() * cartasjugador.length)]);
 
     console.log(manocasa);
     console.log(manojugador);
@@ -84,35 +87,47 @@ function calcularPuntos () {
         }
     }
 
-           if ( puntosJugador > puntosCasa  ) {
-
-             } else {
-
-}
-
-ganador();
+  ganador();
 
 }
 
 function ganador() {
 
-    if ( puntosJugador > puntosCasa  ) {
-            console.long('Va ganando jugador')
+    if (puntosJugador > 21) {
+        console.log("El jugador se ha pasado de 21. Gana la casa");
+        return;
+    } else if (puntosCasa > 21) {
+        console.log("La casa se ha pasado de 21. Gana el jugador");
+        return;
+    }
+
+    if ( puntosJugador > puntosCasa ) {
+            console.long('Va ganando jugador');
+            jugar("casa");
+            
     } else if ( puntosJugador < puntosCasa ){
-        console.long('Va ganando casa');
+        console.log("Gana la casa");
+        jugar("jugador");
     }else {
         console.long('Hay empate');
     }
 }
 
-// function jugar() {
+function jugar(jugada) {
  
-//     if (puntosJugador > puntosCasa ) {
+   switch (jugada) {
+    case "casa":
+        manocasa.push(cartascasa[Math.floor(Math.random() * cartascasa.length)]);
+        break;
+        case "jugador":
+        manojugador.push(cartasjugador[Math.floor(Math.random() * cartasjugador.length)]);
+        break;
+    default:
+        break;
+   }
+   calcularPuntos();
         
-//     manocasa.push(cartascasa[Math.floor(Math.random() * cartascasa.length)]);
-        
-//     }
+}
 
-
-// }
 start();
+
