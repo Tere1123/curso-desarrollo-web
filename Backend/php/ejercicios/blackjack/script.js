@@ -1,15 +1,11 @@
 
 //primero creamos variables y el  array del valor de las cartas
-
 let puntosCasa = 0;
 let manocasa = [];
-
-
 let cartascasa = [
     "A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"
 
 ];
-
 
 
 let puntosJugador = 0;
@@ -19,10 +15,21 @@ let cartasjugador = [
 
 ];
 
+let marcadorJ = document.getElementById('puntosJu');
+let resultado = document.getElementById('resul');
+
+let fin = false;
+let timer = 0;
 
 //creamos la funcion para escoger la cartas aleatoriamante
 
 function start() {
+
+    puntosCasa = 0;
+    manocasa = [];
+
+    puntosJugador = 0;
+    manojugador = [];
 
     //primero usamos el numero randon / despues lo remplazamos con la funcion de jugada que realza el mismo trabajo
 
@@ -39,6 +46,10 @@ function start() {
     jugar("jugador");
     jugar("jugador");
 
+    
+    document.getElementById("cartascasa").innerHTML = manocasa;
+
+    document.getElementById("cartasjugador").innerHTML = manojugador;
 
     // lo imprimimos en consola con la funcion de calcular puntos
 
@@ -49,6 +60,7 @@ function start() {
 // creamos la funcion de calcular puntos en donde le daremos el valor a las cartas con letra,primero con un for que cuente las cartas
 // y despues le agregamos un swich(if) para darles el valor con la condicion
 function calcularPuntos() {
+   
     puntosCasa = 0;
     puntosJugador = 0;
 
@@ -100,17 +112,19 @@ function calcularPuntos() {
         }
     }
 
-    document.getElementById('manocasa').innerHTML = manocasa;
     console.log("cartas de la casa:" + manocasa.join());
+    
+    document.getElementById("cartascasa").innerHTML = manocasa.join();
 
     console.log("puntuación de la casa: " + puntosCasa);
-    document.getElementById('puntosCasa').innerHTML = puntosCasa;
+    document.getElementById('puntos').innerHTML = puntosCasa;
 
     console.log("cartas del jugador:" + manojugador.join());
-    document.getElementById('manojugador').innerHTML = manojugador;
+
+    document.getElementById("cartasjugador").innerHTML = manojugador.join();
 
     console.log("puntuación del jugador: " + puntosJugador);
-    document.getElementById('puntosJugador').innerHTML = puntosJugador;
+    marcadorJ.innerHTML = puntosJugador;
     //cerramos la funcion
     ganador();
 
@@ -124,10 +138,12 @@ function ganador() {
     // primero se estipola si alguno se a pasado de 21  
     if (puntosJugador > 21) {
         console.log("El jugador se ha pasado de 21. Gana la casa");
+        resultado.innerHTML = "El jugador se ha pasado de 21. Gana la casa" ;
         fin = true;
         return;
     } else if (puntosCasa > 21) {
         console.log("La casa se ha pasado de 21. Gana el jugador");
+        resultado.innerHTML = "La casa se ha pasado de 21. Gana el jugador" ;
         fin = true;
         return;
     }
@@ -136,22 +152,27 @@ function ganador() {
         //si los puntos son mayores a los del contrincante pero es diferente de la variable fin(21) 
         //va ganando y juega el contrario       
         console.log("Va ganando el jugador");
+        resultado.innerHTML = "Va ganando el jugador" ;
         console.log("");
-        jugar("casa");
+        // jugar("casa");
         return;
 
     } else if (puntosCasa > puntosJugador && !fin) {
         console.log("Va ganando la casa");
+        resultado.innerHTML = "Va ganando la casa" ;
         console.log("");
-        jugar("jugador");
+        // jugar("jugador");
         return;
     } else {
         console.log("Hay empate");
         console.log("");
-        jugar("jugador");
+        resultado.innerHTML = "Hay empate" ;
+        // jugar("jugador");
         return;
     }
 
+
+  
 
 }
 
@@ -175,6 +196,50 @@ function jugar(jugada) {
 
 
 }
+
+function plantarse() {
+
+    if (puntosJugador > puntosCasa ) {
+        jugar("casa");
+
+    } else fin = true;
+
+    if (!fin) {
+        timer = setTimeout(() => {
+            plantarse();
+        }, 1500);
+    } else {
+        clearTimeout(timer);
+        timer = 0;
+    }
+    console.log(fin);
+
+}
+
+
+function reset() {
+
+    document.getElementById("cartascasa").innerHTML = manocasa;
+
+    document.getElementById("cartasjugador").innerHTML = manojugador;
+
+    document.getElementById('puntos').innerHTML = puntosCasa;
+
+ 
+    resultado.innerHTML =  [ ] ;
+
+    puntosCasa = 0;
+
+    manocasa = [];
+
+    puntosJugador = 0;
+    manojugador = [];
+
+    marcadorJ.innerHTML = puntosJugador;
+
+}
+
+
 
 start();
 
