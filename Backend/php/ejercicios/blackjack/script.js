@@ -15,8 +15,13 @@ let cartasjugador = [
 
 ];
 
+// Identificamos los elementos de HTML
+let tableroc = document.getElementById('cartas-casa');
+let tableroj = document.getElementById('cartas-jugador');
+let marcadorc = document.getElementById('puntos');
 let marcadorJ = document.getElementById('puntosJu');
 let resultado = document.getElementById('resul');
+
 
 let fin = false;
 let timer = 0;
@@ -47,15 +52,33 @@ function start() {
     jugar("jugador");
 
     
-    document.getElementById("cartascasa").innerHTML = manocasa;
+    tableroc.innerHTML;
 
-    document.getElementById("cartasjugador").innerHTML = manojugador;
+    tablerojinnerHTML;
 
     // lo imprimimos en consola con la funcion de calcular puntos
 
     calcularPuntos();
 
 }
+
+function jugar(jugada) {
+
+    switch (jugada) {
+        case "casa":
+            manocasa.push(cartascasa[Math.floor(Math.random() * cartascasa.length)]);
+            break;
+        case "jugador":
+            manojugador.push(cartasjugador[Math.floor(Math.random() * cartasjugador.length)]);
+            break;
+    }
+
+    //este if nos permitira calcular cuando cada jugador tenga 2 cartas 
+    if (manocasa.length >= 2 && manojugador.length >= 2) calcularPuntos();
+
+
+}
+
 
 // creamos la funcion de calcular puntos en donde le daremos el valor a las cartas con letra,primero con un for que cuente las cartas
 // y despues le agregamos un swich(if) para darles el valor con la condicion
@@ -117,7 +140,7 @@ function calcularPuntos() {
     document.getElementById("cartascasa").innerHTML = manocasa.join();
 
     console.log("puntuación de la casa: " + puntosCasa);
-    document.getElementById('puntos').innerHTML = puntosCasa;
+    marcadorc.innerHTML = puntosCasa;
 
     console.log("cartas del jugador:" + manojugador.join());
 
@@ -126,15 +149,42 @@ function calcularPuntos() {
     console.log("puntuación del jugador: " + puntosJugador);
     marcadorJ.innerHTML = puntosJugador;
     //cerramos la funcion
+    mostrarCartas();
+
     ganador();
 
 }
+
+let iconoDiamantes = `<i class='bi bi-suit-diamond-fill'></i>`;
+let iconoPicas = `<i class="bi bi-suit-spade-fill"></i>`;
+
+function mostrarCartas() {
+
+    manocasa.innerHTML = '';
+    manojugador.innerHTML = '';
+
+    for (let i = 0; i < jugadaCasa.length; i++) {
+        manocasa.innerHTML += "<div class='carta'>"
+        + "<div class='num top'>" + jugadaCasa[i] + "</div>" 
+        + "<div class='palo'>" + iconoDiamantes + "</div>"
+        + "<div class='num bot'>" + jugadaCasa[i] + "</div>" 
+        + "</div>";
+     }
+     for (let i = 0; i < jugadaJugador.length; i++) {
+        manojugador.innerHTML += "<div class='carta'>"
+        + "<div class='num top'>" + jugadaJugador[i] + "</div>" 
+        + "<div class='palo'>" + iconoPicas + "</div>"
+        + "<div class='num bot'>" + jugadaJugador[i] + "</div>" 
+        + "</div>";
+     }
+ }
 
 //al tener los puntos ya determinamos necesitamos saber quien va ganando y si es necesario pedrir otra carta
 //para esto creamos la funcion ganador
 function ganador() {
 
     let fin = false;
+
     // primero se estipola si alguno se a pasado de 21  
     if (puntosJugador > 21) {
         console.log("El jugador se ha pasado de 21. Gana la casa");
@@ -171,31 +221,11 @@ function ganador() {
         return;
     }
 
-
-  
-
 }
 
 // creamos una funcion que nos permitira jugar,introducimos un switch que nos arrojara una carta adicional de forma aleatoria
 
 // en este caso usamos el numero random del inicio en una funcion
-
-function jugar(jugada) {
-
-    switch (jugada) {
-        case "casa":
-            manocasa.push(cartascasa[Math.floor(Math.random() * cartascasa.length)]);
-            break;
-        case "jugador":
-            manojugador.push(cartasjugador[Math.floor(Math.random() * cartasjugador.length)]);
-            break;
-    }
-
-    //este if nos permitira calcular cuando cada jugador tenga 2 cartas 
-    if (manocasa.length >= 2 && manojugador.length >= 2) calcularPuntos();
-
-
-}
 
 function plantarse() {
 
