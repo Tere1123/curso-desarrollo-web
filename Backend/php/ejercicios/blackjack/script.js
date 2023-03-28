@@ -16,8 +16,9 @@ let cartasjugador = [
 ];
 
 // Identificamos los elementos de HTML
-let tableroc = document.getElementById('cartas-casa');
-let tableroj = document.getElementById('cartas-jugador');
+let cartasc = document.getElementById('cartas-casa');
+let cartasj = document.getElementById('cartas-jugador');
+
 let marcadorc = document.getElementById('puntos');
 let marcadorJ = document.getElementById('puntosJu');
 let resultado = document.getElementById('resul');
@@ -51,10 +52,7 @@ function start() {
     jugar("jugador");
     jugar("jugador");
 
-    
-    tableroc.innerHTML;
 
-    tablerojinnerHTML;
 
     // lo imprimimos en consola con la funcion de calcular puntos
 
@@ -137,17 +135,20 @@ function calcularPuntos() {
 
     console.log("cartas de la casa:" + manocasa.join());
     
-    document.getElementById("cartascasa").innerHTML = manocasa.join();
+    // document.getElementById("cartascasa").innerHTML = manocasa.join();
 
     console.log("puntuación de la casa: " + puntosCasa);
+
     marcadorc.innerHTML = puntosCasa;
 
     console.log("cartas del jugador:" + manojugador.join());
 
-    document.getElementById("cartasjugador").innerHTML = manojugador.join();
+    // document.getElementById("cartasjugador").innerHTML = manojugador.join();
 
     console.log("puntuación del jugador: " + puntosJugador);
     marcadorJ.innerHTML = puntosJugador;
+    cartasc.innerHTML = manocasa.join();
+    cartasj.innerHTML =  manojugador.join();
     //cerramos la funcion
     mostrarCartas();
 
@@ -160,40 +161,46 @@ let iconoPicas = `<i class="bi bi-suit-spade-fill"></i>`;
 
 function mostrarCartas() {
 
-    manocasa.innerHTML = '';
-    manojugador.innerHTML = '';
+    cartasc.innerHTML = '';
+    cartasj.innerHTML = '';
 
-    for (let i = 0; i < jugadaCasa.length; i++) {
-        manocasa.innerHTML += "<div class='carta'>"
-        + "<div class='num top'>" + jugadaCasa[i] + "</div>" 
+    for (let i = 0; i < manocasa.length; i++) {
+        cartasc.innerHTML += "<div class='carta'>"
+        + "<div class='num top'>" + manocasa[i] + "</div>" 
         + "<div class='palo'>" + iconoDiamantes + "</div>"
-        + "<div class='num bot'>" + jugadaCasa[i] + "</div>" 
+        + "<div class='num bot'>" + manocasa[i] + "</div>" 
         + "</div>";
      }
-     for (let i = 0; i < jugadaJugador.length; i++) {
-        manojugador.innerHTML += "<div class='carta'>"
-        + "<div class='num top'>" + jugadaJugador[i] + "</div>" 
+     for (let i = 0; i < manojugador.length; i++) {
+        cartasj.innerHTML += "<div class='carta'>"
+        + "<div class='num top'>" + manojugador[i] + "</div>" 
         + "<div class='palo'>" + iconoPicas + "</div>"
-        + "<div class='num bot'>" + jugadaJugador[i] + "</div>" 
+        + "<div class='num bot'>" + manojugador[i] + "</div>" 
         + "</div>";
      }
  }
 
 //al tener los puntos ya determinamos necesitamos saber quien va ganando y si es necesario pedrir otra carta
 //para esto creamos la funcion ganador
+let btncompra = document.getElementById('place_order');
+
 function ganador() {
 
     let fin = false;
+    let btnjugar = document.getElementById('place_order');
+    btnjugar.disabled = false;
 
     // primero se estipola si alguno se a pasado de 21  
-    if (puntosJugador > 21) {
+    if (puntosJugador >= 21) {
         console.log("El jugador se ha pasado de 21. Gana la casa");
         resultado.innerHTML = "El jugador se ha pasado de 21. Gana la casa" ;
+        btnjugar.disabled = true;
         fin = true;
         return;
     } else if (puntosCasa > 21) {
         console.log("La casa se ha pasado de 21. Gana el jugador");
         resultado.innerHTML = "La casa se ha pasado de 21. Gana el jugador" ;
+        btnjugar.disabled = true;
         fin = true;
         return;
     }
@@ -211,12 +218,14 @@ function ganador() {
         console.log("Va ganando la casa");
         resultado.innerHTML = "Va ganando la casa" ;
         console.log("");
+       
         // jugar("jugador");
         return;
     } else {
         console.log("Hay empate");
         console.log("");
         resultado.innerHTML = "Hay empate" ;
+        btnjugar.disabled = true;
         // jugar("jugador");
         return;
     }
@@ -249,24 +258,13 @@ function plantarse() {
 
 function reset() {
 
-    document.getElementById("cartascasa").innerHTML = manocasa;
+    cartasc.innerHTML = [ ];
+    cartasj.innerHTML = [ ];
+    marcadorc.innerHTML = [ ];
+    marcadorJ.innerHTML = [ ];
+    resultado.innerHTML =  [ ];
 
-    document.getElementById("cartasjugador").innerHTML = manojugador;
-
-    document.getElementById('puntos').innerHTML = puntosCasa;
-
- 
-    resultado.innerHTML =  [ ] ;
-
-    puntosCasa = 0;
-
-    manocasa = [];
-
-    puntosJugador = 0;
-    manojugador = [];
-
-    marcadorJ.innerHTML = puntosJugador;
-
+   
 }
 
 
