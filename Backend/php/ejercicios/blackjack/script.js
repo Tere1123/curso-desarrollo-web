@@ -182,25 +182,31 @@ function mostrarCartas() {
 
 //al tener los puntos ya determinamos necesitamos saber quien va ganando y si es necesario pedrir otra carta
 //para esto creamos la funcion ganador
-let btncompra = document.getElementById('place_order');
+let btnjugar = document.getElementById('place_order');
+let btnplantarse = document.getElementById('detener');
+
 
 function ganador() {
 
     let fin = false;
     let btnjugar = document.getElementById('place_order');
+    let btnplantarse = document.getElementById('detener');
+    btnplantarse.disabled = false;
     btnjugar.disabled = false;
 
     // primero se estipola si alguno se a pasado de 21  
-    if (puntosJugador >= 21) {
+    if (puntosJugador > 21) {
         console.log("El jugador se ha pasado de 21. Gana la casa");
         resultado.innerHTML = "El jugador se ha pasado de 21. Gana la casa" ;
         btnjugar.disabled = true;
+        btnplantarse.disabled = true;
         fin = true;
         return;
     } else if (puntosCasa > 21) {
         console.log("La casa se ha pasado de 21. Gana el jugador");
         resultado.innerHTML = "La casa se ha pasado de 21. Gana el jugador" ;
         btnjugar.disabled = true;
+        btnplantarse.disabled = true;
         fin = true;
         return;
     }
@@ -209,7 +215,7 @@ function ganador() {
         //si los puntos son mayores a los del contrincante pero es diferente de la variable fin(21) 
         //va ganando y juega el contrario       
         console.log("Va ganando el jugador");
-        resultado.innerHTML = "Va ganando el jugador" ;
+        resultado.innerHTML = "Va ganando el jugador";
         console.log("");
         // jugar("casa");
         return;
@@ -225,13 +231,26 @@ function ganador() {
         console.log("Hay empate");
         console.log("");
         resultado.innerHTML = "Hay empate" ;
-        btnjugar.disabled = true;
+        // btnjugar.disabled = true;
         // jugar("jugador");
         return;
     }
 
+    
+
 }
 
+let apuesta = document.getElementById('apuestaJ');
+
+
+function apostar() {
+
+    
+
+   
+
+
+}
 // creamos una funcion que nos permitira jugar,introducimos un switch que nos arrojara una carta adicional de forma aleatoria
 
 // en este caso usamos el numero random del inicio en una funcion
@@ -264,7 +283,7 @@ function reset() {
     marcadorJ.innerHTML = [ ];
     resultado.innerHTML =  [ ];
 
-   
+
 }
 
 

@@ -50,7 +50,7 @@
                             <p> puntos: </p>
                             <p><span id="puntos"></span></p>
                         </div>
-                        <div class="apuesta">
+                        <div>
                             <p><i class="bi bi-cash-coin"></i></p>
                         </div>
                     </div>
@@ -66,15 +66,29 @@
                             <p><span id="puntosJu"></span></p>
                         </div>
 
-                        <div class="apuesta">
+                        <div>
                             <p><i class="bi bi-cash-coin"></i></p>
                         </div>
 
                     </div>
                 </div>
 
+                <div class="apuesta">
+
+                    <div>
+                        <button onclick="apostar()">10€</button>
+                        <button onclick="apostar()">20€</button>
+                        <button onclick="apostar()">50€</button> 
+                    </div>
+
+                    <div>
+             
+                        <p><span id="total"></span></p>
+                        
+                    </div>
+                </div>
                 <div class="resultado">
-                    <p><i class="bi bi-trophy-fill"></i> </p>
+                    <p><i class="bi bi-trophy-fill"></i></p>
                     <p><span id="resul"></span></p>
                 </div>
 
@@ -85,7 +99,8 @@
                         bi-play-fill"></i></button>
                 <button title='jugar' id="place_order"
                     onclick="jugar('jugador')"><i class="bi bi-controller"></i></button>
-                <button title='plantarse' onclick="plantarse()"><i class="bi
+                <button title='plantarse' id="detener" onclick="plantarse()"><i
+                        class="bi
                         bi-stop"></i></button>
                 <button title='reiniciar' onclick="reset()"><i class="bi
                         bi-arrow-clockwise"></i></button>
