@@ -50,9 +50,7 @@
                             <p> puntos: </p>
                             <p><span id="puntos"></span></p>
                         </div>
-                        <div>
-                            <p><i class="bi bi-cash-coin"></i></p>
-                        </div>
+            
                     </div>
 
                     <div>
@@ -66,27 +64,30 @@
                             <p><span id="puntosJu"></span></p>
                         </div>
 
-                        <div>
-                            <p><i class="bi bi-cash-coin"></i></p>
-                        </div>
 
                     </div>
+
                 </div>
 
+                
                 <div class="apuesta">
 
-                    <div>
-                        <button onclick="apostar()">10€</button>
-                        <button onclick="apostar()">20€</button>
-                        <button onclick="apostar()">50€</button> 
+                    <div class="coin">
+                        <p><i class="bi bi-cash-coin"></i></p>
+                        <button class="apuestaj" onclick="apostar(10)">10€</button>
+                        <button class="apuestaj" onclick="apostar(20)">20€</button>
+                        <button class="apuestaj" onclick="apostar(50)">50€</button> 
+                  
                     </div>
 
-                    <div>
-             
-                        <p><span id="total"></span></p>
+                    <div class="dinero">
+                        <p>Dinero:<span id="total"></span></p>
+                        <div id="message"></div>
                         
                     </div>
                 </div>
+
+                
                 <div class="resultado">
                     <p><i class="bi bi-trophy-fill"></i></p>
                     <p><span id="resul"></span></p>
