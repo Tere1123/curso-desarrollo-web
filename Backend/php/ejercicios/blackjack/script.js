@@ -21,7 +21,11 @@ let cartasj = document.getElementById('cartas-jugador');
 
 let marcadorc = document.getElementById('puntos');
 let marcadorJ = document.getElementById('puntosJu');
-let resultado = document.getElementById('resul');
+let resultadoJuego = document.getElementById('resultadoJuego');
+
+
+let btnjugar = document.getElementById('place_order');
+let btnplantarse = document.getElementById('detener');
 
 
 let fin = false;
@@ -31,7 +35,7 @@ let timer = 0;
 
 function start() {
 
-    apostar(apuestaJ);
+    // apostar(apuestaJ);
 
     puntosCasa = 0;
     manocasa = [];
@@ -39,6 +43,7 @@ function start() {
     puntosJugador = 0;
     manojugador = [];
 
+    resultadoJuego.innerHTML = "Introduce tu apuesta";
 
     //primero usamos el numero randon / despues lo remplazamos con la funcion de jugada que realza el mismo trabajo
 
@@ -64,54 +69,38 @@ function start() {
 
 }
 
-
-let total = document.getElementById("total");
+let total = 50 ;
+let totalDisplay = document.getElementById("total");
 let apuestaDisplay = document.getElementById("message");
+let resultadoApuesta = document.getElementById("resultadoApuesta");
+let apuestaJ = 0;
 
-function apostar(apuestaJ) {
+totalDisplay.innerHTML = total;
 
-    total = 50;
-
+function apostar(apuesta) {
+    apuestaJ = apuesta;
+    console.log(total);
     if ((total - apuestaJ < 0)) {
         apuestaDisplay.innerHTML = "te faltan fondos!";
         return true;
     } else {
-        total = total - apuestaJ;
+
+
+        console.log(total);
+        totalDisplay.innerHTML = total - apuestaJ;
         apuestaDisplay.innerHTML = apuestaJ + " € " + "apuesta realizada!";
+
     }
 
-    jugar("casa");
-    jugar("casa");
-    
-    jugar("jugador");
-    jugar("jugador");
+    if (manocasa.length == 0 && manojugador.length == 0) {
+        jugar("casa");
+        jugar("casa");
 
-if (puntosJugador > puntosCasa && !fin) {
-    total = total + (apuestaJ * 2);
-    apuestaDisplay.innerHTML = total + " Haz ganado";
-    fin = true;
-    return true;
-
-} else if  (puntosCasa > puntosJugador && !fin){
-
-    total = total - apuestaJ;
-    apuestaDisplay.innerHTML = total + " Haz perdido";
-    fin = true;
-    return true;
-
-} else {
-
-    total = total + apuestaJ ;
-    apuestaDisplay.innerHTML = total + " Empate";
-    fin = true;
-    return true;
+        jugar("jugador");
+        jugar("jugador");
+    }
 
 }
-
-}   
-
-
-
 
 function jugar(jugada) {
 
@@ -234,33 +223,68 @@ function mostrarCartas() {
 
 //al tener los puntos ya determinamos necesitamos saber quien va ganando y si es necesario pedrir otra carta
 //para esto creamos la funcion ganador
-let btnjugar = document.getElementById('place_order');
-let btnplantarse = document.getElementById('detener');
 
 
 function ganador() {
 
     let fin = false;
-    let btnjugar = document.getElementById('place_order');
-    let btnplantarse = document.getElementById('detener');
     btnplantarse.disabled = false;
     btnjugar.disabled = false;
+
 
     // primero se estipola si alguno se a pasado de 21  
     if (puntosJugador > 21) {
         console.log("El jugador se ha pasado de 21. Gana la casa");
-        resultado.innerHTML = "El jugador se ha pasado de 21. Gana la casa";
+        resultadoJuego.innerHTML = "El jugador se ha pasado de 21. Gana la casa";
         btnjugar.disabled = true;
         btnplantarse.disabled = true;
         fin = true;
+        // Si el jugador pierde, se le resta la apuesta de su saldo
+        total = total - apuestaJ;
+        totalDisplay.innerHTML = total;
+        console.log(total);
         return;
 
     } else if (puntosCasa > 21) {
         console.log("La casa se ha pasado de 21. Gana el jugador");
-        resultado.innerHTML = "La casa se ha pasado de 21. Gana el jugador";
+        resultadoJuego.innerHTML = "La casa se ha pasado de 21. Gana el jugador";
         btnjugar.disabled = true;
         btnplantarse.disabled = true;
+        total = total + apuestaJ;
+        totalDisplay.innerHTML = total;
+        console.log(total);
         fin = true;
+        return;
+    }
+
+    if (puntosJugador == 21) {
+        if (puntosCasa == 21) {
+            resultadoJuego.innerHTML = "Hay empate";
+            total = total + apuestaJ;
+            apuestaDisplay.innerHTML = total;
+            totalDisplay.innerHTML = total;
+        } else {
+            resultadoJuego.innerHTML = "El jugador tiene un 21. Ganas el doble de tu apuesta!";
+            total = total + apuestaJ * 2;
+            apuestaDisplay.innerHTML = total;
+            totalDisplay.innerHTML = total;
+        }
+        return;
+    }
+    if (puntosCasa == 21) {
+        if (puntosJugador == 21) {
+            resultadoJuego.innerHTML = "Hay empate";
+            total = total + apuestaJ;
+            console.log(total);
+            apuestaDisplay.innerHTML = total;
+            totalDisplay.innerHTML = total;
+        } else {
+            resultadoJuego.innerHTML = "La casa tiene 21. Pierdes tu apuesta";
+            total = total - apuestaJ;
+            console.log(total);
+            apuestaDisplay.innerHTML = total;
+            totalDisplay.innerHTML = total;
+        }
         return;
     }
 
@@ -269,52 +293,54 @@ function ganador() {
         //si los puntos son mayores a los del contrincante pero es diferente de la variable fin(21) 
         //va ganando y juega el contrario       
         console.log("Va ganando el jugador");
-        resultado.innerHTML = "Va ganando el jugador";
+        resultadoJuego.innerHTML = "Va ganando el jugador";
         console.log("");
         // jugar("casa");
         return;
 
     } else if (puntosCasa > puntosJugador && !fin) {
         console.log("Va ganando la casa");
-        resultado.innerHTML = "Va ganando la casa";
+        resultadoJuego.innerHTML = "Va ganando la casa";
         console.log("");
-
         // jugar("jugador");
         return;
 
     } else {
         console.log("Hay empate");
         console.log("");
-        resultado.innerHTML = "Hay empate";
-        // btnjugar.disabled = true;
+        resultadoJuego.innerHTML = "Hay empate";
         // jugar("jugador");
+        if (jugadorPlantado) {
+            // total = total + apuestaJ;
+            apuestaDisplay.innerHTML = total;
+            totalDisplay.innerHTML = total;
+            console.log(total);
+        }
         return;
     }
 
-
-
 }
 
-
-
 // creamos una funcion que nos permitira jugar,introducimos un switch que nos arrojara una carta adicional de forma aleatoria
-
 // en este caso usamos el numero random del inicio en una funcion
-
+let jugadorPlantado = false;
 function plantarse() {
+
+    jugadorPlantado = true;
+    btnplantarse.disabled = true;
+    btnjugar.disabled = true;
 
     if (puntosJugador > puntosCasa) {
         jugar("casa");
 
-    } else fin = true;
-
-    if (!fin) {
         timer = setTimeout(() => {
             plantarse();
         }, 1500);
     } else {
         clearTimeout(timer);
         timer = 0;
+
+        ganador();
     }
     console.log(fin);
 
@@ -322,14 +348,20 @@ function plantarse() {
 
 
 function reset() {
+    puntosCasa = 0;
+    manocasa = [];
+
+    puntosJugador = 0;
+    manojugador = [];
 
     cartasc.innerHTML = [];
     cartasj.innerHTML = [];
-    apuestaDisplay.innerHTML = [];
     marcadorc.innerHTML = [];
     marcadorJ.innerHTML = [];
-    resultado.innerHTML = [];
-
+    resultadoJuego.innerHTML = "Introduce tu apuesta";
+    resultadoApuesta.innerHTML = [];
+    apuestaDisplay.innerHTML = total;
+    totalDisplay.innerHTML = total;
 
 }
 
