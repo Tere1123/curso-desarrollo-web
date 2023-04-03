@@ -45,6 +45,8 @@ function start() {
 
     resultadoJuego.innerHTML = "Introduce tu apuesta";
 
+    tablero.style.display = 'visible';
+
     //primero usamos el numero randon / despues lo remplazamos con la funcion de jugada que realza el mismo trabajo
 
     // manocasa.push(cartascasa[Math.floor(Math.random() * cartascasa.length)]);
@@ -207,7 +209,7 @@ function mostrarCartas() {
 
     for (let i = 0; i < manocasa.length; i++) {
         cartasc.innerHTML += "<div class='carta'>"
-            + "<div class='num top'>" + manocasa[i] + "</div>"
+            + "<div class='num top' >" + manocasa[i] + "</div>"
             + "<div class='palo'>" + iconoDiamantes + "</div>"
             + "<div class='num bot'>" + manocasa[i] + "</div>"
             + "</div>";
