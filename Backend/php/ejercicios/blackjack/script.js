@@ -26,6 +26,7 @@ let resultadoJuego = document.getElementById('resultadoJuego');
 
 let btnjugar = document.getElementById('place_order');
 let btnplantarse = document.getElementById('detener');
+let btninicio = document.getElementById('inicio');
 
 
 let fin = false;
@@ -44,9 +45,19 @@ function start() {
     manojugador = [];
 
     resultadoJuego.innerHTML = "Introduce tu apuesta";
+    
 
-    tablero.style.display = 'visible';
+    if (manocasa.length == 0 && manojugador.length == 0) {
 
+        jugar("casa");
+        jugar("casa");
+
+        jugar("jugador");
+        jugar("jugador");
+   
+    }
+    btninicio.disabled = true;
+ 
     //primero usamos el numero randon / despues lo remplazamos con la funcion de jugada que realza el mismo trabajo
 
     // manocasa.push(cartascasa[Math.floor(Math.random() * cartascasa.length)]);
@@ -71,35 +82,30 @@ function start() {
 
 }
 
+//creamos variables para apostar
 let total = 50 ;
 let totalDisplay = document.getElementById("total");
 let apuestaDisplay = document.getElementById("message");
-let resultadoApuesta = document.getElementById("resultadoApuesta");
+// let resultadoApuesta = document.getElementById("resultadoApuesta");
 let apuestaJ = 0;
 
 totalDisplay.innerHTML = total;
 
+// creamosla funcion para apostar
 function apostar(apuesta) {
     apuestaJ = apuesta;
     console.log(total);
+    btninicio.disabled = false; 
+
     if ((total - apuestaJ < 0)) {
         apuestaDisplay.innerHTML = "te faltan fondos!";
+        btninicio.disabled = true; 
         return true;
     } else {
-
-
         console.log(total);
         totalDisplay.innerHTML = total - apuestaJ;
         apuestaDisplay.innerHTML = apuestaJ + " € " + "apuesta realizada!";
-
-    }
-
-    if (manocasa.length == 0 && manojugador.length == 0) {
-        jugar("casa");
-        jugar("casa");
-
-        jugar("jugador");
-        jugar("jugador");
+        
     }
 
 }
@@ -207,13 +213,23 @@ function mostrarCartas() {
     cartasc.innerHTML = '';
     cartasj.innerHTML = '';
 
+
+
     for (let i = 0; i < manocasa.length; i++) {
+
         cartasc.innerHTML += "<div class='carta'>"
-            + "<div class='num top' >" + manocasa[i] + "</div>"
+            + "<div class='num top'>" + manocasa[i] + "</div>"
             + "<div class='palo'>" + iconoDiamantes + "</div>"
             + "<div class='num bot'>" + manocasa[i] + "</div>"
             + "</div>";
     }
+
+    //ocultamos una de las cartas y la coplocamos de reves
+
+    ultimaCarta = document.querySelectorAll('#cartas-casa .carta');
+    ultimaCarta[ultimaCarta.length - 1].style. backgroundImage = "url('https://www.casinobarcelona.es/blog/wp-content/uploads/2022/12/juegos-con-cartas-poker-1024x610.webp')";
+    ultimaCarta[ultimaCarta.length - 1].style.color = 'rgba(7, 7, 7, 0.988)';
+
     for (let i = 0; i < manojugador.length; i++) {
         cartasj.innerHTML += "<div class='carta'>"
             + "<div class='num top'>" + manojugador[i] + "</div>"
@@ -234,7 +250,7 @@ function ganador() {
     btnjugar.disabled = false;
 
 
-    // primero se estipola si alguno se a pasado de 21  
+    // primero se estipula si alguno se a pasado de 21  
     if (puntosJugador > 21) {
         console.log("El jugador se ha pasado de 21. Gana la casa");
         resultadoJuego.innerHTML = "El jugador se ha pasado de 21. Gana la casa";
@@ -252,6 +268,7 @@ function ganador() {
         resultadoJuego.innerHTML = "La casa se ha pasado de 21. Gana el jugador";
         btnjugar.disabled = true;
         btnplantarse.disabled = true;
+        //calcula la apuesta
         total = total + apuestaJ;
         totalDisplay.innerHTML = total;
         console.log(total);
@@ -350,6 +367,7 @@ function plantarse() {
 
 
 function reset() {
+
     puntosCasa = 0;
     manocasa = [];
 
@@ -361,9 +379,9 @@ function reset() {
     marcadorc.innerHTML = [];
     marcadorJ.innerHTML = [];
     resultadoJuego.innerHTML = "Introduce tu apuesta";
-    resultadoApuesta.innerHTML = [];
-    apuestaDisplay.innerHTML = total;
+    apuestaDisplay.innerHTML = "";
     totalDisplay.innerHTML = total;
+
 
 }
 
