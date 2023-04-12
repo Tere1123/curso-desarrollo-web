@@ -69,6 +69,10 @@
 
                 </div>
 
+                <div class="resultado">
+                    <p><i class="bi bi-trophy-fill"></i></p>
+                    <p><span id="resultadoJuego"></span></p>
+                </div>
 
                 <div class="apuesta">
 
@@ -78,33 +82,27 @@
                         <button class="apuestaj" onclick="apostar(20)">20€</button>
                         <button class="apuestaj" onclick="apostar(50)">50€</button>
                     </div>
-
-                    <div class="dinero">
-                        <p>Saldo restante:</p>
-                        <p><span id="total"></span>€</p>
-                        <div id="message"></div>
-                    </div>
-
                 </div>
 
-
-                <div class="resultado">
-                    <p><i class="bi bi-trophy-fill"></i></p>
-                    <p><span id="resultadoJuego"></span></p>
+                <div class="dinero">
+                    <p>Saldo restante:</p>
+                    <p><span id="total"></span>€</p>
+                    <div id="message"></div>
                 </div>
 
-            </div>
-
-            <div class="mandos">
-                <button title='inicio' id="inicio" onclick="start()"><i class="bi
-                        bi-play-fill"></i></button>
-                <button title='jugar' id="place_order"
-                    onclick="jugar('jugador')"><i class="bi bi-controller"></i></button>
-                <button title='plantarse' id="detener" onclick="plantarse()"><i
-                        class="bi
-                        bi-stop"></i></button>
-                <button title='reiniciar' onclick="reset()"><i class="bi
-                        bi-arrow-clockwise"></i></button>
+                <div class="mandos">
+                    <button title='inicio' id="inicio" onclick="start()"><i
+                            class="bi
+                            bi-play-fill"></i></button>
+                    <button title='jugar' id="place_order"
+                        onclick="jugar('jugador')"><i class="bi bi-controller"></i></button>
+                    <button title='plantarse' id="detener"
+                        onclick="plantarse()"><i
+                            class="bi
+                            bi-stop"></i></button>
+                    <button title='reiniciar' id="reset" onclick="reset()"><i class="bi
+                            bi-arrow-clockwise"></i></button>
+                </div>
             </div>
 
         </body>

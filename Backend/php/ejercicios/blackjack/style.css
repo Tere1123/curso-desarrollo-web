@@ -64,7 +64,7 @@ h1 {
     align-items: center;
     justify-content: space-between;
     position: relative;
-    top: 60px;
+    top: 20%;
     left: 0;
 
     width: 650px;
@@ -98,17 +98,18 @@ p span div {
     margin: 1px;
 }
 span#cartas-casa {
-    color: red;
+    color: rgba(243, 243, 245, 0.87);
 }
 span#cartas-jugador {
-    color: black;
+    color: rgb(125, 155, 18);
+
 }
 
 .carta {
 
     display: flex;
     
-    background: #ffffff;
+    background:#3b055faf;
     border: 1px solid black;
     height: 65px;
     width: 45px;
@@ -116,14 +117,19 @@ span#cartas-jugador {
     position: relative;
     padding: 3px;
     margin: 5px;
+    
+    /* esto nos permite adaptar la imagen dentro del contenedor,esta imagen la tenemos en el JS */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.carta .num {
-    font-family: 'Cousine', monospace;
 
+.carta .num {
+    font-family: 'Silkscreen', cursive;
     position: absolute;
     margin: 0 2px;
-    font-size: 0.70rem;
+    font-size: 0.75rem;
 }
 .carta .num.top {
     top: 0;
@@ -145,13 +151,11 @@ span#cartas-jugador {
 }
 .mandos {
 
-  
     position: absolute;
-    top: 95%;
+    top: 120%;
     left: 50%;
-    transform: translate(-50%, -60%);
-
-
+    transform: translate(-40%, -70%);
+    width: 600px;
 }
 
 .mandos button{
@@ -178,9 +182,13 @@ span#cartas-jugador {
 
     display: flex;
     align-items: center;
-    text-align: center;
+    justify-content: center;
+    position: relative;
+    top: -265px;
+    border-radius: 50px;
 
-
+    width: 800px;
+    height: 30px;
     background-color: rgba(7, 7, 7, 0.35);
     color: #ffffff;
 }
@@ -204,6 +212,7 @@ span#resul{
     align-items: center;
     width:700px ;
     height: 100px;
+    padding: 15px ;
 }
 
 .apuesta .apuestaj {
@@ -224,14 +233,16 @@ transition: 3s;
 .dinero {
 
     display: flex;
- 
     align-items: center;
     justify-content: space-around;
-    width: 600px;
-    padding: 0px 20px;
+    width: 800px;
+    height: 50px;
+    padding: 0px ;
     background-color: rgba(7, 7, 7, 0.35);
     color:#ffffff;
     border-radius: 20px;
+    position: relative;
+    top:10% ;
 }
 .coin {
     display: flex;
@@ -243,7 +254,7 @@ transition: 3s;
 
 .apuesta i {
     color: #c5a410;
-    font-size: 40px;
+    font-size: 50px;
     margin: 15px;
    
 }
@@ -251,10 +262,11 @@ transition: 3s;
    
     border-radius: 5px;
     background-color: rgba(57, 255, 8);
-    height: 30px;
-    width: 60px;
+    height: 35px;
+    width: 65px;
     font-family: 'Silkscreen', cursive;
     font-size: 18px;
+    margin: 15px;
 
 }
 .apuesta button:hover {

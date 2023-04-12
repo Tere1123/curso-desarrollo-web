@@ -27,6 +27,7 @@ let resultadoJuego = document.getElementById('resultadoJuego');
 let btnjugar = document.getElementById('place_order');
 let btnplantarse = document.getElementById('detener');
 let btninicio = document.getElementById('inicio');
+let btnreset = document.getElementById('reset');
 
 
 let fin = false;
@@ -56,6 +57,7 @@ function start() {
         jugar("jugador");
    
     }
+
     btninicio.disabled = true;
  
     //primero usamos el numero randon / despues lo remplazamos con la funcion de jugada que realza el mismo trabajo
@@ -96,19 +98,21 @@ function apostar(apuesta) {
     apuestaJ = apuesta;
     console.log(total);
     btninicio.disabled = false; 
-
+   
     if ((total - apuestaJ < 0)) {
         apuestaDisplay.innerHTML = "te faltan fondos!";
         btninicio.disabled = true; 
         return true;
+       
     } else {
         console.log(total);
         totalDisplay.innerHTML = total - apuestaJ;
         apuestaDisplay.innerHTML = apuestaJ + " € " + "apuesta realizada!";
         
     }
-
 }
+
+
 
 function jugar(jugada) {
 
@@ -227,8 +231,8 @@ function mostrarCartas() {
     //ocultamos una de las cartas y la coplocamos de reves
 
     ultimaCarta = document.querySelectorAll('#cartas-casa .carta');
-    ultimaCarta[ultimaCarta.length - 1].style. backgroundImage = "url('https://www.casinobarcelona.es/blog/wp-content/uploads/2022/12/juegos-con-cartas-poker-1024x610.webp')";
-    ultimaCarta[ultimaCarta.length - 1].style.color = 'rgba(7, 7, 7, 0.988)';
+    ultimaCarta[ultimaCarta.length - 1].style. backgroundImage = "url('https://img.freepik.com/free-vector/neon-suit-poker-casino-brick-wall_47243-538.jpg?size=338&ext=jpg')";
+    ultimaCarta[ultimaCarta.length - 1].style.color = 'transparent';
 
     for (let i = 0; i < manojugador.length; i++) {
         cartasj.innerHTML += "<div class='carta'>"
@@ -278,11 +282,14 @@ function ganador() {
 
     if (puntosJugador == 21) {
         if (puntosCasa == 21) {
+            btnplantarse.disabled = true;
             resultadoJuego.innerHTML = "Hay empate";
             total = total + apuestaJ;
             apuestaDisplay.innerHTML = total;
             totalDisplay.innerHTML = total;
         } else {
+            btnplantarse.disabled = true;
+            btnjugar.disabled = true;
             resultadoJuego.innerHTML = "El jugador tiene un 21. Ganas el doble de tu apuesta!";
             total = total + apuestaJ * 2;
             apuestaDisplay.innerHTML = total;
@@ -298,6 +305,8 @@ function ganador() {
             apuestaDisplay.innerHTML = total;
             totalDisplay.innerHTML = total;
         } else {
+            btnplantarse.disabled = true;
+            btnjugar.disabled = true;
             resultadoJuego.innerHTML = "La casa tiene 21. Pierdes tu apuesta";
             total = total - apuestaJ;
             console.log(total);
@@ -333,6 +342,8 @@ function ganador() {
             // total = total + apuestaJ;
             apuestaDisplay.innerHTML = total;
             totalDisplay.innerHTML = total;
+            // btnplantarse.disabled = true;
+            // btnjugar.disabled = true;
             console.log(total);
         }
         return;
@@ -365,7 +376,6 @@ function plantarse() {
 
 }
 
-
 function reset() {
 
     puntosCasa = 0;
@@ -381,7 +391,7 @@ function reset() {
     resultadoJuego.innerHTML = "Introduce tu apuesta";
     apuestaDisplay.innerHTML = "";
     totalDisplay.innerHTML = total;
-
+    total = 50;
 
 }
 
