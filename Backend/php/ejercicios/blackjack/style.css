@@ -98,10 +98,11 @@ p span div {
     margin: 1px;
 }
 span#cartas-casa {
-    color: rgba(243, 243, 245, 0.87);
+    color: rgb(4, 247, 247);
+  
 }
 span#cartas-jugador {
-    color: rgb(125, 155, 18);
+    color: rgba(245, 233, 239, 0.966);
 
 }
 
@@ -154,7 +155,7 @@ span#cartas-jugador {
     position: absolute;
     top: 120%;
     left: 50%;
-    transform: translate(-40%, -70%);
+    transform: translate(-30%, -50%);
     width: 600px;
 }
 

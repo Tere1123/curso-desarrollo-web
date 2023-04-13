@@ -28,6 +28,7 @@ let btnjugar = document.getElementById('place_order');
 let btnplantarse = document.getElementById('detener');
 let btninicio = document.getElementById('inicio');
 let btnreset = document.getElementById('reset');
+let btnapostar = document.getElementsByClassName('apuestaj');
 
 
 let fin = false;
@@ -37,17 +38,15 @@ let timer = 0;
 
 function start() {
 
-    // apostar(apuestaJ);
 
     puntosCasa = 0;
     manocasa = [];
 
     puntosJugador = 0;
     manojugador = [];
-
+   
     resultadoJuego.innerHTML = "Introduce tu apuesta";
-    
-
+   
     if (manocasa.length == 0 && manojugador.length == 0) {
 
         jugar("casa");
@@ -55,11 +54,19 @@ function start() {
 
         jugar("jugador");
         jugar("jugador");
-   
-    }
 
+        btninicio.disabled = true;
+    }
+    
     btninicio.disabled = true;
- 
+    
+//para desabilitar los botones despues de apostar creamos un FOR para recorrer los botones
+//
+    for (let i = 0; i < btnapostar.length; i++) {
+        btnapostar[i].disabled = true;
+        
+     }
+
     //primero usamos el numero randon / despues lo remplazamos con la funcion de jugada que realza el mismo trabajo
 
     // manocasa.push(cartascasa[Math.floor(Math.random() * cartascasa.length)]);
@@ -88,17 +95,20 @@ function start() {
 let total = 50 ;
 let totalDisplay = document.getElementById("total");
 let apuestaDisplay = document.getElementById("message");
-// let resultadoApuesta = document.getElementById("resultadoApuesta");
 let apuestaJ = 0;
 
+  
 totalDisplay.innerHTML = total;
 
-// creamosla funcion para apostar
+// creamos la funcion para apostar
 function apostar(apuesta) {
     apuestaJ = apuesta;
     console.log(total);
-    btninicio.disabled = false; 
    
+    btninicio.disabled = false; 
+
+  
+
     if ((total - apuestaJ < 0)) {
         apuestaDisplay.innerHTML = "te faltan fondos!";
         btninicio.disabled = true; 
@@ -107,13 +117,12 @@ function apostar(apuesta) {
     } else {
         console.log(total);
         totalDisplay.innerHTML = total - apuestaJ;
-        apuestaDisplay.innerHTML = apuestaJ + " € " + "apuesta realizada!";
+        apuestaDisplay.innerHTML = apuestaJ + " € " + "apuesta realizada!";   
         
-    }
 }
 
-
-
+}
+    
 function jugar(jugada) {
 
     switch (jugada) {
@@ -228,8 +237,7 @@ function mostrarCartas() {
             + "</div>";
     }
 
-    //ocultamos una de las cartas y la coplocamos de reves
-
+    //ocultamos una de las cartas
     ultimaCarta = document.querySelectorAll('#cartas-casa .carta');
     ultimaCarta[ultimaCarta.length - 1].style. backgroundImage = "url('https://img.freepik.com/free-vector/neon-suit-poker-casino-brick-wall_47243-538.jpg?size=338&ext=jpg')";
     ultimaCarta[ultimaCarta.length - 1].style.color = 'transparent';
@@ -241,6 +249,7 @@ function mostrarCartas() {
             + "<div class='num bot'>" + manojugador[i] + "</div>"
             + "</div>";
     }
+
 }
 
 //al tener los puntos ya determinamos necesitamos saber quien va ganando y si es necesario pedrir otra carta
@@ -342,8 +351,8 @@ function ganador() {
             // total = total + apuestaJ;
             apuestaDisplay.innerHTML = total;
             totalDisplay.innerHTML = total;
-            // btnplantarse.disabled = true;
-            // btnjugar.disabled = true;
+            btnplantarse.disabled = true;
+            btnjugar.disabled = true;
             console.log(total);
         }
         return;
@@ -391,9 +400,14 @@ function reset() {
     resultadoJuego.innerHTML = "Introduce tu apuesta";
     apuestaDisplay.innerHTML = "";
     totalDisplay.innerHTML = total;
-    total = 50;
+ 
+    // repetimos el FOR para voverlos a habilitar
+    for (let i = 0; i < btnapostar.length; i++) {
+        btnapostar[i].disabled = false;
+        
+    }
 
 }
 
-start();
+// start();
 
