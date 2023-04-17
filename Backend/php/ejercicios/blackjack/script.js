@@ -44,9 +44,10 @@ function start() {
 
     puntosJugador = 0;
     manojugador = [];
-   
+
     resultadoJuego.innerHTML = "Introduce tu apuesta";
-   
+
+
     if (manocasa.length == 0 && manojugador.length == 0) {
 
         jugar("casa");
@@ -55,17 +56,17 @@ function start() {
         jugar("jugador");
         jugar("jugador");
 
-        btninicio.disabled = true;
+
     }
-    
+
     btninicio.disabled = true;
-    
-//para desabilitar los botones despues de apostar creamos un FOR para recorrer los botones
-//
+
+    //para desabilitar los botones despues de apostar creamos un FOR para recorrer los botones
+    //
     for (let i = 0; i < btnapostar.length; i++) {
         btnapostar[i].disabled = true;
-        
-     }
+
+    }
 
     //primero usamos el numero randon / despues lo remplazamos con la funcion de jugada que realza el mismo trabajo
 
@@ -92,37 +93,42 @@ function start() {
 }
 
 //creamos variables para apostar
-let total = 50 ;
+let total = 50;
 let totalDisplay = document.getElementById("total");
 let apuestaDisplay = document.getElementById("message");
 let apuestaJ = 0;
 
-  
+btninicio.disabled = true;
 totalDisplay.innerHTML = total;
 
 // creamos la funcion para apostar
 function apostar(apuesta) {
+
     apuestaJ = apuesta;
     console.log(total);
-   
-    btninicio.disabled = false; 
 
-  
 
     if ((total - apuestaJ < 0)) {
-        apuestaDisplay.innerHTML = "te faltan fondos!";
-        btninicio.disabled = true; 
+        btninicio.disabled = true;
+        let resultado = window.confirm('¡Te faltan fondos!, ¿Quieres volver a iniciar?');
+
+        if (resultado === true) {
+            total = 50;
+        }
+
         return true;
-       
+
     } else {
         console.log(total);
         totalDisplay.innerHTML = total - apuestaJ;
-        apuestaDisplay.innerHTML = apuestaJ + " € " + "apuesta realizada!";   
-        
-}
+        apuestaDisplay.innerHTML = apuestaJ + " € " + "apuesta realizada!";
+        btninicio.disabled = false;
+
+    }
+
 
 }
-    
+
 function jugar(jugada) {
 
     switch (jugada) {
@@ -239,7 +245,7 @@ function mostrarCartas() {
 
     //ocultamos una de las cartas
     ultimaCarta = document.querySelectorAll('#cartas-casa .carta');
-    ultimaCarta[ultimaCarta.length - 1].style. backgroundImage = "url('https://img.freepik.com/free-vector/neon-suit-poker-casino-brick-wall_47243-538.jpg?size=338&ext=jpg')";
+    ultimaCarta[ultimaCarta.length - 1].style.backgroundImage = "url('https://img.freepik.com/free-vector/neon-suit-poker-casino-brick-wall_47243-538.jpg?size=338&ext=jpg')";
     ultimaCarta[ultimaCarta.length - 1].style.color = 'transparent';
 
     for (let i = 0; i < manojugador.length; i++) {
@@ -269,11 +275,25 @@ function ganador() {
         resultadoJuego.innerHTML = "El jugador se ha pasado de 21. Gana la casa";
         btnjugar.disabled = true;
         btnplantarse.disabled = true;
-        fin = true;
+
         // Si el jugador pierde, se le resta la apuesta de su saldo
         total = total - apuestaJ;
         totalDisplay.innerHTML = total;
         console.log(total);
+
+        if ((total - apuestaJ <= 0)) {
+
+            //usamos el setTimeout para que me permita ver las carta antes de que me salga la alerta
+            setTimeout(() => {
+                let resultado = window.confirm('¡Te faltan fondos!, ¿Quieres volver a iniciar?');
+                if (resultado === true) {
+                    total = 50;
+                }
+            }, 1000);
+
+
+        }
+        fin = true;
         return;
 
     } else if (puntosCasa > 21) {
@@ -288,6 +308,7 @@ function ganador() {
         fin = true;
         return;
     }
+
 
     if (puntosJugador == 21) {
         if (puntosCasa == 21) {
@@ -400,11 +421,11 @@ function reset() {
     resultadoJuego.innerHTML = "Introduce tu apuesta";
     apuestaDisplay.innerHTML = "";
     totalDisplay.innerHTML = total;
- 
+
     // repetimos el FOR para voverlos a habilitar
     for (let i = 0; i < btnapostar.length; i++) {
         btnapostar[i].disabled = false;
-        
+
     }
 
 }
