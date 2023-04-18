@@ -30,6 +30,8 @@ let btninicio = document.getElementById('inicio');
 let btnreset = document.getElementById('reset');
 let btnapostar = document.getElementsByClassName('apuestaj');
 
+let barajas = document.getElementById('baraja');
+
 
 let fin = false;
 let timer = 0;
@@ -98,6 +100,8 @@ let totalDisplay = document.getElementById("total");
 let apuestaDisplay = document.getElementById("message");
 let apuestaJ = 0;
 
+btnplantarse.disabled = true;
+btnjugar.disabled = true;
 btninicio.disabled = true;
 totalDisplay.innerHTML = total;
 
@@ -110,11 +114,7 @@ function apostar(apuesta) {
 
     if ((total - apuestaJ < 0)) {
         btninicio.disabled = true;
-        let resultado = window.confirm('¡Te faltan fondos!, ¿Quieres volver a iniciar?');
-
-        if (resultado === true) {
-            total = 50;
-        }
+        apuestaDisplay.innerHTML = 'No hay saldo';
 
         return true;
 
@@ -227,6 +227,18 @@ function calcularPuntos() {
 let iconoDiamantes = `<i class='bi bi-suit-diamond-fill'></i>`;
 let iconoPicas = `<i class="bi bi-suit-spade-fill"></i>`;
 
+function baraja() {
+
+    
+    for (let i = 0; i < barajas.length; i++){
+    barajas.innerHTML += "<div class='baraja'>"
+    + "<div class='num top'>" + manocasa[i] + "</div>"
+    + "<div class='palo'>" + iconoDiamantes + "</div>"
+    + "<div class='num bot'>" + manocasa[i] + "</div>"
+    + "</div>";
+    }
+
+}
 function mostrarCartas() {
 
     cartasc.innerHTML = '';
@@ -285,9 +297,10 @@ function ganador() {
 
             //usamos el setTimeout para que me permita ver las carta antes de que me salga la alerta
             setTimeout(() => {
-                let resultado = window.confirm('¡Te faltan fondos!, ¿Quieres volver a iniciar?');
+                let resultado = window.confirm('¡Perdiste todo!, ¿Quieres volver a iniciar?');
                 if (resultado === true) {
                     total = 50;
+                    reset();
                 }
             }, 1000);
 
@@ -413,6 +426,7 @@ function reset() {
 
     puntosJugador = 0;
     manojugador = [];
+
 
     cartasc.innerHTML = [];
     cartasj.innerHTML = [];
