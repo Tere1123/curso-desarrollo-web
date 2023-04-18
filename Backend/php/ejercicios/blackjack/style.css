@@ -217,34 +217,22 @@ span#resul{
 }
 
 .apuesta .apuestaj {
-transition: 3s;
--moz-transition: 3s;
+    animation: girar 3s linear infinite;
+/* transition: 3s; */
+/* -moz-transition: 3s;
 -webkit-transition: 3s;
--o-transition: 3s
+-o-transition: 3s */
 }
 
-.apuesta .apuestaj:hover{
+/* .apuesta .apuestaj:hover{
  transform:rotate(360deg);
 -ms-transform:rotate(360deg);
 -moz-transform:rotate(360deg);
 -webkit-transform:rotate(360deg);
 -o-transform:rotate(360deg)
-}
+} */
 
-.dinero {
 
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 800px;
-    height: 50px;
-    padding: 0px ;
-    background-color: rgba(7, 7, 7, 0.35);
-    color:#ffffff;
-    border-radius: 20px;
-    position: relative;
-    top:10% ;
-}
 .coin {
     display: flex;
     align-items: center;
@@ -254,11 +242,14 @@ transition: 3s;
 }
 
 .apuesta i {
+
     color: #c5a410;
     font-size: 50px;
     margin: 15px;
+
    
 }
+
 .apuesta button {
    
     border-radius: 5px;
@@ -276,11 +267,27 @@ cursor: pointer;
 background-color:rgb(233, 229, 10);
 
 }
-
+.dinero {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 800px;
+    height: 50px;
+    padding: 0px ;
+    background-color: rgba(7, 7, 7, 0.35);
+    color:#ffffff;
+    border-radius: 20px;
+    position: relative;
+    top:10% ;
+}
 
 .total {
     display: flex;
 }
 
-
+@keyframes girar {
+    0% {transform: rotateY(0deg);}
+    50%  {transform: rotateY(180deg);}
+    100%  {transform: rotateY(360deg);}
+}
 
