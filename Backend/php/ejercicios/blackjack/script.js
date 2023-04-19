@@ -30,9 +30,6 @@ let btninicio = document.getElementById('inicio');
 let btnreset = document.getElementById('reset');
 let btnapostar = document.getElementsByClassName('apuestaj');
 
-let barajas = document.getElementById('baraja');
-
-
 let fin = false;
 let timer = 0;
 
@@ -226,19 +223,85 @@ function calcularPuntos() {
 
 let iconoDiamantes = `<i class='bi bi-suit-diamond-fill'></i>`;
 let iconoPicas = `<i class="bi bi-suit-spade-fill"></i>`;
+let iconoCorazones = `<i class="bi bi-suit-heart"></i>`;
+let iconoTreboles = `<i class="bi bi-suit-club"></i>`;
+let reves = `<img src="https://img.freepik.com/free-vector/neon-suit-poker-casino-brick-wall_47243-538.jpg?size=338&ext=jpg" alt="">`
 
-function baraja() {
+const contenedorBaraja = document.getElementById('baraja');
 
-    
-    for (let i = 0; i < barajas.length; i++){
-    barajas.innerHTML += "<div class='baraja'>"
-    + "<div class='num top'>" + manocasa[i] + "</div>"
-    + "<div class='palo'>" + iconoDiamantes + "</div>"
-    + "<div class='num bot'>" + manocasa[i] + "</div>"
-    + "</div>";
+function Baraja() {
+
+    let baraja = new Array();
+    let palos = {
+        "T": "Treboles",
+        "D": "Diamantes",
+        "P": "Picas",
+        "C": "Corazones"
+    }
+
+    let rangos = new Array("A", 2, 3, 4, 5, 6, 7, 8, 9, 0, "J", "Q", "K");
+
+    Object.keys(palos).forEach(function (value) {
+        for (let i = 0; i < rangos.length; i++) {
+            baraja.push(rangos[i] + value);
+        }
+    })
+
+    console.log(baraja);
+
+    for (let i = 0; i < baraja.length; i++) {
+        let valor = baraja[i].charAt(0);
+        if (valor == 0) valor = 10;
+        let palo = baraja[i].charAt(1);
+        let print = '';
+        let color = '';
+        switch (palo) {
+            case 'T':
+                print = iconoTreboles;
+                color = 'carta-negra';
+                break;
+            case 'D':
+                print = iconoDiamantes;
+                color = 'carta-roja';
+                break;
+            case 'C':
+                print = iconoCorazones;
+                color = 'carta-roja';
+                break;
+            case 'P':
+                print = iconoPicas;
+                color = 'carta-negra';
+                break;
+            default:
+                break;
+        }
+        contenedorBaraja.innerHTML +=
+            "<div id='" + baraja[i] + "' class='carta baraja'>"
+            + "<div class='carta-contenedor'>"
+            + "<div class='frontal " + color + "'>"
+            + "<div class='num top'>" + valor + "</div>"
+            + "<div class='palo'>" + print + "</div>"
+            + "<div class='num bot'>" + valor + "</div>"
+            + "</div>"
+            + "<div class='trasera'>" + reves + "</div>"
+            + "</div>"
+            + "</div>"
+
+        let cartaTop = document.querySelectorAll('.baraja');
+        cartaTop[cartaTop.length - 1].style.zIndex = i;
     }
 
 }
+
+Baraja();
+
+let baraja = document.querySelectorAll('.baraja');
+let caraCartas = document.querySelectorAll('.baraja .carta-contenedor');
+let num = document.querySelectorAll('.baraja .num');
+let palos = document.querySelectorAll('.baraja .palo');
+let barajaTrasera = document.querySelectorAll('.trasera');
+
+
 function mostrarCartas() {
 
     cartasc.innerHTML = '';
@@ -279,7 +342,7 @@ function ganador() {
     let fin = false;
     btnplantarse.disabled = false;
     btnjugar.disabled = false;
-
+    let alerta = document.getElementById('alerta');
 
     // primero se estipula si alguno se a pasado de 21  
     if (puntosJugador > 21) {
@@ -297,11 +360,18 @@ function ganador() {
 
             //usamos el setTimeout para que me permita ver las carta antes de que me salga la alerta
             setTimeout(() => {
-                let resultado = window.confirm('¡Perdiste todo!, ¿Quieres volver a iniciar?');
-                if (resultado === true) {
-                    total = 50;
-                    reset();
-                }
+
+                alerta.style.display = "block";
+                total = 50;
+                // if (alerta === onclick()) {
+
+                //     alerta.style.display = "none";
+                // let resultado = window.confirm('¡Perdiste todo!, ¿Quieres volver a iniciar?');
+                // if (resultado === true) {
+                //     total = 50;
+                //     reset();
+                // }
+
             }, 1000);
 
 

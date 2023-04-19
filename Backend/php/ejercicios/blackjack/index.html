@@ -38,8 +38,9 @@
                 </span></h1>
 
             <div class="container">
-                <div class="baraja">
-                    <span id="baraja"></span>
+
+                <div id="baraja">
+               
                 </div>
 
                 <div class="tablero">
@@ -105,8 +106,15 @@
                     <button title='reiniciar' id="reset" onclick="reset()"><i class="bi
                             bi-arrow-clockwise"></i></button>
                 </div>
+                <div id="alerta">
+
+                    <p>¡Perdiste todo! ¿Quieres volver a jugar? </p>
+                    <button onclick="reset()">Iniciar</button>
+
+                </div>
             </div>
 
         </body>
         <script src="script.js"></script>
     </html>
+   
