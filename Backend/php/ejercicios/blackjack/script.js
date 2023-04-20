@@ -30,6 +30,8 @@ let btninicio = document.getElementById('inicio');
 let btnreset = document.getElementById('reset');
 let btnapostar = document.getElementsByClassName('apuestaj');
 
+let alerta = document.getElementById('alerta');
+
 let fin = false;
 let timer = 0;
 
@@ -221,14 +223,14 @@ function calcularPuntos() {
 
 }
 
+//asignamos variables a cada icono de las carta
 let iconoDiamantes = `<i class='bi bi-suit-diamond-fill'></i>`;
 let iconoPicas = `<i class="bi bi-suit-spade-fill"></i>`;
 let iconoCorazones = `<i class="bi bi-suit-heart"></i>`;
 let iconoTreboles = `<i class="bi bi-suit-club"></i>`;
-let reves = `<img src="https://img.freepik.com/free-vector/neon-suit-poker-casino-brick-wall_47243-538.jpg?size=338&ext=jpg" alt="">`
 
 const contenedorBaraja = document.getElementById('baraja');
-
+//creamos la funcion para crear la baraja completa
 function Baraja() {
 
     let baraja = new Array();
@@ -240,19 +242,21 @@ function Baraja() {
     }
 
     let rangos = new Array("A", 2, 3, 4, 5, 6, 7, 8, 9, 0, "J", "Q", "K");
-
+//usamos los objetos para unir el valor con el palo en una carta 
     Object.keys(palos).forEach(function (value) {
         for (let i = 0; i < rangos.length; i++) {
             baraja.push(rangos[i] + value);
         }
     })
-
+//mostramos la baraja en consola
     console.log(baraja);
-
+//creamos un bucle para recorrer cada carta de la baraja
     for (let i = 0; i < baraja.length; i++) {
         let valor = baraja[i].charAt(0);
+
         if (valor == 0) valor = 10;
         let palo = baraja[i].charAt(1);
+
         let print = '';
         let color = '';
         switch (palo) {
@@ -275,6 +279,7 @@ function Baraja() {
             default:
                 break;
         }
+        
         contenedorBaraja.innerHTML +=
             "<div id='" + baraja[i] + "' class='carta baraja'>"
             + "<div class='carta-contenedor'>"
@@ -283,7 +288,13 @@ function Baraja() {
             + "<div class='palo'>" + print + "</div>"
             + "<div class='num bot'>" + valor + "</div>"
             + "</div>"
-            + "<div class='trasera'>" + reves + "</div>"
+
+            + "<div class='trasera'>"
+            + "<div class='palo'>" 
+            // + reves 
+            + "</div>"
+            + "</div>"
+
             + "</div>"
             + "</div>"
 
@@ -300,6 +311,26 @@ let caraCartas = document.querySelectorAll('.baraja .carta-contenedor');
 let num = document.querySelectorAll('.baraja .num');
 let palos = document.querySelectorAll('.baraja .palo');
 let barajaTrasera = document.querySelectorAll('.trasera');
+
+function voltearBaraja() {
+    if (caraCartas[0].classList.contains('voltear')) {
+        for (let i = 0; i < caraCartas.length; i++) {
+            caraCartas[i].classList.remove('voltear');
+        }
+        caraCarta.style.hover = " transform: rotateY(180deg)"
+    } else {
+        for (let i = 0; i < caraCartas.length; i++) {
+            caraCartas[i].classList.add('voltear');
+        }
+    }
+}
+function juntar() {
+    
+    for (let i = 0; i < baraja.length; i++) {
+        baraja[i].style.marginLeft = '-65.85px';
+
+    }
+}
 
 
 function mostrarCartas() {
@@ -342,7 +373,7 @@ function ganador() {
     let fin = false;
     btnplantarse.disabled = false;
     btnjugar.disabled = false;
-    let alerta = document.getElementById('alerta');
+    btnreset.disabled = false;
 
     // primero se estipula si alguno se a pasado de 21  
     if (puntosJugador > 21) {
@@ -363,6 +394,8 @@ function ganador() {
 
                 alerta.style.display = "block";
                 total = 50;
+                btnreset.disabled = true;
+
                 // if (alerta === onclick()) {
 
                 //     alerta.style.display = "none";
@@ -373,7 +406,6 @@ function ganador() {
                 // }
 
             }, 1000);
-
 
         }
         fin = true;
@@ -391,7 +423,6 @@ function ganador() {
         fin = true;
         return;
     }
-
 
     if (puntosJugador == 21) {
         if (puntosCasa == 21) {
@@ -506,6 +537,7 @@ function reset() {
     apuestaDisplay.innerHTML = "";
     totalDisplay.innerHTML = total;
 
+    
     // repetimos el FOR para voverlos a habilitar
     for (let i = 0; i < btnapostar.length; i++) {
         btnapostar[i].disabled = false;
@@ -515,4 +547,7 @@ function reset() {
 }
 
 // start();
-
+let alertaBtn = document.querySelector('#alerta button');
+alertaBtn.addEventListener('click', function() {
+    alerta.style.display = 'none';
+})
