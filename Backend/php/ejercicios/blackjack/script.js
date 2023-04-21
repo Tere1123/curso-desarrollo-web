@@ -281,6 +281,7 @@ function Baraja() {
         }
         
         contenedorBaraja.innerHTML +=
+
             "<div id='" + baraja[i] + "' class='carta baraja'>"
             + "<div class='carta-contenedor'>"
             + "<div class='frontal " + color + "'>"
@@ -317,7 +318,7 @@ function voltearBaraja() {
         for (let i = 0; i < caraCartas.length; i++) {
             caraCartas[i].classList.remove('voltear');
         }
-        caraCarta.style.hover = " transform: rotateY(180deg)"
+        caraCarta.style.hover  = " transform: rotateY(360deg)"
     } else {
         for (let i = 0; i < caraCartas.length; i++) {
             caraCartas[i].classList.add('voltear');
@@ -337,16 +338,27 @@ function mostrarCartas() {
 
     cartasc.innerHTML = '';
     cartasj.innerHTML = '';
+    baraja.innerHTML = '';
 
 
 
     for (let i = 0; i < manocasa.length; i++) {
 
-        cartasc.innerHTML += "<div class='carta'>"
+        cartasc.innerHTML += 
+        "<div id='" + baraja[i] + "'class='carta-contenedor'>"
+            + "<div  class='carta baraja'>"
             + "<div class='num top'>" + manocasa[i] + "</div>"
-            + "<div class='palo'>" + iconoDiamantes + "</div>"
+            // + "<div class='palo'>" + baraja[i] + "</div>"
             + "<div class='num bot'>" + manocasa[i] + "</div>"
-            + "</div>";
+            + "</div>"
+            
+            + "<div class='trasera'>"
+            + "<div class='palo'>" 
+            + "</div>"
+            + "</div>"
+
+            + "</div>"
+          
     }
 
     //ocultamos una de las cartas
@@ -355,10 +367,18 @@ function mostrarCartas() {
     ultimaCarta[ultimaCarta.length - 1].style.color = 'transparent';
 
     for (let i = 0; i < manojugador.length; i++) {
-        cartasj.innerHTML += "<div class='carta'>"
+        cartasj.innerHTML +=
+            "<div id='" + baraja[i] + "'class='carta-contenedor'>"
+            + "<div class='carta baraja'>"
             + "<div class='num top'>" + manojugador[i] + "</div>"
-            + "<div class='palo'>" + iconoPicas + "</div>"
+            // + "<div class='palo'>" + baraja[i] + "</div>"
             + "<div class='num bot'>" + manojugador[i] + "</div>"
+            + "</div>"
+            + "<div class='trasera'>"
+            + "<div class='palo'>" 
+            + "</div>"
+            + "</div>"
+
             + "</div>";
     }
 

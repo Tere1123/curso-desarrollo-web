@@ -351,10 +351,8 @@ animation: none;
 }
 .trasera .palo {
 
-    background:#3b055faf;
-    border: 1px solid black;
-    /* height: 65px;
-    width: 45px; */
+    /* border: 1px solid black; */
+   
     height: 100%;
     width: 100%;
     border-radius: 4px;
@@ -363,8 +361,7 @@ animation: none;
     margin: 5px; */
     
     /* esto nos permite adaptar la imagen dentro del contenedor,esta imagen la tenemos en el JS */
-   background-image: url(https://img.freepik.com/free-vector/neon-suit-poker-casino-brick-wall_47243-538.jpg?size=338&ext=jpg
-   );
+    background-image: url(https://img.freepik.com/free-vector/neon-suit-poker-casino-brick-wall_47243-538.jpg?size=338&ext=jpg );
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -372,17 +369,20 @@ animation: none;
 }
 
 .carta-contenedor {
-    background:#3b055f;
+    background:#2d0547d5;
 
     position: relative;
     width: 100%;
-    height: 100%;
+    width: 100%;
     transition: all .5s;
     transform-style: preserve-3d;
+    border-radius: 5px;
+    
+    
 }
 
 .carta:hover .carta-contenedor {
-    transform: rotateY(180deg);
+    transform: rotateY(360deg);
 }
 
 .frontal,
@@ -401,7 +401,7 @@ animation: none;
 
 .trasera,
 .voltear {
-    /* display: block !important; */
+    display: block !important;
     transform: rotateY(180deg);
 }
 .oculta {
