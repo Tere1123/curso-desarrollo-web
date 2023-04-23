@@ -112,8 +112,8 @@ span#cartas-jugador {
 
     display: flex;
    
-/* 
-    background:#3b055f;  */
+
+    background:#3b055f; 
     /* border: 1px solid black; */
     border-radius: 6px;
     height: 65px;
@@ -368,7 +368,7 @@ animation: none;
 
 }
 
-.carta-contenedor {
+/* .carta-contenedor {
     background:#2d0547d5;
 
     position: relative;
@@ -379,7 +379,7 @@ animation: none;
     border-radius: 5px;
     
     
-}
+} */
 
 .carta:hover .carta-contenedor {
     transform: rotateY(360deg);

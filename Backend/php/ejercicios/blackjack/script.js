@@ -231,107 +231,107 @@ let iconoTreboles = `<i class="bi bi-suit-club"></i>`;
 
 const contenedorBaraja = document.getElementById('baraja');
 //creamos la funcion para crear la baraja completa
-function Baraja() {
+// function Baraja() {
 
-    let baraja = new Array();
-    let palos = {
-        "T": "Treboles",
-        "D": "Diamantes",
-        "P": "Picas",
-        "C": "Corazones"
-    }
+//     let baraja = new Array();
+//     let palos = {
+//         "T": "Treboles",
+//         "D": "Diamantes",
+//         "P": "Picas",
+//         "C": "Corazones"
+//     }
 
-    let rangos = new Array("A", 2, 3, 4, 5, 6, 7, 8, 9, 0, "J", "Q", "K");
-//usamos los objetos para unir el valor con el palo en una carta 
-    Object.keys(palos).forEach(function (value) {
-        for (let i = 0; i < rangos.length; i++) {
-            baraja.push(rangos[i] + value);
-        }
-    })
-//mostramos la baraja en consola
-    console.log(baraja);
-//creamos un bucle para recorrer cada carta de la baraja
-    for (let i = 0; i < baraja.length; i++) {
-        let valor = baraja[i].charAt(0);
+//     let rangos = new Array("A", 2, 3, 4, 5, 6, 7, 8, 9, 0, "J", "Q", "K");
+// //usamos los objetos para unir el valor con el palo en una carta 
+//     Object.keys(palos).forEach(function (value) {
+//         for (let i = 0; i < rangos.length; i++) {
+//             baraja.push(rangos[i] + value);
+//         }
+//     })
+// //mostramos la baraja en consola
+//     console.log(baraja);
+// //creamos un bucle para recorrer cada carta de la baraja
+//     for (let i = 0; i < baraja.length; i++) {
+//         let valor = baraja[i].charAt(0);
 
-        if (valor == 0) valor = 10;
-        let palo = baraja[i].charAt(1);
+//         if (valor == 0) valor = 10;
+//         let palo = baraja[i].charAt(1);
 
-        let print = '';
-        let color = '';
-        switch (palo) {
-            case 'T':
-                print = iconoTreboles;
-                color = 'carta-negra';
-                break;
-            case 'D':
-                print = iconoDiamantes;
-                color = 'carta-roja';
-                break;
-            case 'C':
-                print = iconoCorazones;
-                color = 'carta-roja';
-                break;
-            case 'P':
-                print = iconoPicas;
-                color = 'carta-negra';
-                break;
-            default:
-                break;
-        }
+//         let print = '';
+//         let color = '';
+//         switch (palo) {
+//             case 'T':
+//                 print = iconoTreboles;
+//                 color = 'carta-negra';
+//                 break;
+//             case 'D':
+//                 print = iconoDiamantes;
+//                 color = 'carta-roja';
+//                 break;
+//             case 'C':
+//                 print = iconoCorazones;
+//                 color = 'carta-roja';
+//                 break;
+//             case 'P':
+//                 print = iconoPicas;
+//                 color = 'carta-negra';
+//                 break;
+//             default:
+//                 break;
+//         }
         
-        contenedorBaraja.innerHTML +=
+//         contenedorBaraja.innerHTML +=
 
-            "<div id='" + baraja[i] + "' class='carta baraja'>"
-            + "<div class='carta-contenedor'>"
-            + "<div class='frontal " + color + "'>"
-            + "<div class='num top'>" + valor + "</div>"
-            + "<div class='palo'>" + print + "</div>"
-            + "<div class='num bot'>" + valor + "</div>"
-            + "</div>"
+//             "<div id='" + baraja[i] + "' class='carta baraja'>"
+//             + "<div class='carta-contenedor'>"
+//             + "<div class='frontal " + color + "'>"
+//             + "<div class='num top'>" + valor + "</div>"
+//             + "<div class='palo'>" + print + "</div>"
+//             + "<div class='num bot'>" + valor + "</div>"
+//             + "</div>"
 
-            + "<div class='trasera'>"
-            + "<div class='palo'>" 
-            // + reves 
-            + "</div>"
-            + "</div>"
+//             + "<div class='trasera'>"
+//             + "<div class='palo'>" 
+//             // + reves 
+//             + "</div>"
+//             + "</div>"
 
-            + "</div>"
-            + "</div>"
+//             + "</div>"
+//             + "</div>"
 
-        let cartaTop = document.querySelectorAll('.baraja');
-        cartaTop[cartaTop.length - 1].style.zIndex = i;
-    }
+//         let cartaTop = document.querySelectorAll('.baraja');
+//         cartaTop[cartaTop.length - 1].style.zIndex = i;
+//     }
 
-}
+// }
 
-Baraja();
+// Baraja();
 
-let baraja = document.querySelectorAll('.baraja');
-let caraCartas = document.querySelectorAll('.baraja .carta-contenedor');
-let num = document.querySelectorAll('.baraja .num');
-let palos = document.querySelectorAll('.baraja .palo');
-let barajaTrasera = document.querySelectorAll('.trasera');
+// let baraja = document.querySelectorAll('.baraja');
+// let caraCartas = document.querySelectorAll('.baraja .carta-contenedor');
+// let num = document.querySelectorAll('.baraja .num');
+// let palos = document.querySelectorAll('.baraja .palo');
+// let barajaTrasera = document.querySelectorAll('.trasera');
 
-function voltearBaraja() {
-    if (caraCartas[0].classList.contains('voltear')) {
-        for (let i = 0; i < caraCartas.length; i++) {
-            caraCartas[i].classList.remove('voltear');
-        }
-        caraCarta.style.hover  = " transform: rotateY(360deg)"
-    } else {
-        for (let i = 0; i < caraCartas.length; i++) {
-            caraCartas[i].classList.add('voltear');
-        }
-    }
-}
-function juntar() {
+// function voltearBaraja() {
+//     if (caraCartas[0].classList.contains('voltear')) {
+//         for (let i = 0; i < caraCartas.length; i++) {
+//             caraCartas[i].classList.remove('voltear');
+//         }
+//         caraCarta.style.hover  = " transform: rotateY(360deg)"
+//     } else {
+//         for (let i = 0; i < caraCartas.length; i++) {
+//             caraCartas[i].classList.add('voltear');
+//         }
+//     }
+// }
+// function juntar() {
     
-    for (let i = 0; i < baraja.length; i++) {
-        baraja[i].style.marginLeft = '-65.85px';
+//     for (let i = 0; i < baraja.length; i++) {
+//         baraja[i].style.marginLeft = '-65.85px';
 
-    }
-}
+//     }
+// }
 
 
 function mostrarCartas() {
@@ -348,7 +348,7 @@ function mostrarCartas() {
         "<div id='" + baraja[i] + "'class='carta-contenedor'>"
             + "<div  class='carta baraja'>"
             + "<div class='num top'>" + manocasa[i] + "</div>"
-            // + "<div class='palo'>" + baraja[i] + "</div>"
+            + "<div class='palo'>" +  iconoPicas+ "</div>"
             + "<div class='num bot'>" + manocasa[i] + "</div>"
             + "</div>"
             
@@ -371,7 +371,7 @@ function mostrarCartas() {
             "<div id='" + baraja[i] + "'class='carta-contenedor'>"
             + "<div class='carta baraja'>"
             + "<div class='num top'>" + manojugador[i] + "</div>"
-            // + "<div class='palo'>" + baraja[i] + "</div>"
+            + "<div class='palo'>" + iconoDiamantes + "</div>"
             + "<div class='num bot'>" + manojugador[i] + "</div>"
             + "</div>"
             + "<div class='trasera'>"
