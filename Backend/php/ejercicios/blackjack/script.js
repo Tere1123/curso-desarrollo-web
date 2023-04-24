@@ -56,12 +56,9 @@ function start() {
 
         jugar("jugador");
         jugar("jugador");
-
-
     }
 
     btninicio.disabled = true;
-
     //para desabilitar los botones despues de apostar creamos un FOR para recorrer los botones
     //
     for (let i = 0; i < btnapostar.length; i++) {
@@ -69,7 +66,7 @@ function start() {
 
     }
 
-    //primero usamos el numero randon / despues lo remplazamos con la funcion de jugada que realza el mismo trabajo
+    // primero usamos el numero random / despues lo remplazamos con la funcion de jugada que realza el mismo trabajo
 
     // manocasa.push(cartascasa[Math.floor(Math.random() * cartascasa.length)]);
     // manocasa.push(cartascasa[Math.floor(Math.random() * cartascasa.length)]);
@@ -124,7 +121,6 @@ function apostar(apuesta) {
         btninicio.disabled = false;
 
     }
-
 
 }
 
