@@ -47,7 +47,7 @@ function start() {
 
     resultadoJuego.innerHTML = "Introduce tu apuesta";
 
- 
+
 
 
     if (manocasa.length == 0 && manojugador.length == 0) {
@@ -109,7 +109,7 @@ function apostar(apuesta) {
     console.log(total);
 
 
-    if ((total - apuestaJ < 0)) {
+    if (total - apuestaJ < 0) {
         btninicio.disabled = true;
         apuestaDisplay.innerHTML = 'No hay saldo';
 
@@ -154,13 +154,18 @@ function calcularPuntos() {
     puntosJugador = 0;
 
     // se realiza el for con cada jugador primero con la casa 
-    for (let i = 0; i < manocasa.length; i++) {
-        let as = false;
-        switch (manocasa[i]) {
+    let as = false;
+    let limite = 1;
+    if (jugadorPlantado) limite = manocasa.length;
+    for (let i = 0; i < limite; i++) {
+
+        let puntos = manocasa[i].charAt(0);
+        switch (puntos) {
             case "A":
                 puntosCasa += 11;
                 as = true;
                 break;
+            case '0':
             case "J":
             case "Q":
             case "K":
@@ -168,23 +173,30 @@ function calcularPuntos() {
                 break;
 
             default:
-                puntosCasa += manocasa[i];
+                puntosCasa += parseInt(puntos);
                 break;
         }
-        //si los puntos son menores que 21 al AS se le restaran 10 para que valga 1
-        if (manocasa > 21 && as) {
-            puntosCasa -= 10;
-        }
+
+    }
+    //si los puntos son menores que 21 al AS se le restaran 10 para que valga 1
+    if (puntosCasa > 21 && as) {
+        puntosCasa -= 10;
     }
 
     // for despues con el jugador
+    let asJ = false;
     for (let i = 0; i < manojugador.length; i++) {
-        let as = false;
-        switch (manojugador[i]) {
+
+        let puntos = manojugador[i].charAt(0);
+        console.log(puntos);
+        console.log(manojugador[i].charAt(0));
+        switch (puntos) {
             case "A":
                 puntosJugador += 11;
-                as = true;
+                asJ = true;
                 break;
+            case '0':
+                console.log('diez');
             case "J":
             case "Q":
             case "K":
@@ -192,21 +204,23 @@ function calcularPuntos() {
                 break;
 
             default:
-                puntosJugador += manojugador[i];
+                puntosJugador += parseInt(puntos);
                 break;
         }
-        if (puntosJugador > 21 && as) {
-            puntosJugador -= 10;
-        }
+
+    }
+    if (puntosJugador > 21 && asJ) {
+        puntosJugador -= 10;
     }
 
     console.log("cartas de la casa:" + manocasa.join());
     console.log("puntuación de la casa: " + puntosCasa);
 
     marcadorc.innerHTML = puntosCasa;
-    console.log("cartas del jugador:" + manojugador.join());
 
+    console.log("cartas del jugador:" + manojugador.join());
     console.log("puntuación del jugador: " + puntosJugador);
+
     marcadorJ.innerHTML = puntosJugador;
     cartasc.innerHTML = manocasa.join();
     cartasj.innerHTML = manojugador.join();
@@ -226,31 +240,30 @@ let iconoTreboles = `<i class="bi bi-suit-club"></i>`;
 const contenedorBaraja = document.getElementById('baraja');
 // creamos la funcion para crear la baraja completa
 let mazo = new Array();
+
 function Baraja() {
 
 
-    
     let palos = {
-     
         "D": "Diamantes",
         "P": "Picas",
 
     }
 
     let rangos = new Array("A", 2, 3, 4, 5, 6, 7, 8, 9, 0, "J", "Q", "K");
-// //usamos los objetos para unir el valor con el palo en una carta 
+    // //usamos los objetos para unir el valor con el palo en una carta 
     Object.keys(palos).forEach(function (value) {
         for (let i = 0; i < rangos.length; i++) {
             mazo.push(rangos[i] + value);
         }
     })
-// //mostramos la mazo en consola
+    // //mostramos la mazo en consola
     console.log(mazo);
-// //creamos un bucle para recorrer cada carta de la baraja
+    // //creamos un bucle para recorrer cada carta de la baraja
     for (let i = 0; i < mazo.length; i++) {
         let valor = mazo[i].charAt(0);
 
-        if (valor == 0) valor = 10;
+        // if (valor == 0) valor = 10;
         let palo = mazo[i].charAt(1);
 
         let print = '';
@@ -267,7 +280,8 @@ function Baraja() {
             default:
                 break;
         }
-        
+
+
         contenedorBaraja.innerHTML +=
 
             "<div id='" + mazo[i] + "' class='carta baraja'>"
@@ -279,7 +293,7 @@ function Baraja() {
             + "</div>"
 
             + "<div class='trasera'>"
-            + "<div class='palo'>" 
+            + "<div class='palo'>"
             // + reves 
             + "</div>"
             + "</div>"
@@ -292,9 +306,12 @@ function Baraja() {
         // cartaTop[cartaTop.length - 1].style.transition = "transform 0.5s";
         // cartaTop[cartaTop.length - 1].style.transition = "margin 1.5s";
         cartaTop[cartaTop.length - 1].style.transition = "all 1.2s";
+
+
     }
 
 }
+
 
 Baraja();
 
@@ -311,7 +328,7 @@ function voltearBaraja() {
         for (let i = 0; i < caraCartas.length; i++) {
             caraCartas[i].classList.remove('voltear');
         }
-        
+
     } else {
         for (let i = 0; i < caraCartas.length; i++) {
             caraCartas[i].classList.add('voltear');
@@ -320,7 +337,7 @@ function voltearBaraja() {
 }
 voltearBaraja();
 function juntar() {
-    
+
     for (let i = 0; i < baraja.length; i++) {
         baraja[i].style.marginLeft = '-77.85px';
 
@@ -354,7 +371,7 @@ function mostrarCartas() {
             default:
                 break;
         }
-        
+
         cartasc.innerHTML +=
 
             "<div id='" + manocasa[i] + "' class='carta baraja'>"
@@ -366,7 +383,7 @@ function mostrarCartas() {
             + "</div>"
 
             + "<div class='trasera'>"
-            + "<div class='palo'>" 
+            + "<div class='palo'>"
             // + reves 
             + "</div>"
             + "</div>"
@@ -375,17 +392,18 @@ function mostrarCartas() {
             + "</div>"
     }
 
-    let ultimaCarta = document.querySelectorAll('#cartas-casa .carta');
-    ultimaCarta[ultimaCarta.length - 1].style.backgroundImage =
-    "url('https://img.freepik.com/free-vector/neon-suit-poker-casino-brick-wall_47243-538.jpg?size=338&ext=jpg')";
-    // ultimaCarta[ultimaCarta.length - 1].style.color = 'transparent';
-    ultimaCarta[ultimaCarta.length - 1].childNodes[0].style.opacity = '0';
-
-//     let cartaOculta = document.querySelectorAll('#cartas-casa .carta');
-//     console.log(cartaOculta);
-//     // cartaOculta[1].classList.add('voltear');
-//     cartaOculta[1].style.backgroundImage =
-//    "url('https://img.freepik.com/free-vector/neon-suit-poker-casino-brick-wall_47243-538.jpg?size=338&ext=jpg')";
+    if (!jugadorPlantado) {
+        let ultimaCarta = document.querySelectorAll('#cartas-casa .carta');
+        ultimaCarta[ultimaCarta.length - 1].style.backgroundImage =
+            "url('https://img.freepik.com/free-vector/neon-suit-poker-casino-brick-wall_47243-538.jpg?size=338&ext=jpg')";
+        ultimaCarta[ultimaCarta.length - 1].childNodes[0].style.opacity = '0';
+        ultimaCarta[ultimaCarta.length - 1].style.transition = 'all 1s';
+    }
+    //     let cartaOculta = document.querySelectorAll('#cartas-casa .carta');
+    //     console.log(cartaOculta);
+    //     // cartaOculta[1].classList.add('voltear');
+    //     cartaOculta[1].style.backgroundImage =
+    //    "url('https://img.freepik.com/free-vector/neon-suit-poker-casino-brick-wall_47243-538.jpg?size=338&ext=jpg')";
 
     for (let i = 0; i < manojugador.length; i++) {
         let valor = manojugador[i].charAt(0);
@@ -407,7 +425,7 @@ function mostrarCartas() {
             default:
                 break;
         }
-        
+
         cartasj.innerHTML +=
 
             "<div id='" + manojugador[i] + "' class='carta baraja'>"
@@ -419,7 +437,7 @@ function mostrarCartas() {
             + "</div>"
 
             + "<div class='trasera'>"
-            + "<div class='palo'>" 
+            + "<div class='palo'>"
             // + reves 
             + "</div>"
             + "</div>"
@@ -437,22 +455,22 @@ function mostrarCartas() {
     //         + "<div class='palo'>" +  iconoPicas + "</div>"
     //         + "<div class='num bot'>" + manocasa[i] + "</div>"
     //         + "</div>"
-            
+
     //         + "<div class='trasera'>"
     //         + "<div class='palo'>" 
     //         + "</div>"
     //         + "</div>"
 
     //         + "</div>"
-          
+
     // }
 
-    //ocultamos una de las cartas
+    // ocultamos una de las cartas
     // ultimaCarta = document.querySelectorAll('#cartas-casa .carta');
     // ultimaCarta[ultimaCarta.length - 1].style.backgroundImage =
     //  "url('https://img.freepik.com/free-vector/neon-suit-poker-casino-brick-wall_47243-538.jpg?size=338&ext=jpg')";
     // ultimaCarta[ultimaCarta.length - 1].style.color = 'transparent';
-  
+
 
     // for (let i = 0; i < manojugador.length; i++) {
     //     cartasj.innerHTML +=
@@ -599,27 +617,32 @@ function ganador() {
 // creamos una funcion que nos permitira jugar,introducimos un switch que nos arrojara una carta adicional de forma aleatoria
 // en este caso usamos el numero random del inicio en una funcion
 let jugadorPlantado = false;
+
 function plantarse() {
 
     jugadorPlantado = true;
     btnplantarse.disabled = true;
     btnjugar.disabled = true;
+    let ultimaCarta = document.querySelectorAll('#cartas-casa .carta');
     ultimaCarta[ultimaCarta.length - 1].style.backgroundImage = 'none';
     ultimaCarta[ultimaCarta.length - 1].childNodes[0].style.opacity = '1';
 
-    if (puntosJugador > puntosCasa) {
-       
-        jugar("casa");
+    setTimeout(() => {
+        if (puntosJugador > puntosCasa) {
 
-        timer = setTimeout(() => {
-            plantarse();
-        }, 1500);
-    } else {
-        clearTimeout(timer);
-        timer = 0;
-
-        ganador();
-    }
+            jugar("casa");
+    
+            timer = setTimeout(() => {
+                plantarse();
+            }, 1500);
+        } else {
+            clearTimeout(timer);
+            timer = 0;
+    
+            ganador();
+        }
+    }, 1000);
+    
     console.log(fin);
 
 }
@@ -633,9 +656,7 @@ function reset() {
     puntosJugador = 0;
     manojugador = [];
 
-    
-    contenedor.style.visiblility = 'hidden';
-
+    jugadorPlantado = false;
 
     cartasc.innerHTML = [];
     cartasj.innerHTML = [];
@@ -645,7 +666,7 @@ function reset() {
     apuestaDisplay.innerHTML = "";
     totalDisplay.innerHTML = total;
 
-    
+
     // repetimos el FOR para voverlos a habilitar
     for (let i = 0; i < btnapostar.length; i++) {
         btnapostar[i].disabled = false;
@@ -656,6 +677,6 @@ function reset() {
 
 // start();
 let alertaBtn = document.querySelector('#alerta button');
-alertaBtn.addEventListener('click', function() {
+alertaBtn.addEventListener('click', function () {
     alerta.style.display = 'none';
 })
