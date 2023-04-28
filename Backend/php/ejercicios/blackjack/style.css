@@ -299,6 +299,9 @@ background-color:rgb(233, 229, 10);
     position: relative;
     top:13% ;
 }
+.dinero .saldo {
+    display: flex;
+}
 
 .total {
     display: flex;
