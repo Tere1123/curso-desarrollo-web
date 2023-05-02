@@ -287,15 +287,18 @@ background-color:rgb(233, 229, 10);
 /* animation: none; */
 }
 .dinero {
+
     display: flex;
     align-items: center;
     justify-content: space-around;
+
     width: 800px;
     height: 50px;
     padding: 0px ;
     background-color: rgba(204, 86, 169, 0.514);
     color:#ffffff;
     border-radius: 20px;
+
     position: relative;
     top:13% ;
 }
@@ -438,4 +441,64 @@ background-color:rgb(233, 229, 10);
 .carta-negra {
     color: aqua;
     /* text-shadow: 0 0 10px aqua; */
+}
+
+@media screen and (max-width: 600px) {
+    .container{
+    width: 300px;
+    height: 400px;
+    }
+
+    #tablero{
+    width: 200px;
+    height: 250px;
+    font-size: 10px;
+    }
+
+    .resultado{
+    width: 300px;
+    height: 20px;  
+    font-size: 15px; 
+    }
+    .apuesta .button {
+    height: 10px;
+    width: 30px;
+    font-size: 10px;
+
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    }
+   
+    .dinero {
+
+    width: 300px;
+    height: 20px;
+    font-size: 10px;
+    position: absolute;
+    top:110% ;
+
+    }
+
+    .mandos {
+
+        position: absolute;
+        top: 125%;
+        left: 50%;
+        transform: translate(-20%, -50%);
+        width: 600px;
+    }
+    
+.mandos button{
+
+    width: 50px;
+    height: 20px;
+    font-size: 15px;
+
+
+}
+
 }
