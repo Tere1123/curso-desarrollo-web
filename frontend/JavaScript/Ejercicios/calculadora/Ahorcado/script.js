@@ -114,36 +114,52 @@ function juego() {
 //creamos una funcion donde comprobemos que ganamos la partida
     function ganar() {
        //  una forma de hacerlo cuando se complete la palabra
-        // if (contador == palabra.length ) {
-        //     // setTimeout ( function () {
-        //     // window.alert('has ganado');
-        //     // location.reload();// da la opcion de aceptar y recargar la pagina.
-        //     // }, 1000); 
+        if (contador == palabra.length ) {
+            setTimeout ( function () {
+            window.alert('has ganado');
+            location.reload();// da la opcion de aceptar y recargar la pagina.
+            }, 1000); 
             
-        // }
+        }
 
 //otra forma de hacerlo contando los guiones completados
 
-let guiones = 0
+// let guiones = 0
 
- for (let i = 0; i < aciertos.length; i++) {
+//  for (let i = 0; i < aciertos.length; i++) {
      
 
-    if ( aciertos[i] =="_") {
-        guiones++;
+//     if ( aciertos[i] =="_") {
+//         guiones++;
     
-            }
+//             }
         
-    }
+//     }
     
-    if (guiones == 0) {
-        setTimeout(function () {
-         window.alert('has ganado');   
-        location.reload()}, 1000);
+//     if (guiones == 0) {
+//         setTimeout(function () {
+//          window.alert('has ganado');   
+//         location.reload()}, 1000);
        
-     }
+//      }
 
 }
+
+ function perder(){
+  vidas = 5;
+
+    for (let i = 0; i < palabra.length; i++) {
+        console.log(palabra[i]);
+    }
+    if (palabra[i] != letra) {
+        console.log("no hay coincidencia");
+        aciertos [i] = vidas - 1;
+        contador ++;// cada que el jugador acierta aumenta el contador
+    } 
+
+
+ }
+
 
 
 

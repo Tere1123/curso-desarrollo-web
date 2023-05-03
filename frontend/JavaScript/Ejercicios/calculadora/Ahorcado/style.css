@@ -16,10 +16,19 @@ div h2 {
 .lienzo {
     
     height: 300px;
+    
+  
+}
+
+.lienzo svg {
     border: 2px solid black;
     border-color: black;
     border-radius:10px ;
-    
+}
+
+line {
+    stroke: black;
+    stroke-width: 4;
 }
 
 /* div button {
