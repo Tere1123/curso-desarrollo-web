@@ -303,12 +303,19 @@ function voltearBaraja() {
     }
 }
 voltearBaraja();
+
 function juntar() {
-
+if ('max-width: 600px') {
     for (let i = 0; i < baraja.length; i++) {
-        baraja[i].style.marginLeft = '-77.85px';
-
+        baraja[i].style.marginLeft = '-20.85px';
+     
     }
+}else{
+    for (let i = 0; i < baraja.length; i++) {
+        baraja[i].style.marginLeft = '-70.85px';
+     
+    }
+}
 }
 
 
